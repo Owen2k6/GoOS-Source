@@ -1,2 +1,4 @@
 # Auto detect text files and perform LF normalization
 * text=auto
+Tools/qemu-w64-setup-20240815.exe filter=lfs diff=lfs merge=lfs -text
+Tools/dotnet-sdk-8.0.401-win-x64.exe filter=lfs diff=lfs merge=lfs -text

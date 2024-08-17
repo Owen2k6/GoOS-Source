@@ -21,7 +21,7 @@ namespace MOOS.Misc
             FontSize = size;
         }
 
-        public int DrawChar(Graphics g,int X, int Y, char Chr)
+        public int DrawChar(Graphics g,int X, int Y, char Chr) 
         {
             int index = charset.IndexOf(Chr);
             if (index == -1)

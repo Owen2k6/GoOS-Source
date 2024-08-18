@@ -22,7 +22,7 @@ namespace MOOS.Misc
             ParseHeight();
             ParseKerning();
             ParseMetadata();
-            ParseGlyphs(); // ITS THIS ONE!
+            ParseGlyphs();
             ParseEndingMagic();
         }
 
@@ -222,6 +222,21 @@ namespace MOOS.Misc
             return (ushort)(returnVal + (s.Length * SpacingModifier()));
         }
 
+        public int MeasureStringVert(string s)
+        {
+            int topHeight = 0;
+            for (int I = 0; I < s.Length; I++)
+            {
+                Glyph? Temp = GetGlyph(s[I]);
+                if (Temp != null && Temp.Height > topHeight)
+                {
+                    topHeight = Temp.Height;
+                }
+            }
+
+            return topHeight;
+        }
+
         public int SpacingModifier() => 0;
 
         /// <summary>
@@ -264,7 +279,7 @@ namespace MOOS.Misc
         /// </summary>
         private readonly Glyph[] _glyphs = new Glyph[256];
 
-        public void DrawChar(int x, int y, Glyph glyph, Color colour, Graphics graphics)
+        public void DrawChar(int x, int y, Glyph glyph, uint colour, Graphics graphics)
         {
             for (int yy = 0; yy < glyph.Height; yy++)
             {
@@ -279,12 +294,8 @@ namespace MOOS.Misc
                     uint alpha = glyph.Bitmap[yy * glyph.Width + xx];
                     uint invAlpha = (uint)-alpha;
 
-                    // Get the index of the framebuffer of where to draw the point at.
-                    int canvasIdx = (y + yy - glyph.Top) * Width + x + xx;
-
                     // Get the background ARGB value and the glyph color's ARGB value.
                     uint backgroundArgb = graphics.GetPoint(x + xx, y + yy - glyph.Top);
-                    uint glyphColorArgb = colour.ToArgb();
 
                     // Store the individual background color's R, G and B values.
                     byte backgroundR = (byte)((backgroundArgb >> 16) & 0xFF);
@@ -292,9 +303,9 @@ namespace MOOS.Misc
                     byte backgroundB = (byte)(backgroundArgb & 0xFF);
 
                     // Store the individual glyph foreground color's R, G and B values.
-                    byte foregroundR = (byte)((glyphColorArgb >> 16) & 0xFF);
-                    byte foregroundG = (byte)((glyphColorArgb >> 8) & 0xFF);
-                    byte foregroundB = (byte)((glyphColorArgb) & 0xFF);
+                    byte foregroundR = (byte)((colour >> 16) & 0xFF);
+                    byte foregroundG = (byte)((colour >> 8) & 0xFF);
+                    byte foregroundB = (byte)((colour) & 0xFF);
 
                     // Get the individual R, G and B values for the blended color.
                     byte r = (byte)((alpha * foregroundR + invAlpha * backgroundR) >> 8);
@@ -310,7 +321,7 @@ namespace MOOS.Misc
             }
         }
 
-        public void DrawString(int x, int y, string text, Color colour, Graphics graphics, bool centre = false)
+        public void DrawString(int x, int y, string text, uint colour, Graphics graphics, bool centre = false)
         {
             if (string.IsNullOrEmpty(text)) return;
 
@@ -322,8 +333,8 @@ namespace MOOS.Misc
             int[] by = new int[lines.Length];
 
             // Set temporary values.
-            for (int i = 0; i < bx.Length; i++) bx[i] = x;
-            for (int i = 0; i < by.Length; i++) by[i] = y + GetHeight() * i;
+            for (int i = 0; i < bx.Length; i++) bx[i] = 0;
+            for (int i = 0; i < by.Length; i++) by[i] = GetHeight() * i;
 
             // Loop though the split lines.
             for (int i = 0; i < lines.Length; i++)
@@ -336,6 +347,16 @@ namespace MOOS.Misc
                 {
                     by[i] -= GetHeight() * (lines.Length + 1) / 2;
                     bx[i] -= TextWidth / 2;
+                }
+
+                int topHeight = 0;
+                for (int I = 0; I < lines[i].Length; I++)
+                {
+                    Glyph? Temp = GetGlyph(lines[i][I]);
+                    if (Temp != null && Temp.Height > topHeight)
+                    {
+                        topHeight = Temp.Height;
+                    }
                 }
 
                 // Loop through each character in the line.
@@ -371,11 +392,11 @@ namespace MOOS.Misc
                         {
                             // Get the alpha value of the glyph's pixel and the inverted value.
                             uint alpha = Temp.Bitmap[yy * Temp.Width + xx];
-                            uint invAlpha = alpha - 2 - (alpha * 2);
+                            //uint invAlpha = alpha - 2 - (alpha * 2);
 
                             // Get the background ARGB value and the glyph color's ARGB value.
-                            uint backgroundArgb = graphics.GetPoint(bx[i] + x + xx, by[i] + y + yy - Temp.Top);
-                            uint glyphColorArgb = colour.ToArgb();
+                            uint backgroundArgb = graphics.GetPoint(bx[i] + x + xx, by[i] + y + yy + topHeight - Temp.Top);
+                            uint glyphColorArgb = colour;
 
                             // Store the individual background color's R, G and B values.
                             byte backgroundR = (byte)((backgroundArgb >> 16) & 0xFF);
@@ -388,15 +409,15 @@ namespace MOOS.Misc
                             byte foregroundB = (byte)((glyphColorArgb) & 0xFF);
 
                             // Get the individual R, G and B values for the blended color.
-                            byte r = (byte)((alpha * foregroundR + invAlpha * backgroundR) >> 8);
-                            byte g = (byte)((alpha * foregroundG + invAlpha * backgroundG) >> 8);
-                            byte b = (byte)((alpha * foregroundB + invAlpha * backgroundB) >> 8);
+                            byte r = (byte)((alpha * foregroundR + (255 - alpha) * backgroundR) >> 8);
+                            byte g = (byte)((alpha * foregroundG + (255 - alpha) * backgroundG) >> 8);
+                            byte b = (byte)((alpha * foregroundB + (255 - alpha) * backgroundB) >> 8);
 
                             // Store the blended color in an unsigned integer.
                             uint _colour = ((uint)255 << 24) | ((uint)r << 16) | ((uint)g << 8) | b;
 
                             // Set the pixel to the blended color.
-                            graphics.DrawPoint(bx[i] + x + xx, by[i] + y + yy - Temp.Top, _colour);
+                            graphics.DrawPoint(bx[i] + x + xx, by[i] + y + yy + topHeight - Temp.Top, _colour);
                         }
                     }
 

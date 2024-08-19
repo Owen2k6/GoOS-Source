@@ -20,12 +20,25 @@ unsafe class Program
     public static WindowManager wm;
     public static ProcessManager pm;
 
+    public static int MouseX, MouseY;
+
     public static ACFFont lg12;
     public static ACFFont lg18;
     public static ACFFont lg24;
     public static ACFFont lg36;
 
-    public static Image scafellPike;
+    public static Image ScafellPike;
+    public static Image WindowbarGradient;
+
+    public static Image WindowCloseButton;
+    public static Image WindowCloseButtonPress;
+    public static Image WindowCloseButtonHover;
+    public static Image WindowMaxButton;
+    public static Image WindowMaxButtonPress;
+    public static Image WindowMaxButtonHover;
+    public static Image WindowMinButton;
+    public static Image WindowMinButtonPress;
+    public static Image WindowMinButtonHover;
 
     public static Bitmap mouse;
 
@@ -107,6 +120,17 @@ unsafe class Program
         byte[] lg36Raw = File.ReadAllBytes("Resources/Fonts/LucidaGrande36.acf");
 
         byte[] scafellPikeRaw = File.ReadAllBytes("Resources/Images/ScafellPike.png");
+        byte[] windowbarGradientRaw = File.ReadAllBytes("Resources/Images/Windows/WindowbarGradient.png");
+
+        byte[] windowCloseButtonRaw = File.ReadAllBytes("Resources/Images/Windows/WindowbarExit.png");
+        byte[] windowCloseButtonPressRaw = File.ReadAllBytes("Resources/Images/Windows/WindowbarExitPressed.png");
+        byte[] windowCloseButtonHoverRaw = File.ReadAllBytes("Resources/Images/Windows/WindowbarExitHovered.png");
+        byte[] windowMaxButtonRaw = File.ReadAllBytes("Resources/Images/Windows/WindowbarMaximise.png");
+        byte[] windowMaxButtonPressRaw = File.ReadAllBytes("Resources/Images/Windows/WindowbarMaximisePressed.png");
+        byte[] windowMaxButtonHoverRaw = File.ReadAllBytes("Resources/Images/Windows/WindowbarMaximiseHovered.png");
+        byte[] windowMinButtonRaw = File.ReadAllBytes("Resources/Images/Windows/WindowbarMinimise.png");
+        byte[] windowMinButtonPressRaw = File.ReadAllBytes("Resources/Images/Windows/WindowbarMinimisePressed.png");
+        byte[] windowMinButtonHoverRaw = File.ReadAllBytes("Resources/Images/Windows/WindowbarMinimiseHovered.png");
 
         byte[] mouseRaw = File.ReadAllBytes("Resources/Images/mouse.bmp"); 
        
@@ -116,8 +140,19 @@ unsafe class Program
         lg36 = new ACFFont(lg36Raw);
 
         Image scafellPikePre = new PNG(scafellPikeRaw);
-        scafellPike = scafellPikePre.ResizeImage(Framebuffer.Width, Framebuffer.Height);
+        ScafellPike = scafellPikePre.ResizeImage(Framebuffer.Width, Framebuffer.Height);
         scafellPikePre.Dispose();
+
+        WindowbarGradient = new PNG(windowbarGradientRaw);
+        WindowCloseButton = new PNG(windowCloseButtonRaw);
+        WindowCloseButtonPress = new PNG(windowCloseButtonPressRaw);
+        WindowCloseButtonHover = new PNG(windowCloseButtonHoverRaw);
+        WindowMaxButton = new PNG(windowMaxButtonRaw);
+        WindowMaxButtonPress = new PNG(windowMaxButtonPressRaw);
+        WindowMaxButtonHover = new PNG(windowMaxButtonHoverRaw);
+        WindowMinButton = new PNG(windowMinButtonRaw);
+        WindowMinButtonPress = new PNG(windowMinButtonPressRaw);
+        WindowMinButtonHover = new PNG(windowMinButtonHoverRaw);
 
         mouse = new Bitmap(mouseRaw);
 
@@ -129,14 +164,15 @@ unsafe class Program
         Test testProcess = new Test();
         pm.addProcess(testProcess);
 
+        Framebuffer.Graphics.DrawImage(0, 0, ScafellPike, false);
+
         for (; ; )
         {
-            Framebuffer.Graphics.DrawImage(0, 0, scafellPike, false);
+            MouseX = Control.MousePosition.X;
+            MouseY = Control.MousePosition.Y;
 
             pm.Execute();
             wm.Render(Framebuffer.Graphics);
-
-            Framebuffer.Graphics.DrawImage(Control.MousePosition.X, Control.MousePosition.Y, mouse);
 
             Framebuffer.Update();
         }

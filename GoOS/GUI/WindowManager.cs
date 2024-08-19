@@ -125,12 +125,15 @@ namespace GoOS.GUI
 
             if (!mouseHandled) 
             {
-                int offset = 0;
-                if (oldMouseY + 19 > Programme.ScafellPike.Height) offset = oldMouseY + 19 - Programme.ScafellPike.Height;
+                int offsetX = 0;
+                if (oldMouseX + 12 > Programme.ScafellPike.Width) offsetX = oldMouseX + 12 - Programme.ScafellPike.Width;
 
-                for (int x = 0; x < 12; x++)
+                int offsetY = 0;
+                if (oldMouseY + 19 > Programme.ScafellPike.Height) offsetY = oldMouseY + 19 - Programme.ScafellPike.Height;
+
+                for (int x = 0; x < 12 - offsetX; x++)
                 {
-                    for (int y = 0; y < 19 - offset; y++) 
+                    for (int y = 0; y < 19 - offsetY; y++) 
                     {
                         uint colour = Programme.ScafellPike.GetPixel(oldMouseX + x, oldMouseY + y);
                         g.DrawPoint(oldMouseX + x, oldMouseY + y, colour);

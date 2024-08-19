@@ -18,7 +18,7 @@ namespace System
     // with the remainder of the bits storing the tick count. This information
     // is only used during time zone conversions and is not part of the
     // identity of the DateTime. Thus, operations like Compare and Equals
-    // ignore this state. This is to stay compatible with earlier behavior
+    // ignore this state. This is to stay compatible with earlier behaviour
     // and performance characteristics and to avoid forcing  people into dealing
     // with the effects of daylight savings. Note, that this has little effect
     // on how the DateTime works except in a context where its specific time
@@ -31,7 +31,7 @@ namespace System
     // effectively hidden from most users, who just see the 3-state DateTimeKind
     // enumeration.
     //
-    // For compatibility, DateTime does not serialize the Kind data when used in
+    // For compatibility, DateTime does not serialise the Kind data when used in
     // binary serialization.
     //
     // For a description of various calendar issues, look at
@@ -388,8 +388,8 @@ namespace System
 
             bool foundTicks = false;
             bool foundDateData = false;
-            long serializedTicks = 0;
-            ulong serializedDateData = 0;
+            long serialisedTicks = 0;
+            ulong serialisedDateData = 0;
 
             // Get the data
             SerializationInfoEnumerator enumerator = info.GetEnumerator();
@@ -398,11 +398,11 @@ namespace System
                 switch (enumerator.Name)
                 {
                     case TicksField:
-                        serializedTicks = Convert.ToInt64(enumerator.Value, CultureInfo.InvariantCulture);
+                        serialisedTicks = Convert.ToInt64(enumerator.Value, CultureInfo.InvariantCulture);
                         foundTicks = true;
                         break;
                     case DateDataField:
-                        serializedDateData = Convert.ToUInt64(enumerator.Value, CultureInfo.InvariantCulture);
+                        serialisedDateData = Convert.ToUInt64(enumerator.Value, CultureInfo.InvariantCulture);
                         foundDateData = true;
                         break;
                     default:
@@ -412,11 +412,11 @@ namespace System
             }
             if (foundDateData)
             {
-                _dateData = serializedDateData;
+                _dateData = serialisedDateData;
             }
             else if (foundTicks)
             {
-                _dateData = (ulong)serializedTicks;
+                _dateData = (ulong)serialisedTicks;
             }
             else
             {
@@ -808,7 +808,7 @@ namespace System
         */
 
         // A version of ToBinary that uses the real representation and does not adjust local times. This is needed for
-        // scenarios where the serialized data must maintain compatibility
+        // scenarios where the serialised data must maintain compatibility
         internal static DateTime FromBinaryRaw(long dateData)
         {
             long ticks = dateData & (long)TicksMask;
@@ -864,7 +864,7 @@ namespace System
                 throw new ArgumentNullException(nameof(info));
             }
 
-            // Serialize both the old and the new format
+            // Serialise both the old and the new format
             info.AddValue(TicksField, InternalTicks);
             info.AddValue(DateDataField, _dateData);
         }

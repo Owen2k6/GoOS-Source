@@ -432,8 +432,8 @@ namespace System
 		internal static string @Arg_TimeoutException = "The operation has timed out.";
 		/// <summary>Attempt to access the type failed.</summary>
 		internal static string @Arg_TypeAccessException = "Attempt to access the type failed.";
-		/// <summary>The TypedReference must be initialized.</summary>
-		internal static string @Arg_TypedReference_Null = "The TypedReference must be initialized.";
+		/// <summary>The TypedReference must be initialised.</summary>
+		internal static string @Arg_TypedReference_Null = "The TypedReference must be initialised.";
 		/// <summary>Failure has occurred while loading a type.</summary>
 		internal static string @Arg_TypeLoadException = "Failure has occurred while loading a type.";
 		/// <summary>A null or zero length string does not represent a valid Type.</summary>
@@ -442,8 +442,8 @@ namespace System
 		internal static string @Arg_TypeRefPrimitve = "TypedReferences cannot be redefined as primitives. Field name '{0}'.";
 		/// <summary>Type had been unloaded.</summary>
 		internal static string @Arg_TypeUnloadedException = "Type had been unloaded.";
-		/// <summary>Attempted to perform an unauthorized operation.</summary>
-		internal static string @Arg_UnauthorizedAccessException = "Attempted to perform an unauthorized operation.";
+		/// <summary>Attempted to perform an unauthorised operation.</summary>
+		internal static string @Arg_UnauthorisedAccessException = "Attempted to perform an unauthorised operation.";
 		/// <summary>Late bound operations cannot be performed on fields with types for which Type.ContainsGenericParameters is true.</summary>
 		internal static string @Arg_UnboundGenField = "Late bound operations cannot be performed on fields with types for which Type.ContainsGenericParameters is true.";
 		/// <summary>Late bound operations cannot be performed on types or methods for which ContainsGenericParameters is true.</summary>
@@ -566,8 +566,8 @@ namespace System
 		internal static string @Argument_CultureNotSupportedInInvariantMode = "Only the invariant culture is supported in globalization-invariant mode. See https://aka.ms/GlobalizationInvariantMode for more information.";
 		/// <summary>Resolved assembly's simple name should be the same as of the requested assembly.</summary>
 		internal static string @Argument_CustomAssemblyLoadContextRequestedNameMismatch = "Resolved assembly's simple name should be the same as of the requested assembly.";
-		/// <summary>Customized cultures cannot be passed by LCID, only by name.</summary>
-		internal static string @Argument_CustomCultureCannotBePassedByNumber = "Customized cultures cannot be passed by LCID, only by name.";
+		/// <summary>Customised cultures cannot be passed by LCID, only by name.</summary>
+		internal static string @Argument_CustomCultureCannotBePassedByNumber = "Customised cultures cannot be passed by LCID, only by name.";
 		/// <summary>The binary data must result in a DateTime with ticks between DateTime.MinValue.Ticks and DateTime.MaxValue.Ticks.</summary>
 		internal static string @Argument_DateTimeBadBinaryData = "The binary data must result in a DateTime with ticks between DateTime.MinValue.Ticks and DateTime.MaxValue.Ticks.";
 		/// <summary>The supplied DateTime must have the Year, Month, and Day properties set to 1. The time cannot be specified more precisely than whole milliseconds.</summary>
@@ -758,8 +758,8 @@ namespace System
 		internal static string @Argument_InvalidSafeBufferOffLen = "Offset and length were greater than the size of the SafeBuffer.";
 		/// <summary>Invalid seek origin.</summary>
 		internal static string @Argument_InvalidSeekOrigin = "Invalid seek origin.";
-		/// <summary>The specified serialized string '{0}' is not supported.</summary>
-		internal static string @Argument_InvalidSerializedString = "The specified serialized string '{0}' is not supported.";
+		/// <summary>The specified serialised string '{0}' is not supported.</summary>
+		internal static string @Argument_InvalidSerialisedString = "The specified serialised string '{0}' is not supported.";
 		/// <summary>The signature of the startup hook '{0}' in assembly '{1}' was invalid. It must be 'public static void Initialise()'.</summary>
 		internal static string @Argument_InvalidStartupHookSignature = "The signature of the startup hook '{0}' in assembly '{1}' was invalid. It must be 'public static void Initialise()'.";
 		/// <summary>An undefined TimeSpanStyles value is being used.</summary>
@@ -794,8 +794,8 @@ namespace System
 		internal static string @Argument_MismatchedArrays = "Two arrays, {0} and {1}, must be of the same size.";
 		/// <summary>was missing default constructor.</summary>
 		internal static string @Argument_MissingDefaultConstructor = "was missing default constructor.";
-		/// <summary>Argument must be initialized to false</summary>
-		internal static string @Argument_MustBeFalse = "Argument must be initialized to false";
+		/// <summary>Argument must be initialised to false</summary>
+		internal static string @Argument_MustBeFalse = "Argument must be initialised to false";
 		/// <summary>Assembly must be a runtime Assembly object.</summary>
 		internal static string @Argument_MustBeRuntimeAssembly = "Assembly must be a runtime Assembly object.";
 		/// <summary>FieldInfo must be a runtime FieldInfo object.</summary>
@@ -846,8 +846,8 @@ namespace System
 		internal static string @Argument_NotMethodCallOpcode = "The specified opcode cannot be passed to EmitCall.";
 		/// <summary>Argument passed in is not serializable.</summary>
 		internal static string @Argument_NotSerializable = "Argument passed in is not serializable.";
-		/// <summary>Uninitialized Strings cannot be created.</summary>
-		internal static string @Argument_NoUninitializedStrings = "Uninitialized Strings cannot be created.";
+		/// <summary>Uninitialised Strings cannot be created.</summary>
+		internal static string @Argument_NoUninitialisedStrings = "Uninitialised Strings cannot be created.";
 		/// <summary>The object's type must be __ComObject or derived from __ComObject.</summary>
 		internal static string @Argument_ObjNotComObject = "The object's type must be __ComObject or derived from __ComObject.";
 		/// <summary>Offset and capacity were greater than the size of the view.</summary>
@@ -1194,8 +1194,8 @@ namespace System
 		internal static string @AssumptionFailed = "Assumption failed.";
 		/// <summary>Assumption failed: {0}</summary>
 		internal static string @AssumptionFailed_Cnd = "Assumption failed: {0}";
-		/// <summary>The builder was not properly initialized.</summary>
-		internal static string @AsyncMethodBuilder_InstanceNotInitialised = "The builder was not properly initialized.";
+		/// <summary>The builder was not properly initialised.</summary>
+		internal static string @AsyncMethodBuilder_InstanceNotInitialised = "The builder was not properly initialised.";
 		/// <summary>Bad IL format.</summary>
 		internal static string @BadImageFormat_BadILFormat = "Bad IL format.";
 		/// <summary>Corrupt .resources file. The specified type doesn't exist.</summary>
@@ -1204,8 +1204,8 @@ namespace System
 		internal static string @BadImageFormat_NegativeStringLength = "Corrupt .resources file. String length must be non-negative.";
 		/// <summary>The parameters and the signature of the method don't match.</summary>
 		internal static string @BadImageFormat_ParameterSignatureMismatch = "The parameters and the signature of the method don't match.";
-		/// <summary>The type serialized in the .resources file was not the same type that the .resources file said it contained. Expected '{0}' but read '{1}'.</summary>
-		internal static string @BadImageFormat_ResType_SerBlobMismatch = "The type serialized in the .resources file was not the same type that the .resources file said it contained. Expected '{0}' but read '{1}'.";
+		/// <summary>The type serialised in the .resources file was not the same type that the .resources file said it contained. Expected '{0}' but read '{1}'.</summary>
+		internal static string @BadImageFormat_ResType_SerBlobMismatch = "The type serialised in the .resources file was not the same type that the .resources file said it contained. Expected '{0}' but read '{1}'.";
 		/// <summary>Corrupt .resources file. The specified data length '{0}' is not a valid position in the stream.</summary>
 		internal static string @BadImageFormat_ResourceDataLengthInvalid = "Corrupt .resources file. The specified data length '{0}' is not a valid position in the stream.";
 		/// <summary>Corrupt .resources file. A resource name extends past the end of the stream.</summary>
@@ -1286,8 +1286,8 @@ namespace System
 		internal static string @EventSource_IllegalTaskValue = "Task {0} has a value of {1} which is outside the legal range (1-65535).";
 		/// <summary>Illegal value "{0}" (prefix strings with @ to indicate a literal string).</summary>
 		internal static string @EventSource_IllegalValue = "Illegal value '{0}' (prefix strings with @ to indicate a literal string).";
-		/// <summary>Incorrectly-authored TypeInfo - a type should be serialized as one field or as one group</summary>
-		internal static string @EventSource_IncorrentlyAuthoredTypeInfo = "Incorrectly-authored TypeInfo - a type should be serialized as one field or as one group";
+		/// <summary>Incorrectly-authored TypeInfo - a type should be serialised as one field or as one group</summary>
+		internal static string @EventSource_IncorrentlyAuthoredTypeInfo = "Incorrectly-authored TypeInfo - a type should be serialised as one field or as one group";
 		/// <summary>Invalid command value.</summary>
 		internal static string @EventSource_InvalidCommand = "Invalid command value.";
 		/// <summary>Can't specify both etw event format flags.</summary>
@@ -1324,8 +1324,8 @@ namespace System
 		internal static string @EventSource_NotSupportedArrayOfNil = "Arrays of Nil are not supported.";
 		/// <summary>Arrays of null-terminated string are not supported.</summary>
 		internal static string @EventSource_NotSupportedArrayOfNullTerminatedString = "Arrays of null-terminated string are not supported.";
-		/// <summary>Enumerables of custom-serialized data are not supported</summary>
-		internal static string @EventSource_NotSupportedCustomSerializedData = "Enumerables of custom-serialized data are not supported";
+		/// <summary>Enumerables of custom-serialised data are not supported</summary>
+		internal static string @EventSource_NotSupportedCustomSerialisedData = "Enumerables of custom-serialised data are not supported";
 		/// <summary>Nested arrays/enumerables are not supported.</summary>
 		internal static string @EventSource_NotSupportedNestedArraysEnums = "Nested arrays/enumerables are not supported.";
 		/// <summary>Null passed as a event argument.</summary>
@@ -1580,8 +1580,8 @@ namespace System
 		internal static string @InvalidOperation_GetVersion = "OSVersion's call to GetVersionEx failed.";
 		/// <summary>Type definition of the global function has been completed.</summary>
 		internal static string @InvalidOperation_GlobalsHaveBeenCreated = "Type definition of the global function has been completed.";
-		/// <summary>Handle is not initialized.</summary>
-		internal static string @InvalidOperation_HandleIsNotInitialised = "Handle is not initialized.";
+		/// <summary>Handle is not initialised.</summary>
+		internal static string @InvalidOperation_HandleIsNotInitialised = "Handle is not initialised.";
 		/// <summary>Handle is not pinned.</summary>
 		internal static string @InvalidOperation_HandleIsNotPinned = "Handle is not pinned.";
 		/// <summary>Hashtable insert failed. Load factor too high. The most common cause is multiple threads writing to the Hashtable simultaneously.</summary>
@@ -1738,8 +1738,8 @@ namespace System
 		internal static string @IO_TooManySymbolicLinkLevels = "Too many levels of symbolic links in '{0}'.";
 		/// <summary>[Unknown]</summary>
 		internal static string @IO_UnknownFileName = "[Unknown]";
-		/// <summary>The lazily-initialized type does not have a public, parameterless constructor.</summary>
-		internal static string @Lazy_CreateValue_NoParameterlessCtorForT = "The lazily-initialized type does not have a public, parameterless constructor.";
+		/// <summary>The lazily-initialised type does not have a public, parameterless constructor.</summary>
+		internal static string @Lazy_CreateValue_NoParameterlessCtorForT = "The lazily-initialised type does not have a public, parameterless constructor.";
 		/// <summary>The mode argument specifies an invalid value.</summary>
 		internal static string @Lazy_ctor_ModeInvalid = "The mode argument specifies an invalid value.";
 		/// <summary>ValueFactory returned null.</summary>
@@ -1834,8 +1834,8 @@ namespace System
 		internal static string @NotSupported_IllegalOneByteBranch = "Illegal one-byte branch at position: {0}. Requested branch was: {1}.";
 		/// <summary>Mutating a key collection derived from a dictionary is not allowed.</summary>
 		internal static string @NotSupported_KeyCollectionSet = "Mutating a key collection derived from a dictionary is not allowed.";
-		/// <summary>Cannot create uninitialized instances of types requiring managed activation.</summary>
-		internal static string @NotSupported_ManagedActivation = "Cannot create uninitialized instances of types requiring managed activation.";
+		/// <summary>Cannot create uninitialised instances of types requiring managed activation.</summary>
+		internal static string @NotSupported_ManagedActivation = "Cannot create uninitialised instances of types requiring managed activation.";
 		/// <summary>The number of WaitHandles must be less than or equal to 64.</summary>
 		internal static string @NotSupported_MaxWaitHandles = "The number of WaitHandles must be less than or equal to 64.";
 		/// <summary>The number of WaitHandles on a STA thread must be less than or equal to 63.</summary>
@@ -2068,46 +2068,46 @@ namespace System
 		internal static string @SemaphoreSlim_Wait_TimeoutWrong = "The timeout must represent a value between -1 and Int32.MaxValue, inclusive.";
 		/// <summary>Non existent ParameterInfo. Position bigger than member's parameters length.</summary>
 		internal static string @Serialization_BadParameterInfo = "Non existent ParameterInfo. Position bigger than member's parameters length.";
-		/// <summary>The value of the field '{0}' is invalid. The serialized data is corrupt.</summary>
-		internal static string @Serialization_CorruptField = "The value of the field '{0}' is invalid. The serialized data is corrupt.";
-		/// <summary>Invalid serialized DateTime data. Ticks must be between DateTime.MinValue.Ticks and DateTime.MaxValue.Ticks.</summary>
-		internal static string @Serialization_DateTimeTicksOutOfRange = "Invalid serialized DateTime data. Ticks must be between DateTime.MinValue.Ticks and DateTime.MaxValue.Ticks.";
+		/// <summary>The value of the field '{0}' is invalid. The serialised data is corrupt.</summary>
+		internal static string @Serialization_CorruptField = "The value of the field '{0}' is invalid. The serialised data is corrupt.";
+		/// <summary>Invalid serialised DateTime data. Ticks must be between DateTime.MinValue.Ticks and DateTime.MaxValue.Ticks.</summary>
+		internal static string @Serialization_DateTimeTicksOutOfRange = "Invalid serialised DateTime data. Ticks must be between DateTime.MinValue.Ticks and DateTime.MaxValue.Ticks.";
 		/// <summary>Serializing delegates is not supported on this platform.</summary>
 		internal static string @Serialization_DelegatesNotSupported = "Serializing delegates is not supported on this platform.";
 		/// <summary>Insufficient state to return the real object.</summary>
 		internal static string @Serialization_InsufficientState = "Insufficient state to return the real object.";
-		/// <summary>An error occurred while deserializing the object. The serialized data is corrupt.</summary>
-		internal static string @Serialization_InvalidData = "An error occurred while deserializing the object. The serialized data is corrupt.";
-		/// <summary>The serialized data contained an invalid escape sequence '\\{0}'.</summary>
-		internal static string @Serialization_InvalidEscapeSequence = "The serialized data contained an invalid escape sequence '\\{0}'.";
-		/// <summary>OnDeserialization method was called while the object was not being deserialized.</summary>
-		internal static string @Serialization_InvalidOnDeser = "OnDeserialization method was called while the object was not being deserialized.";
-		/// <summary>An IntPtr or UIntPtr with an eight byte value cannot be deserialized on a machine with a four byte word size.</summary>
-		internal static string @Serialization_InvalidPtrValue = "An IntPtr or UIntPtr with an eight byte value cannot be deserialized on a machine with a four byte word size.";
-		/// <summary>Only system-provided types can be passed to the GetUninitializedObject method. '{0}' is not a valid instance of a type.</summary>
-		internal static string @Serialization_InvalidType = "Only system-provided types can be passed to the GetUninitializedObject method. '{0}' is not a valid instance of a type.";
+		/// <summary>An error occurred while deserializing the object. The serialised data is corrupt.</summary>
+		internal static string @Serialization_InvalidData = "An error occurred while deserializing the object. The serialised data is corrupt.";
+		/// <summary>The serialised data contained an invalid escape sequence '\\{0}'.</summary>
+		internal static string @Serialization_InvalidEscapeSequence = "The serialised data contained an invalid escape sequence '\\{0}'.";
+		/// <summary>OnDeserialization method was called while the object was not being deserialised.</summary>
+		internal static string @Serialization_InvalidOnDeser = "OnDeserialization method was called while the object was not being deserialised.";
+		/// <summary>An IntPtr or UIntPtr with an eight byte value cannot be deserialised on a machine with a four byte word size.</summary>
+		internal static string @Serialization_InvalidPtrValue = "An IntPtr or UIntPtr with an eight byte value cannot be deserialised on a machine with a four byte word size.";
+		/// <summary>Only system-provided types can be passed to the GetUninitialisedObject method. '{0}' is not a valid instance of a type.</summary>
+		internal static string @Serialization_InvalidType = "Only system-provided types can be passed to the GetUninitialisedObject method. '{0}' is not a valid instance of a type.";
 		/// <summary>The keys and values arrays have different sizes.</summary>
 		internal static string @Serialization_KeyValueDifferentSizes = "The keys and values arrays have different sizes.";
-		/// <summary>Invalid serialized DateTime data. Unable to find 'ticks' or 'dateData'.</summary>
-		internal static string @Serialization_MissingDateTimeData = "Invalid serialized DateTime data. Unable to find 'ticks' or 'dateData'.";
+		/// <summary>Invalid serialised DateTime data. Unable to find 'ticks' or 'dateData'.</summary>
+		internal static string @Serialization_MissingDateTimeData = "Invalid serialised DateTime data. Unable to find 'ticks' or 'dateData'.";
 		/// <summary>The Keys for this Hashtable are missing.</summary>
 		internal static string @Serialization_MissingKeys = "The Keys for this Hashtable are missing.";
 		/// <summary>The values for this dictionary are missing.</summary>
 		internal static string @Serialization_MissingValues = "The values for this dictionary are missing.";
-		/// <summary>Serialized member does not have a ParameterInfo.</summary>
-		internal static string @Serialization_NoParameterInfo = "Serialized member does not have a ParameterInfo.";
+		/// <summary>Serialised member does not have a ParameterInfo.</summary>
+		internal static string @Serialization_NoParameterInfo = "Serialised member does not have a ParameterInfo.";
 		/// <summary>Member '{0}' was not found.</summary>
 		internal static string @Serialization_NotFound = "Member '{0}' was not found.";
-		/// <summary>One of the serialized keys is null.</summary>
-		internal static string @Serialization_NullKey = "One of the serialized keys is null.";
+		/// <summary>One of the serialised keys is null.</summary>
+		internal static string @Serialization_NullKey = "One of the serialised keys is null.";
 		/// <summary>Version value must be positive.</summary>
 		internal static string @Serialization_OptionalFieldVersionValue = "Version value must be positive.";
 		/// <summary>Cannot add the same member twice to a SerializationInfo object.</summary>
 		internal static string @Serialization_SameNameTwice = "Cannot add the same member twice to a SerializationInfo object.";
-		/// <summary>The serialized Capacity property of StringBuilder must be positive, less than or equal to MaxCapacity and greater than or equal to the String length.</summary>
-		internal static string @Serialization_StringBuilderCapacity = "The serialized Capacity property of StringBuilder must be positive, less than or equal to MaxCapacity and greater than or equal to the String length.";
-		/// <summary>The serialized MaxCapacity property of StringBuilder must be positive and greater than or equal to the String length.</summary>
-		internal static string @Serialization_StringBuilderMaxCapacity = "The serialized MaxCapacity property of StringBuilder must be positive and greater than or equal to the String length.";
+		/// <summary>The serialised Capacity property of StringBuilder must be positive, less than or equal to MaxCapacity and greater than or equal to the String length.</summary>
+		internal static string @Serialization_StringBuilderCapacity = "The serialised Capacity property of StringBuilder must be positive, less than or equal to MaxCapacity and greater than or equal to the String length.";
+		/// <summary>The serialised MaxCapacity property of StringBuilder must be positive and greater than or equal to the String length.</summary>
+		internal static string @Serialization_StringBuilderMaxCapacity = "The serialised MaxCapacity property of StringBuilder must be positive and greater than or equal to the String length.";
 		/// <summary>Setter must have parameters.</summary>
 		internal static string @SetterHasNoParams = "Setter must have parameters.";
 		/// <summary>The calling thread does not hold the lock.</summary>
@@ -2227,13 +2227,13 @@ namespace System
 		/// <summary>Could not resolve type '{0}' in assembly '{1}'.</summary>
 		internal static string @TypeLoad_ResolveTypeFromAssembly = "Could not resolve type '{0}' in assembly '{1}'.";
 		/// <summary>Access to the path is denied.</summary>
-		internal static string @UnauthorizedAccess_IODenied_NoPathName = "Access to the path is denied.";
+		internal static string @UnauthorisedAccess_IODenied_NoPathName = "Access to the path is denied.";
 		/// <summary>Access to the path '{0}' is denied.</summary>
-		internal static string @UnauthorizedAccess_IODenied_Path = "Access to the path '{0}' is denied.";
+		internal static string @UnauthorisedAccess_IODenied_Path = "Access to the path '{0}' is denied.";
 		/// <summary>MemoryStream's internal buffer cannot be accessed.</summary>
-		internal static string @UnauthorizedAccess_MemStreamBuffer = "MemoryStream's internal buffer cannot be accessed.";
+		internal static string @UnauthorisedAccess_MemStreamBuffer = "MemoryStream's internal buffer cannot be accessed.";
 		/// <summary>Access to the registry key '{0}' is denied.</summary>
-		internal static string @UnauthorizedAccess_RegistryKeyGeneric_Key = "Access to the registry key '{0}' is denied.";
+		internal static string @UnauthorisedAccess_RegistryKeyGeneric_Key = "Access to the registry key '{0}' is denied.";
 		/// <summary>Unknown error "{0}".</summary>
 		internal static string @UnknownError_Num = "Unknown error '{0}'.";
 		/// <summary>Operation could destabilize the runtime.</summary>

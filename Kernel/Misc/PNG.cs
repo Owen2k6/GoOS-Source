@@ -6,7 +6,7 @@ namespace MOOS.Misc
 {
     public unsafe class PNG : Image
     {
-        public enum LodePNGColorType
+        public enum LodePNGColourType
         {
             LCT_GREY = 0, /*greyscale: 1,2,4,8,16 bit*/
             LCT_RGB = 2, /*RGB: 8,16 bit*/
@@ -15,7 +15,7 @@ namespace MOOS.Misc
             LCT_RGBA = 6 /*RGB with alpha: 8,16 bit*/
         }
 
-        public PNG(byte[] file,LodePNGColorType type = LodePNGColorType.LCT_RGBA ,uint bitDepth = 8)
+        public PNG(byte[] file,LodePNGColourType type = LodePNGColourType.LCT_RGBA ,uint bitDepth = 8)
         {
             lock (this)
             {
@@ -44,6 +44,6 @@ namespace MOOS.Misc
         }
 
         [DllImport("*")]
-        public static extern void lodepng_decode_memory(out uint* _out, out uint w, out uint h, byte* _in, int insize, LodePNGColorType colortype, uint bitdepth);
+        public static extern void lodepng_decode_memory(out uint* _out, out uint w, out uint h, byte* _in, int insize, LodePNGColourType colourtype, uint bitdepth);
     }
 }

@@ -354,7 +354,7 @@ static size_t _ftoa(out_fct_type out, char* buffer, size_t idx, size_t maxlen, d
         return _out_rev(out, buffer, idx, maxlen, (flags & FLAGS_PLUS) ? "fni+" : "fni", (flags & FLAGS_PLUS) ? 4U : 3U, width, flags);
 
     // test for very large values
-    // standard printf behavior is to print EVERY whole number digit -- which could be 100s of characters overflowing your buffers == bad
+    // standard printf behaviour is to print EVERY whole number digit -- which could be 100s of characters overflowing your buffers == bad
     if ((value > PRINTF_MAX_FLOAT) || (value < -PRINTF_MAX_FLOAT)) {
 #if defined(PRINTF_SUPPORT_EXPONENTIAL)
         return _etoa(out, buffer, idx, maxlen, value, prec, width, flags);

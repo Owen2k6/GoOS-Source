@@ -70,7 +70,7 @@ namespace MOOS
         public byte BluePosition;
         public byte ReservedMask;
         public byte ReservedPosition;
-        public byte DirectColorAttributes;
+        public byte DirectColourAttributes;
         public uint PhysBase;
         public uint OffScreenMemoryOff;
         public ushort OffScreenMemorySize;

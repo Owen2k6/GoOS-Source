@@ -170,7 +170,7 @@ namespace MOOS
             Framebuffer.Update();
         }
 
-        public static void API_Clear(uint color) => Framebuffer.Graphics.Clear(color);
+        public static void API_Clear(uint colour) => Framebuffer.Graphics.Clear(colour);
 
         [RuntimeExport("DebugWrite")]
         public static void API_DebugWrite(char c)
@@ -211,9 +211,9 @@ namespace MOOS
             }
         }
 
-        public static void API_DrawPoint(int x, int y, uint color)
+        public static void API_DrawPoint(int x, int y, uint colour)
         {
-            Framebuffer.Graphics.DrawPoint(x, y, color);
+            Framebuffer.Graphics.DrawPoint(x, y, colour);
         }
 
         public static void API_SwitchToConsoleMode() 

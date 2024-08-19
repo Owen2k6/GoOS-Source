@@ -47,10 +47,10 @@ namespace MOOS.Misc
                 int counter = 0;
                 for (int h = 0; h < FontSize; h++)
                 {
-                    uint color = image.GetPixel(baseX + w, baseY + h);
+                    uint colour = image.GetPixel(baseX + w, baseY + h);
                     if (X != -1 && Y != -1)
-                        g.DrawPoint(X + w, Y + h, color, true);
-                    if ((color & 0xFF000000) == 0) counter++;
+                        g.DrawPoint(X + w, Y + h, colour, true);
+                    if ((colour & 0xFF000000) == 0) counter++;
                 }
                 if (w > (FontSize/3) && counter == FontSize) return w;
             }

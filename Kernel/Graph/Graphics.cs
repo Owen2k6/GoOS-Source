@@ -24,9 +24,9 @@ namespace MOOS.Graph
 
         public virtual void Update() { }
 
-        public virtual void Clear(uint Color)
+        public virtual void Clear(uint Colour)
         {
-            Native.Stosd(VideoMemory, Color, (ulong)(Width * Height));
+            Native.Stosd(VideoMemory, Colour, (ulong)(Width * Height));
         }
 
         public virtual void Copy(int dX, int dY, int sX, int sY, int Width, int Height)
@@ -40,24 +40,24 @@ namespace MOOS.Graph
             }
         }
 
-        public virtual void FillRectangle(int X, int Y, int Width, int Height, uint Color)
+        public virtual void FillRectangle(int X, int Y, int Width, int Height, uint Colour)
         {
             for (int w = 0; w < Width; w++)
             {
                 for (int h = 0; h < Height; h++)
                 {
-                    DrawPoint(X + w, Y + h, Color);
+                    DrawPoint(X + w, Y + h, Colour);
                 }
             }
         }
 
-        public virtual void AFillRectangle(int X, int Y, int Width, int Height, uint Color)
+        public virtual void AFillRectangle(int X, int Y, int Width, int Height, uint Colour)
         {
             for (int w = 0; w < Width; w++)
             {
                 for (int h = 0; h < Height; h++)
                 {
-                    DrawPoint(X + w, Y + h, Color, true);
+                    DrawPoint(X + w, Y + h, Colour, true);
                 }
             }
         }
@@ -71,11 +71,11 @@ namespace MOOS.Graph
             return 0;
         }
 
-        public virtual void DrawPoint(int X, int Y, uint color, bool alphaBlending = false)
+        public virtual void DrawPoint(int X, int Y, uint colour, bool alphaBlending = false)
         {
             if (alphaBlending)
             {
-                uint foreground = color;
+                uint foreground = colour;
                 int fA = (byte)((foreground >> 24) & 0xFF);
                 int fR = (byte)((foreground >> 16) & 0xFF);
                 int fG = (byte)((foreground >> 8) & 0xFF);
@@ -94,23 +94,23 @@ namespace MOOS.Graph
                 int newG = (fG * alpha + inv_alpha * bG) >> 8;
                 int newB = (fB * alpha + inv_alpha * bB) >> 8;
 
-                color = Color.ToArgb((byte)newR, (byte)newG, (byte)newB);
+                colour = Colour.ToArgb((byte)newR, (byte)newG, (byte)newB);
             }
 
             if (X > 0 && Y > 0 && X < Width && Y < Height)
             {
-                VideoMemory[Width * Y + X] = color;
+                VideoMemory[Width * Y + X] = colour;
             }
         }
 
-        public virtual void DrawRectangle(int X, int Y, int Width, int Height, uint Color, int Weight = 1)
+        public virtual void DrawRectangle(int X, int Y, int Width, int Height, uint Colour, int Weight = 1)
         {
-            FillRectangle(X, Y, Width, Weight, Color);
+            FillRectangle(X, Y, Width, Weight, Colour);
 
-            FillRectangle(X, Y, Weight, Height, Color);
-            FillRectangle(X + (Width - Weight), Y, Weight, Height, Color);
+            FillRectangle(X, Y, Weight, Height, Colour);
+            FillRectangle(X + (Width - Weight), Y, Weight, Height, Colour);
 
-            FillRectangle(X, Y + (Height - Weight), Width, Weight, Color);
+            FillRectangle(X, Y + (Height - Weight), Width, Weight, Colour);
         }
 
         public virtual Image Save()
@@ -227,17 +227,17 @@ namespace MOOS.Graph
         // draws a pixel on screen of given brightness
         // 0<=brightness<=1. We can use your own library
         // to draw on screen
-        public virtual void DrawPoint(int X, int Y, uint Color, float Brightness)
+        public virtual void DrawPoint(int X, int Y, uint Colour, float Brightness)
         {
-            byte A = (byte)((Color >> 24) & 0xFF);
-            byte R = (byte)((Color >> 16) & 0xFF);
-            byte G = (byte)((Color >> 8) & 0xFF);
-            byte B = (byte)((Color) & 0xFF);
+            byte A = (byte)((Colour >> 24) & 0xFF);
+            byte R = (byte)((Colour >> 16) & 0xFF);
+            byte G = (byte)((Colour >> 8) & 0xFF);
+            byte B = (byte)((Colour) & 0xFF);
             A = ((byte)(A * (1f - Brightness)));
-            DrawPoint(X, Y, System.Drawing.Color.ToArgb(A, R, G, B), true);
+            DrawPoint(X, Y, System.Drawing.Colour.ToArgb(A, R, G, B), true);
         }
 
-        public virtual void DrawLine(int x0, int y0, int x1, int y1, uint color)
+        public virtual void DrawLine(int x0, int y0, int x1, int y1, uint colour)
         {
             bool steep = Absolute(y1 - y0) > Absolute(x1 - x0);
 
@@ -273,9 +273,9 @@ namespace MOOS.Graph
                 {
                     // pixel coverage is determined by fractional
                     // part of y co-ordinate
-                    DrawPoint(IPartOfNumber(intersectY), x, color,
+                    DrawPoint(IPartOfNumber(intersectY), x, colour,
                                 RFPartOfNumber(intersectY));
-                    DrawPoint(IPartOfNumber(intersectY) - 1, x, color,
+                    DrawPoint(IPartOfNumber(intersectY) - 1, x, colour,
                                 FPartOfNumber(intersectY));
                     intersectY += gradient;
                 }
@@ -287,9 +287,9 @@ namespace MOOS.Graph
                 {
                     // pixel coverage is determined by fractional
                     // part of y co-ordinate
-                    DrawPoint(x, IPartOfNumber(intersectY), color,
+                    DrawPoint(x, IPartOfNumber(intersectY), colour,
                                 RFPartOfNumber(intersectY));
-                    DrawPoint(x, IPartOfNumber(intersectY) - 1, color,
+                    DrawPoint(x, IPartOfNumber(intersectY) - 1, colour,
                                   FPartOfNumber(intersectY));
                     intersectY += gradient;
                 }

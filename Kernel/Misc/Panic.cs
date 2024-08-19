@@ -12,14 +12,14 @@ namespace MOOS.Misc
             IDT.Disable();
             Framebuffer.TripleBuffered = false;
 
-            ConsoleColor color = Console.ForegroundColor;
+            ConsoleColour colour = Console.ForegroundColour;
 
-            Console.ForegroundColor = System.ConsoleColor.Red;
+            Console.ForegroundColour = System.ConsoleColour.Red;
             Console.Write("PANIC: ");
             Console.WriteLine(msg);
             Console.WriteLine("All CPU Halted Now!");
 
-            Console.ForegroundColor = color;
+            Console.ForegroundColour = colour;
 
             if (!skippable)
             {

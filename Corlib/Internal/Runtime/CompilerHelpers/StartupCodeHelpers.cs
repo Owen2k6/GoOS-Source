@@ -191,7 +191,7 @@ namespace Internal.Runtime.CompilerHelpers
                 var pBlock = (IntPtr*)*block;
                 var blockAddr = (long)(*pBlock);
 
-                if ((blockAddr & GCStaticRegionConstants.Uninitialized) == GCStaticRegionConstants.Uninitialized)
+                if ((blockAddr & GCStaticRegionConstants.Uninitialised) == GCStaticRegionConstants.Uninitialised)
                 {
                     var obj = RhpNewFast((EEType*)(blockAddr & ~GCStaticRegionConstants.Mask));
 

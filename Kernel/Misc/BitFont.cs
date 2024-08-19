@@ -39,7 +39,7 @@ namespace MOOS.Misc
         private const int FontAlpha = 96;
         private static bool AtEdge = false;
 
-        private static int DrawChar(byte[] Raw, int Size, int Size8, uint Color, int Index, int X, int Y, bool Calculate = false)
+        private static int DrawChar(byte[] Raw, int Size, int Size8, uint Colour, int Index, int X, int Y, bool Calculate = false)
         {
             if (Index < 0)
             {
@@ -65,7 +65,7 @@ namespace MOOS.Misc
 
                             if (!Calculate)
                             {
-                                Framebuffer.Graphics.DrawPoint(x, y, Color);
+                                Framebuffer.Graphics.DrawPoint(x, y, Colour);
 
                                 //AA
 
@@ -119,7 +119,7 @@ namespace MOOS.Misc
             return UsedX;
         }
 
-        public static int DrawString(string FontName, uint color, string Text, int X, int Y, int LineWidth = -1, int Divide = 0)
+        public static int DrawString(string FontName, uint colour, string Text, int X, int Y, int LineWidth = -1, int Divide = 0)
         {
             BitFontDescriptor bitFontDescriptor = GetBitFontDescriptor(FontName);
 
@@ -137,7 +137,7 @@ namespace MOOS.Misc
                     UsedX = 0;
                     continue;
                 }
-                UsedX += BitFont.DrawChar(bitFontDescriptor.Raw, Size, Size8, color, bitFontDescriptor.Charset.IndexOf(c), UsedX + X, Y + bitFontDescriptor.Size * Line, false) + 2 + Divide;
+                UsedX += BitFont.DrawChar(bitFontDescriptor.Raw, Size, Size8, colour, bitFontDescriptor.Charset.IndexOf(c), UsedX + X, Y + bitFontDescriptor.Size * Line, false) + 2 + Divide;
             }
 
             return UsedX;

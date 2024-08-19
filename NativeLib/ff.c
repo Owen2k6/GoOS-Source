@@ -67,8 +67,8 @@
 /* Limits and boundaries */
 #define MAX_DIR		0x200000		/* Max size of FAT directory */
 #define MAX_DIR_EX	0x10000000		/* Max size of exFAT directory */
-#define MAX_FAT12	0xFF5			/* Max FAT12 clusters (differs from specs, but correct for real DOS/Windows behavior) */
-#define MAX_FAT16	0xFFF5			/* Max FAT16 clusters (differs from specs, but correct for real DOS/Windows behavior) */
+#define MAX_FAT12	0xFF5			/* Max FAT12 clusters (differs from specs, but correct for real DOS/Windows behaviour) */
+#define MAX_FAT16	0xFFF5			/* Max FAT16 clusters (differs from specs, but correct for real DOS/Windows behaviour) */
 #define MAX_FAT32	0x0FFFFFF5		/* Max FAT32 clusters (not specified, practical limit) */
 #define MAX_EXFAT	0x7FFFFFFD		/* Max exFAT clusters (differs from specs, implementation limit) */
 
@@ -2625,7 +2625,7 @@ int pattern_matching (	/* 0:not matched, 1:matched */
 		for (;;) {
 			if (*pp == '?' || *pp == '*') {	/* Wildcard? */
 				nm = nx = 0;
-				do {				/* Analyze the wildcard chars */
+				do {				/* Analyse the wildcard chars */
 					if (*pp++ == '?') nm++; else nx = 1;
 				} while (*pp == '?' || *pp == '*');
 				if (pattern_matching(pp, np, nm, nx)) return 1;	/* Test new branch (recurs upto number of wildcard blocks in the pattern) */
@@ -3067,7 +3067,7 @@ FRESULT find_volume (	/* FR_OK(0): successful, !=0: any error occurred */
 	mode &= (BYTE)~FA_READ;				/* Desired access mode, write access or not */
 	if (fs->fs_type != 0) {				/* If the volume has been mounted */
 		stat = disk_status(fs->pdrv);
-		if (!(stat & STA_NOINIT)) {		/* and the physical drive is kept initialized */
+		if (!(stat & STA_NOINIT)) {		/* and the physical drive is kept initialised */
 			if (!FF_FS_READONLY && mode && (stat & STA_PROTECT)) {	/* Check write protection if needed */
 				return FR_WRITE_PROTECTED;
 			}
@@ -3076,7 +3076,7 @@ FRESULT find_volume (	/* FR_OK(0): successful, !=0: any error occurred */
 	}
 
 	/* The filesystem object is not valid. */
-	/* Following code attempts to mount the volume. (analyze BPB and initialize the filesystem object) */
+	/* Following code attempts to mount the volume. (analyse BPB and initialize the filesystem object) */
 
 	fs->fs_type = 0;					/* Clear the filesystem object */
 	fs->pdrv = LD2PD(vol);				/* Bind the logical drive and a physical drive */
@@ -3273,7 +3273,7 @@ FRESULT validate (	/* Returns FR_OK or FR_INVALID_OBJECT */
 	if (obj && obj->fs && obj->fs->fs_type && obj->id == obj->fs->id) {	/* Test if the object is valid */
 #if FF_FS_REENTRANT
 		if (lock_fs(obj->fs)) {	/* Obtain the filesystem object */
-			if (!(disk_status(obj->fs->pdrv) & STA_NOINIT)) { /* Test if the phsical drive is kept initialized */
+			if (!(disk_status(obj->fs->pdrv) & STA_NOINIT)) { /* Test if the phsical drive is kept initialised */
 				res = FR_OK;
 			} else {
 				unlock_fs(obj->fs, FR_OK);
@@ -3282,7 +3282,7 @@ FRESULT validate (	/* Returns FR_OK or FR_INVALID_OBJECT */
 			res = FR_TIMEOUT;
 		}
 #else
-		if (!(disk_status(obj->fs->pdrv) & STA_NOINIT)) { /* Test if the phsical drive is kept initialized */
+		if (!(disk_status(obj->fs->pdrv) & STA_NOINIT)) { /* Test if the phsical drive is kept initialised */
 			res = FR_OK;
 		}
 #endif

@@ -26,10 +26,10 @@ namespace System.Runtime.CompilerServices
             // a single class, and would need to be able to deal with potential deadlocks
             // between class constructors.
 
-            if (context.initialized == 1)
+            if (context.initialised == 1)
                 return;
 
-            context.initialized = 1;
+            context.initialised = 1;
 
             // Run the class constructor.
             ((delegate*<void>)context.cctorMethodAddress)();

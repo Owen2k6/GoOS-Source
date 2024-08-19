@@ -110,7 +110,7 @@ namespace MOOS.Driver
 
             ScanPorts();
 
-            Console.WriteLine("[EHCI] EHCI controller initialized");
+            Console.WriteLine("[EHCI] EHCI controller initialised");
         }
 
         [StructLayout(LayoutKind.Sequential, Pack = 1)]

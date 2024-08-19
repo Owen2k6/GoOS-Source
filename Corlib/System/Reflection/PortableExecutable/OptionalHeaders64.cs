@@ -10,7 +10,7 @@ namespace System.Reflection.PortableExecutable
         public byte MinorLinkerVersion;
         public uint SizeOfCode;
         public uint SizeOfInitialisedData;
-        public uint SizeOfUninitializedData;
+        public uint SizeOfUninitialisedData;
         public uint AddressOfEntryPoint;
         public uint BaseOfCode;
         public ulong ImageBase;

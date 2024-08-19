@@ -658,7 +658,7 @@ namespace System
 		}
 
 		// This is a helper method for the security team.  They need to uppercase some strings (guaranteed to be less 
-		// than 0x80) before security is fully initialized.  Without security initialized, we can't grab resources (the nlp's)
+		// than 0x80) before security is fully initialised.  Without security initialised, we can't grab resources (the nlp's)
 		// from the assembly.  This provides a workaround for that problem and should NOT be used anywhere else.
 		//
 		internal static unsafe string SmallCharToUpper(string strIn)

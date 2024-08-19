@@ -294,28 +294,28 @@ namespace MOOS.Misc
                     uint alpha = glyph.Bitmap[yy * glyph.Width + xx];
                     uint invAlpha = (uint)-alpha;
 
-                    // Get the background ARGB value and the glyph color's ARGB value.
+                    // Get the background ARGB value and the glyph colour's ARGB value.
                     uint backgroundArgb = graphics.GetPoint(x + xx, y + yy - glyph.Top);
 
-                    // Store the individual background color's R, G and B values.
+                    // Store the individual background colour's R, G and B values.
                     byte backgroundR = (byte)((backgroundArgb >> 16) & 0xFF);
                     byte backgroundG = (byte)((backgroundArgb >> 8) & 0xFF);
                     byte backgroundB = (byte)(backgroundArgb & 0xFF);
 
-                    // Store the individual glyph foreground color's R, G and B values.
+                    // Store the individual glyph foreground colour's R, G and B values.
                     byte foregroundR = (byte)((colour >> 16) & 0xFF);
                     byte foregroundG = (byte)((colour >> 8) & 0xFF);
                     byte foregroundB = (byte)((colour) & 0xFF);
 
-                    // Get the individual R, G and B values for the blended color.
+                    // Get the individual R, G and B values for the blended colour.
                     byte r = (byte)((alpha * foregroundR + invAlpha * backgroundR) >> 8);
                     byte g = (byte)((alpha * foregroundG + invAlpha * backgroundG) >> 8);
                     byte b = (byte)((alpha * foregroundB + invAlpha * backgroundB) >> 8);
 
-                    // Store the blended color in an unsigned integer.
+                    // Store the blended colour in an unsigned integer.
                     uint _colour = ((uint)255 << 24) | ((uint)r << 16) | ((uint)g << 8) | b;
 
-                    // Set the pixel to the blended color.
+                    // Set the pixel to the blended colour.
                     graphics.DrawPoint(x + xx, y + yy - glyph.Top, _colour);
                 }
             }
@@ -342,7 +342,7 @@ namespace MOOS.Misc
                 // Precalculate the string's size.
                 ushort TextWidth = MeasureString(lines[i]);
 
-                // Check if the text needs to be centered.
+                // Check if the text needs to be centred.
                 if (centre)
                 {
                     by[i] -= GetHeight() * (lines.Length + 1) / 2;
@@ -394,29 +394,29 @@ namespace MOOS.Misc
                             uint alpha = Temp.Bitmap[yy * Temp.Width + xx];
                             //uint invAlpha = alpha - 2 - (alpha * 2);
 
-                            // Get the background ARGB value and the glyph color's ARGB value.
+                            // Get the background ARGB value and the glyph colour's ARGB value.
                             uint backgroundArgb = graphics.GetPoint(bx[i] + x + xx, by[i] + y + yy + topHeight - Temp.Top);
-                            uint glyphColorArgb = colour;
+                            uint glyphColourArgb = colour;
 
-                            // Store the individual background color's R, G and B values.
+                            // Store the individual background colour's R, G and B values.
                             byte backgroundR = (byte)((backgroundArgb >> 16) & 0xFF);
                             byte backgroundG = (byte)((backgroundArgb >> 8) & 0xFF);
                             byte backgroundB = (byte)(backgroundArgb & 0xFF);
 
-                            // Store the individual glyph foreground color's R, G and B values.
-                            byte foregroundR = (byte)((glyphColorArgb >> 16) & 0xFF);
-                            byte foregroundG = (byte)((glyphColorArgb >> 8) & 0xFF);
-                            byte foregroundB = (byte)((glyphColorArgb) & 0xFF);
+                            // Store the individual glyph foreground colour's R, G and B values.
+                            byte foregroundR = (byte)((glyphColourArgb >> 16) & 0xFF);
+                            byte foregroundG = (byte)((glyphColourArgb >> 8) & 0xFF);
+                            byte foregroundB = (byte)((glyphColourArgb) & 0xFF);
 
-                            // Get the individual R, G and B values for the blended color.
+                            // Get the individual R, G and B values for the blended colour.
                             byte r = (byte)((alpha * foregroundR + (255 - alpha) * backgroundR) >> 8);
                             byte g = (byte)((alpha * foregroundG + (255 - alpha) * backgroundG) >> 8);
                             byte b = (byte)((alpha * foregroundB + (255 - alpha) * backgroundB) >> 8);
 
-                            // Store the blended color in an unsigned integer.
+                            // Store the blended colour in an unsigned integer.
                             uint _colour = ((uint)255 << 24) | ((uint)r << 16) | ((uint)g << 8) | b;
 
-                            // Set the pixel to the blended color.
+                            // Set the pixel to the blended colour.
                             graphics.DrawPoint(bx[i] + x + xx, by[i] + y + yy + topHeight - Temp.Top, _colour);
                         }
                     }

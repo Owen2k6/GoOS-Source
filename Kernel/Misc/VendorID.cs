@@ -94,7 +94,7 @@ namespace MOOS.Misc
             if (id == 0x103B) return "Tatung Corp Of America";
             if (id == 0x103C) return "Hewlett-Packard";
             if (id == 0x103E) return "Solliday Engineering";
-            if (id == 0x103F) return "Logic Modeling";
+            if (id == 0x103F) return "Logic Modelling";
             if (id == 0x1041) return "Computrend";
             if (id == 0x1043) return "Asustek Computer Inc";
             if (id == 0x1044) return "Distributed Processing Tech";
@@ -687,7 +687,7 @@ namespace MOOS.Misc
             if (id == 0x12C4) return "Connect Tech Inc";
             if (id == 0x12C5) return "Picture Elements Inc";
             if (id == 0x12C6) return "Mitani Corp";
-            if (id == 0x12C7) return "Dialogic Corp";
+            if (id == 0x12C7) return "dialogueic Corp";
             if (id == 0x12C8) return "G Force Co Ltd";
             if (id == 0x12C9) return "Gigi Operations";
             if (id == 0x12CA) return "Integrated Computing Engines, Inc";
@@ -741,7 +741,7 @@ namespace MOOS.Misc
             if (id == 0x1307) return "ComputerBoards";
             if (id == 0x1308) return "Jato Technologies Inc";
             if (id == 0x130A) return "Mitsubishi Electric Microcomputer";
-            if (id == 0x130B) return "Colorgraphic Communications Corp";
+            if (id == 0x130B) return "Colourgraphic Communications Corp";
             if (id == 0x130F) return "Advanet Inc";
             if (id == 0x1310) return "Gespac";
             if (id == 0x1312) return "Microscan Systems Inc";
@@ -929,7 +929,7 @@ namespace MOOS.Misc
             if (id == 0x1485) return "Erma - Electronic GMBH";
             if (id == 0x1489) return "KYE Systems Corporation";
             if (id == 0x148A) return "Opto 22";
-            if (id == 0x148B) return "Innomedialogic Inc";
+            if (id == 0x148B) return "Innomedialogueic Inc";
             if (id == 0x148C) return "CP Technology Co Ltd";
             if (id == 0x148D) return "Digicom Systems Inc";
             if (id == 0x148E) return "OSI Plus Corporation";
@@ -1015,7 +1015,7 @@ namespace MOOS.Misc
             if (id == 0x150D) return "Warpspped Inc";
             if (id == 0x150E) return "C-Port Corporation";
             if (id == 0x150F) return "Intec GMBH";
-            if (id == 0x1510) return "Behavior Tech Computer Corp";
+            if (id == 0x1510) return "Behaviour Tech Computer Corp";
             if (id == 0x1511) return "Centillium Technology Corp";
             if (id == 0x1512) return "Rosun Technologies Inc";
             if (id == 0x1513) return "Raychem";

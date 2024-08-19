@@ -13,7 +13,7 @@
 	   string S, or a NULL pointer if no occurance is found.
 
    BUGS
-	   Behavior when character is the null character is implementation
+	   Behaviour when character is the null character is implementation
 	   dependent.
    */
 

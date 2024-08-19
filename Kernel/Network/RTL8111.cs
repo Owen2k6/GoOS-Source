@@ -101,7 +101,7 @@ namespace MOOS
 
             Interrupts.EnableInterrupt(dev.IRQ, &OnInterrupt);
 
-            Console.Write("[RTL8111] device initialized\n");
+            Console.Write("[RTL8111] device initialised\n");
 
             NETv4.Sender = &Send;
         }

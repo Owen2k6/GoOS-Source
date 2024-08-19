@@ -17,9 +17,9 @@ namespace MOOS
         public delegate void OnWriteHandler(char chr);
         public static event OnWriteHandler OnWrite;
 
-        private static uint[] ColorsFB;
+        private static uint[] ColoursFB;
 
-        public static ConsoleColor ForegroundColor;
+        public static ConsoleColour ForegroundColour;
 
         internal static void Setup()
         {
@@ -27,27 +27,27 @@ namespace MOOS
 
             Clear();
 
-            ColorsFB = new uint[16]
+            ColoursFB = new uint[16]
             {
-                Color.Black.ToArgb(),
-                Color.Blue.ToArgb(),
-                Color.Green.ToArgb(),
-                Color.Cyan.ToArgb(),
-                Color.Red.ToArgb(),
-                Color.Purple.ToArgb(),
-                Color.Brown.ToArgb(),
-                Color.Gray.ToArgb(),
-                Color.DarkGray.ToArgb(),
-                Color.LightBlue.ToArgb(),
-                Color.LightGreen.ToArgb(),
-                Color.LightCyan.ToArgb(),
-                Color.MediumVioletRed.ToArgb(),
-                Color.MediumPurple.ToArgb(),
-                Color.Yellow.ToArgb(),
-                Color.White.ToArgb(),
+                Colour.Black.ToArgb(),
+                Colour.Blue.ToArgb(),
+                Colour.Green.ToArgb(),
+                Colour.Cyan.ToArgb(),
+                Colour.Red.ToArgb(),
+                Colour.Purple.ToArgb(),
+                Colour.Brown.ToArgb(),
+                Colour.Gray.ToArgb(),
+                Colour.DarkGray.ToArgb(),
+                Colour.LightBlue.ToArgb(),
+                Colour.LightGreen.ToArgb(),
+                Colour.LightCyan.ToArgb(),
+                Colour.MediumVioletRed.ToArgb(),
+                Colour.MediumPurple.ToArgb(),
+                Colour.Yellow.ToArgb(),
+                Colour.White.ToArgb(),
             };
 
-            ForegroundColor = ConsoleColor.White;
+            ForegroundColour = ConsoleColour.White;
         }
 
         public static void Wait(ref bool b)
@@ -176,17 +176,17 @@ namespace MOOS
 
         public static void Write(string s)
         {
-            ConsoleColor col = Console.ForegroundColor;
+            ConsoleColour col = Console.ForegroundColour;
             for (byte i = 0; i < s.Length; i++)
             {
                 if (s[i] == '[') 
                 {
-                    Console.ForegroundColor = ConsoleColor.Yellow;
+                    Console.ForegroundColour = ConsoleColour.Yellow;
                 }
                 Console.Write(s[i]);
                 if (s[i] == ']')
                 {
-                    Console.ForegroundColor = col;
+                    Console.ForegroundColour = col;
                 }
             }
             s.Dispose();
@@ -239,7 +239,7 @@ namespace MOOS
                 int X = (Framebuffer.Graphics.Width / 2) - ((Width * 8) / 2) + (CursorX * 8);
                 int Y = (Framebuffer.Graphics.Height / 2) - ((Height * 16) / 2) + (CursorY * 16);
                 Framebuffer.Graphics.FillRectangle(X, Y, 8, 16, 0x0);
-                ASC16.DrawChar(chr, X, Y, ColorsFB[(int)ForegroundColor]);
+                ASC16.DrawChar(chr, X, Y, ColoursFB[(int)ForegroundColour]);
             }
         }
 

@@ -31,10 +31,12 @@ namespace GoOS.GUI
 
         public bool[] getMouseOverWindow(Window window)
         {
-            bool[] points = new bool[2];
+            bool[] points = new bool[4];
 
             if (window.X <= oldMouseX && window.Y <= oldMouseY && window.X + window.Width >= oldMouseX && window.Y + window.Height >= oldMouseY) points[0] = true;
-            else if (window.X <= oldMouseX + 11 && window.Y <= oldMouseY + 18 && window.X + window.Width >= oldMouseX + 11 && window.Y + window.Height >= oldMouseY + 18) points[1] = true; ;
+            else if (window.X <= oldMouseX + 11 && window.Y <= oldMouseY + 18 && window.X + window.Width >= oldMouseX + 11 && window.Y + window.Height >= oldMouseY + 18) points[1] = true;
+            else if (window.X <= oldMouseX + 11 && window.Y <= oldMouseY && window.X + window.Width >= oldMouseX + 11 && window.Y + window.Height >= oldMouseY) points[2] = true;
+            else if (window.X <= oldMouseX && window.Y <= oldMouseY + 18 && window.X + window.Width >= oldMouseX && window.Y + window.Height >= oldMouseY + 18) points[3] = true;
             return points;
         }
 
@@ -51,9 +53,9 @@ namespace GoOS.GUI
 
                 bool[] isOveri = getMouseOverWindow(window);
 
-                if (mouseMoved && (isOveri[0] || isOveri[1])) // Is mouse over window?
+                if (mouseMoved && (isOveri[0] || isOveri[1] || isOveri[2] || isOveri[3])) // Is mouse over window?
                 {
-                    if (isOveri[0] && isOveri[1])
+                    if (isOveri[0] && isOveri[1] && isOveri[2] && isOveri[3])
                     {
                         if (window.WID == Focused.WID)
                         {
@@ -66,7 +68,7 @@ namespace GoOS.GUI
                             mouseHandled = true;
                         }
                     }
-                    else if (isOveri[0] || isOveri[1])
+                    else if (isOveri[0] || isOveri[1] || isOveri[2] || isOveri[3])
                     {
                         window.Update = true;
                         for (int x = 0; x < 12; x++)

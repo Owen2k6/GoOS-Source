@@ -22,8 +22,8 @@ namespace System
 		internal static string @Acc_CreateInterfaceEx = "Cannot create an instance of {0} because it is an interface.";
 		/// <summary>Cannot dynamically create an instance of System.Void.</summary>
 		internal static string @Acc_CreateVoid = "Cannot dynamically create an instance of System.Void.";
-		/// <summary>Type initializer was not callable.</summary>
-		internal static string @Acc_NotClassInit = "Type initializer was not callable.";
+		/// <summary>Type initialiser was not callable.</summary>
+		internal static string @Acc_NotClassInit = "Type initialiser was not callable.";
 		/// <summary>Cannot set a constant field.</summary>
 		internal static string @Acc_ReadOnly = "Cannot set a constant field.";
 		/// <summary>Cannot create an instance of void.</summary>
@@ -196,8 +196,8 @@ namespace System
 		internal static string @Arg_InvalidHexStyle = "With the AllowHexSpecifier bit set in the enum bit field, the only other valid bits that can be combined into the enum value must be a subset of those in HexNumber.";
 		/// <summary>The NeutralResourcesLanguageAttribute on the assembly "{0}" specifies an invalid culture name: "{1}".</summary>
 		internal static string @Arg_InvalidNeutralResourcesLanguage_Asm_Culture = "The NeutralResourcesLanguageAttribute on the assembly '{0}' specifies an invalid culture name: '{1}'.";
-		/// <summary>The NeutralResourcesLanguageAttribute specifies an invalid or unrecognized ultimate resource fallback location: "{0}".</summary>
-		internal static string @Arg_InvalidNeutralResourcesLanguage_FallbackLoc = "The NeutralResourcesLanguageAttribute specifies an invalid or unrecognized ultimate resource fallback location: '{0}'.";
+		/// <summary>The NeutralResourcesLanguageAttribute specifies an invalid or unrecognised ultimate resource fallback location: "{0}".</summary>
+		internal static string @Arg_InvalidNeutralResourcesLanguage_FallbackLoc = "The NeutralResourcesLanguageAttribute specifies an invalid or unrecognised ultimate resource fallback location: '{0}'.";
 		/// <summary>Satellite contract version attribute on the assembly '{0}' specifies an invalid version: {1}.</summary>
 		internal static string @Arg_InvalidSatelliteContract_Asm_Ver = "Satellite contract version attribute on the assembly '{0}' specifies an invalid version: {1}.";
 		/// <summary>Specified OLE variant was invalid.</summary>
@@ -554,16 +554,16 @@ namespace System
 		internal static string @Argument_CORDBBadMethod = "Cannot find the method on the object instance.";
 		/// <summary>Cannot evaluate a VarArgs function.</summary>
 		internal static string @Argument_CORDBBadVarArgCallConv = "Cannot evaluate a VarArgs function.";
-		/// <summary>Culture IETF Name {0} is not a recognized IETF name.</summary>
-		internal static string @Argument_CultureIetfNotSupported = "Culture IETF Name {0} is not a recognized IETF name.";
+		/// <summary>Culture IETF Name {0} is not a recognised IETF name.</summary>
+		internal static string @Argument_CultureIetfNotSupported = "Culture IETF Name {0} is not a recognised IETF name.";
 		/// <summary>{0} is an invalid culture identifier.</summary>
 		internal static string @Argument_CultureInvalidIdentifier = "{0} is an invalid culture identifier.";
 		/// <summary>Culture ID {0} (0x{0:X4}) is a neutral culture; a region cannot be created from it.</summary>
 		internal static string @Argument_CultureIsNeutral = "Culture ID {0} (0x{0:X4}) is a neutral culture; a region cannot be created from it.";
 		/// <summary>Culture is not supported.</summary>
 		internal static string @Argument_CultureNotSupported = "Culture is not supported.";
-		/// <summary>Only the invariant culture is supported in globalization-invariant mode. See https://aka.ms/GlobalizationInvariantMode for more information.</summary>
-		internal static string @Argument_CultureNotSupportedInInvariantMode = "Only the invariant culture is supported in globalization-invariant mode. See https://aka.ms/GlobalizationInvariantMode for more information.";
+		/// <summary>Only the invariant culture is supported in globalisation-invariant mode. See https://aka.ms/globalisationInvariantMode for more information.</summary>
+		internal static string @Argument_CultureNotSupportedInInvariantMode = "Only the invariant culture is supported in globalisation-invariant mode. See https://aka.ms/globalisationInvariantMode for more information.";
 		/// <summary>Resolved assembly's simple name should be the same as of the requested assembly.</summary>
 		internal static string @Argument_CustomAssemblyLoadContextRequestedNameMismatch = "Resolved assembly's simple name should be the same as of the requested assembly.";
 		/// <summary>Customised cultures cannot be passed by LCID, only by name.</summary>
@@ -832,10 +832,10 @@ namespace System
 		internal static string @Argument_NoRegionInvariantCulture = "There is no region associated with the Invariant Culture (Culture ID: 0x7F).";
 		/// <summary>Not a writable property.</summary>
 		internal static string @Argument_NotAWritableProperty = "Not a writable property.";
-		/// <summary>There are not enough bytes remaining in the accessor to read at this position.</summary>
-		internal static string @Argument_NotEnoughBytesToRead = "There are not enough bytes remaining in the accessor to read at this position.";
-		/// <summary>There are not enough bytes remaining in the accessor to write at this position.</summary>
-		internal static string @Argument_NotEnoughBytesToWrite = "There are not enough bytes remaining in the accessor to write at this position.";
+		/// <summary>There are not enough bytes remaining in the accesser to read at this position.</summary>
+		internal static string @Argument_NotEnoughBytesToRead = "There are not enough bytes remaining in the accesser to read at this position.";
+		/// <summary>There are not enough bytes remaining in the accesser to write at this position.</summary>
+		internal static string @Argument_NotEnoughBytesToWrite = "There are not enough bytes remaining in the accesser to write at this position.";
 		/// <summary>The type or method has {1} generic parameter(s), but {0} generic argument(s) were provided. A generic argument must be provided for each generic parameter.</summary>
 		internal static string @Argument_NotEnoughGenArguments = "The type or method has {1} generic parameter(s), but {0} generic argument(s) were provided. A generic argument must be provided for each generic parameter.";
 		/// <summary>Does not extend Exception.</summary>
@@ -942,8 +942,8 @@ namespace System
 		internal static string @Argument_UnclosedExceptionBlock = "The IL Generator cannot be used while there are unclosed exceptions.";
 		/// <summary>Unknown unmanaged calling convention for function signature.</summary>
 		internal static string @Argument_UnknownUnmanagedCallConv = "Unknown unmanaged calling convention for function signature.";
-		/// <summary>The UnmanagedMemoryAccessor capacity and offset would wrap around the high end of the address space.</summary>
-		internal static string @Argument_UnmanagedMemAccessorWrapAround = "The UnmanagedMemoryAccessor capacity and offset would wrap around the high end of the address space.";
+		/// <summary>The UnmanagedMemoryaccesser capacity and offset would wrap around the high end of the address space.</summary>
+		internal static string @Argument_UnmanagedMemaccesserWrapAround = "The UnmanagedMemoryaccesser capacity and offset would wrap around the high end of the address space.";
 		/// <summary>Local passed in does not belong to this ILGenerator.</summary>
 		internal static string @Argument_UnmatchedMethodForLocal = "Local passed in does not belong to this ILGenerator.";
 		/// <summary>Non-matching symbol scope.</summary>
@@ -1140,8 +1140,8 @@ namespace System
 		internal static string @ArgumentOutOfRange_PartialWCHAR = "Pointer startIndex and length do not refer to a valid string.";
 		/// <summary>Period must be less than 2^32-1.</summary>
 		internal static string @ArgumentOutOfRange_PeriodTooLarge = "Period must be less than 2^32-1.";
-		/// <summary>The position may not be greater or equal to the capacity of the accessor.</summary>
-		internal static string @ArgumentOutOfRange_PositionLessThanCapacityRequired = "The position may not be greater or equal to the capacity of the accessor.";
+		/// <summary>The position may not be greater or equal to the capacity of the accesser.</summary>
+		internal static string @ArgumentOutOfRange_PositionLessThanCapacityRequired = "The position may not be greater or equal to the capacity of the accesser.";
 		/// <summary>Valid values are between {0} and {1}, inclusive.</summary>
 		internal static string @ArgumentOutOfRange_Range = "Valid values are between {0} and {1}, inclusive.";
 		/// <summary>Rounding digits must be between 0 and 15, inclusive.</summary>
@@ -1386,22 +1386,22 @@ namespace System
 		internal static string @Format_BadBase = "Invalid digits for the specified base.";
 		/// <summary>The input is not a valid Base-64 string as it contains a non-base 64 character, more than two padding characters, or an illegal character among the padding characters.</summary>
 		internal static string @Format_BadBase64Char = "The input is not a valid Base-64 string as it contains a non-base 64 character, more than two padding characters, or an illegal character among the padding characters.";
-		/// <summary>String '{0}' was not recognized as a valid Boolean.</summary>
-		internal static string @Format_BadBoolean = "String '{0}' was not recognized as a valid Boolean.";
+		/// <summary>String '{0}' was not recognised as a valid Boolean.</summary>
+		internal static string @Format_BadBoolean = "String '{0}' was not recognised as a valid Boolean.";
 		/// <summary>Could not determine the order of year, month, and date from '{0}'.</summary>
 		internal static string @Format_BadDatePattern = "Could not determine the order of year, month, and date from '{0}'.";
-		/// <summary>String '{0}' was not recognized as a valid DateTime.</summary>
-		internal static string @Format_BadDateTime = "String '{0}' was not recognized as a valid DateTime.";
-		/// <summary>String '{0}' was not recognized as a valid DateOnly. {Locked="DateOnly"}</summary>
-		internal static string @Format_BadDateOnly = "String '{0}' was not recognized as a valid DateOnly. {Locked='DateOnly'}";
-		/// <summary>String '{0}' was not recognized as a valid TimeOnly. {Locked="TimeOnly"}</summary>
-		internal static string @Format_BadTimeOnly = "String '{0}' was not recognized as a valid TimeOnly. {Locked='TimeOnly'}";
+		/// <summary>String '{0}' was not recognised as a valid DateTime.</summary>
+		internal static string @Format_BadDateTime = "String '{0}' was not recognised as a valid DateTime.";
+		/// <summary>String '{0}' was not recognised as a valid DateOnly. {Locked="DateOnly"}</summary>
+		internal static string @Format_BadDateOnly = "String '{0}' was not recognised as a valid DateOnly. {Locked='DateOnly'}";
+		/// <summary>String '{0}' was not recognised as a valid TimeOnly. {Locked="TimeOnly"}</summary>
+		internal static string @Format_BadTimeOnly = "String '{0}' was not recognised as a valid TimeOnly. {Locked='TimeOnly'}";
 		/// <summary>String '{0}' contains parts which are not specific to the {1}.</summary>
 		internal static string @Format_DateTimeOnlyContainsNoneDateParts = "String '{0}' contains parts which are not specific to the {1}.";
 		/// <summary>The DateTime represented by the string '{0}' is not supported in calendar '{1}'.</summary>
 		internal static string @Format_BadDateTimeCalendar = "The DateTime represented by the string '{0}' is not supported in calendar '{1}'.";
-		/// <summary>String '{0}' was not recognized as a valid DateTime because the day of week was incorrect.</summary>
-		internal static string @Format_BadDayOfWeek = "String '{0}' was not recognized as a valid DateTime because the day of week was incorrect.";
+		/// <summary>String '{0}' was not recognised as a valid DateTime because the day of week was incorrect.</summary>
+		internal static string @Format_BadDayOfWeek = "String '{0}' was not recognised as a valid DateTime because the day of week was incorrect.";
 		/// <summary>Format specifier '{0}' was invalid.</summary>
 		internal static string @Format_BadFormatSpecifier = "Format specifier '{0}' was invalid.";
 		/// <summary>No format specifiers were provided.</summary>
@@ -1412,8 +1412,8 @@ namespace System
 		internal static string @Format_BadHexLength = "The input is not a valid hex string as its length is not a multiple of 2.";
 		/// <summary>Cannot find a matching quote character for the character '{0}'.</summary>
 		internal static string @Format_BadQuote = "Cannot find a matching quote character for the character '{0}'.";
-		/// <summary>String '{0}' was not recognized as a valid TimeSpan.</summary>
-		internal static string @Format_BadTimeSpan = "String '{0}' was not recognized as a valid TimeSpan.";
+		/// <summary>String '{0}' was not recognised as a valid TimeSpan.</summary>
+		internal static string @Format_BadTimeSpan = "String '{0}' was not recognised as a valid TimeSpan.";
 		/// <summary>The DateTime represented by the string '{0}' is out of range.</summary>
 		internal static string @Format_DateOutOfRange = "The DateTime represented by the string '{0}' is out of range.";
 		/// <summary>Input string was either empty or contained only whitespace.</summary>
@@ -1436,8 +1436,8 @@ namespace System
 		internal static string @Format_GuidInvalidChar = "Guid string should only contain hexadecimal characters.";
 		/// <summary>Guid should contain 32 digits with 4 dashes (xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx).</summary>
 		internal static string @Format_GuidInvLen = "Guid should contain 32 digits with 4 dashes (xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx).";
-		/// <summary>Unrecognized Guid format.</summary>
-		internal static string @Format_GuidUnrecognized = "Unrecognized Guid format.";
+		/// <summary>Unrecognised Guid format.</summary>
+		internal static string @Format_GuidUnrecognised = "Unrecognised Guid format.";
 		/// <summary>Index (zero based) must be greater than or equal to zero and less than the size of the argument list.</summary>
 		internal static string @Format_IndexOutOfRange = "Index (zero based) must be greater than or equal to zero and less than the size of the argument list.";
 		/// <summary>Format string can be only "G", "g", "X", "x", "F", "f", "D" or "d".</summary>
@@ -1458,26 +1458,26 @@ namespace System
 		internal static string @Format_RepeatDateTimePattern = "DateTime pattern '{0}' appears more than once with different values.";
 		/// <summary>String cannot have zero length.</summary>
 		internal static string @Format_StringZeroLength = "String cannot have zero length.";
-		/// <summary>The string '{0}' was not recognized as a valid DateTime. There is an unknown word starting at index '{1}'.</summary>
-		internal static string @Format_UnknownDateTimeWord = "The string '{0}' was not recognized as a valid DateTime. There is an unknown word starting at index '{1}'.";
+		/// <summary>The string '{0}' was not recognised as a valid DateTime. There is an unknown word starting at index '{1}'.</summary>
+		internal static string @Format_UnknownDateTimeWord = "The string '{0}' was not recognised as a valid DateTime. There is an unknown word starting at index '{1}'.";
 		/// <summary>The UTC representation of the date '{0}' falls outside the year range 1-9999.</summary>
 		internal static string @Format_UTCOutOfRange = "The UTC representation of the date '{0}' falls outside the year range 1-9999.";
 		/// <summary>Unicode</summary>
-		internal static string @Globalization_cp_1200 = "Unicode";
+		internal static string @globalisation_cp_1200 = "Unicode";
 		/// <summary>Unicode (UTF-32)</summary>
-		internal static string @Globalization_cp_12000 = "Unicode (UTF-32)";
+		internal static string @globalisation_cp_12000 = "Unicode (UTF-32)";
 		/// <summary>Unicode (UTF-32 Big-Endian)</summary>
-		internal static string @Globalization_cp_12001 = "Unicode (UTF-32 Big-Endian)";
+		internal static string @globalisation_cp_12001 = "Unicode (UTF-32 Big-Endian)";
 		/// <summary>Unicode (Big-Endian)</summary>
-		internal static string @Globalization_cp_1201 = "Unicode (Big-Endian)";
+		internal static string @globalisation_cp_1201 = "Unicode (Big-Endian)";
 		/// <summary>US-ASCII</summary>
-		internal static string @Globalization_cp_20127 = "US-ASCII";
+		internal static string @globalisation_cp_20127 = "US-ASCII";
 		/// <summary>Western European (ISO)</summary>
-		internal static string @Globalization_cp_28591 = "Western European (ISO)";
+		internal static string @globalisation_cp_28591 = "Western European (ISO)";
 		/// <summary>Unicode (UTF-7)</summary>
-		internal static string @Globalization_cp_65000 = "Unicode (UTF-7)";
+		internal static string @globalisation_cp_65000 = "Unicode (UTF-7)";
 		/// <summary>Unicode (UTF-8)</summary>
-		internal static string @Globalization_cp_65001 = "Unicode (UTF-8)";
+		internal static string @globalisation_cp_65001 = "Unicode (UTF-8)";
 		/// <summary>Array does not have that many dimensions.</summary>
 		internal static string @IndexOutOfRange_ArrayRankIndex = "Array does not have that many dimensions.";
 		/// <summary>Unmanaged memory stream position was beyond the capacity of the stream.</summary>
@@ -1872,8 +1872,8 @@ namespace System
 		internal static string @NotSupported_OutputStreamUsingTypeBuilder = "Output streams do not support TypeBuilders.";
 		/// <summary>The specified operation is not supported on Ranges.</summary>
 		internal static string @NotSupported_RangeCollection = "The specified operation is not supported on Ranges.";
-		/// <summary>Accessor does not support reading.</summary>
-		internal static string @NotSupported_Reading = "Accessor does not support reading.";
+		/// <summary>accesser does not support reading.</summary>
+		internal static string @NotSupported_Reading = "accesser does not support reading.";
 		/// <summary>Collection is read-only.</summary>
 		internal static string @NotSupported_ReadOnlyCollection = "Collection is read-only.";
 		/// <summary>Cannot read resources that depend on serialization.</summary>
@@ -1912,8 +1912,8 @@ namespace System
 		internal static string @NotSupported_ValueCollectionSet = "Mutating a value collection derived from a dictionary is not allowed.";
 		/// <summary>Arrays of System.Void are not supported.</summary>
 		internal static string @NotSupported_VoidArray = "Arrays of System.Void are not supported.";
-		/// <summary>Accessor does not support writing.</summary>
-		internal static string @NotSupported_Writing = "Accessor does not support writing.";
+		/// <summary>accesser does not support writing.</summary>
+		internal static string @NotSupported_Writing = "accesser does not support writing.";
 		/// <summary>This .resources file should not be read with this reader. The resource reader type is "{0}".</summary>
 		internal static string @NotSupported_WrongResourceReader_Type = "This .resources file should not be read with this reader. The resource reader type is '{0}'.";
 		/// <summary>The pointer for this method was null.</summary>
@@ -1932,12 +1932,12 @@ namespace System
 		internal static string @ObjectDisposed_ResourceSet = "Cannot access a closed resource set.";
 		/// <summary>Cannot access a closed Stream.</summary>
 		internal static string @ObjectDisposed_StreamClosed = "Cannot access a closed Stream.";
-		/// <summary>Cannot access a closed accessor.</summary>
-		internal static string @ObjectDisposed_ViewAccessorClosed = "Cannot access a closed accessor.";
+		/// <summary>Cannot access a closed accesser.</summary>
+		internal static string @ObjectDisposed_ViewaccesserClosed = "Cannot access a closed accesser.";
 		/// <summary>Safe handle has been closed.</summary>
 		internal static string @ObjectDisposed_SafeHandleClosed = "Safe handle has been closed.";
-		/// <summary>The operation was canceled.</summary>
-		internal static string @OperationCanceled = "The operation was canceled.";
+		/// <summary>The operation was cancelled.</summary>
+		internal static string @Operationcancelled = "The operation was cancelled.";
 		/// <summary>Value was either too large or too small for an unsigned byte.</summary>
 		internal static string @Overflow_Byte = "Value was either too large or too small for an unsigned byte.";
 		/// <summary>Value was either too large or too small for a character.</summary>
@@ -2136,8 +2136,8 @@ namespace System
 		internal static string @Task_InvalidTimerTimeSpan = "The value needs to translate in milliseconds to -1 (signifying an infinite timeout), 0, or a positive integer less than or equal to the maximum allowed timer duration.";
 		/// <summary>The value needs to be either -1 (signifying an infinite timeout), 0 or a positive integer.</summary>
 		internal static string @Task_Delay_InvalidMillisecondsDelay = "The value needs to be either -1 (signifying an infinite timeout), 0 or a positive integer.";
-		/// <summary>A task may only be disposed if it is in a completion state (RanToCompletion, Faulted or Canceled).</summary>
-		internal static string @Task_Dispose_NotCompleted = "A task may only be disposed if it is in a completion state (RanToCompletion, Faulted or Canceled).";
+		/// <summary>A task may only be disposed if it is in a completion state (RanToCompletion, Faulted or cancelled).</summary>
+		internal static string @Task_Dispose_NotCompleted = "A task may only be disposed if it is in a completion state (RanToCompletion, Faulted or cancelled).";
 		/// <summary>It is invalid to specify TaskCreationOptions.LongRunning in calls to FromAsync.</summary>
 		internal static string @Task_FromAsync_LongRunning = "It is invalid to specify TaskCreationOptions.LongRunning in calls to FromAsync.";
 		/// <summary>It is invalid to specify TaskCreationOptions.PreferFairness in calls to FromAsync.</summary>
@@ -2168,8 +2168,8 @@ namespace System
 		internal static string @Task_ThrowIfDisposed = "The task has been disposed.";
 		/// <summary>The tasks array included at least one null element.</summary>
 		internal static string @Task_WaitMulti_NullTask = "The tasks array included at least one null element.";
-		/// <summary>A task was canceled.</summary>
-		internal static string @TaskCanceledException_ctor_DefaultMessage = "A task was canceled.";
+		/// <summary>A task was cancelled.</summary>
+		internal static string @TaskcancelledException_ctor_DefaultMessage = "A task was cancelled.";
 		/// <summary>The exceptions collection was empty.</summary>
 		internal static string @TaskCompletionSourceT_TrySetException_NoExceptions = "The exceptions collection was empty.";
 		/// <summary>The exceptions collection included at least one null element.</summary>
@@ -2218,8 +2218,8 @@ namespace System
 		internal static string @TimeZoneNotFound_MissingData = "The time zone ID '{0}' was not found on the local computer.";
 		/// <summary>Type constructor threw an exception.</summary>
 		internal static string @TypeInitialization_Default = "Type constructor threw an exception.";
-		/// <summary>The type initializer for '{0}' threw an exception.</summary>
-		internal static string @TypeInitialization_Type = "The type initializer for '{0}' threw an exception.";
+		/// <summary>The type initialiser for '{0}' threw an exception.</summary>
+		internal static string @TypeInitialization_Type = "The type initialiser for '{0}' threw an exception.";
 		/// <summary>Could not resolve nested type '{0}' in type "{1}'.</summary>
 		internal static string @TypeLoad_ResolveNestedType = "Could not resolve nested type '{0}' in type '{1}'.";
 		/// <summary>Could not resolve type '{0}'.</summary>
@@ -2354,8 +2354,8 @@ namespace System
 		internal static string @InvalidOperation_ResetGlobalObjectiveCMsgSend = "Attempt to update previously set Objective-C msgSend API overrides.";
 		/// <summary>Attempt to track an Objective-C Type without initializing.</summary>
 		internal static string @InvalidOperation_ObjectiveCMarshalNotInitialised = "Attempt to track an Objective-C Type without initializing.";
-		/// <summary>Attempt to reinitialize ObjectiveCMarshal.</summary>
-		internal static string @InvalidOperation_ReinitializeObjectiveCMarshal = "Attempt to reinitialize ObjectiveCMarshal.";
+		/// <summary>Attempt to reinitialise ObjectiveCMarshal.</summary>
+		internal static string @InvalidOperation_ReinitialiseObjectiveCMarshal = "Attempt to reinitialise ObjectiveCMarshal.";
 		/// <summary>Attempt to track an Objective-C Type without a finalizer.</summary>
 		internal static string @InvalidOperation_ObjectiveCTypeNoFinalizer = "Attempt to track an Objective-C Type without a finalizer.";
 		/// <summary>Supplying a non-null inner should also be marked as Aggregated.</summary>
@@ -2506,8 +2506,8 @@ namespace System
 		internal static string @NotSupported_InstanceBodyRemoved = "The body of this instance method was removed by the AOT compiler. This can happen if the owning type was not seen as allocated by the AOT compiler.";
 		/// <summary>Attempted to load a type that was not created during ahead of time compilation.</summary>
 		internal static string @Arg_UnavailableTypeLoadException = "Attempted to load a type that was not created during ahead of time compilation.";
-		/// <summary>A type initializer threw an exception. To determine which type, inspect the InnerException's StackTrace property.</summary>
-		internal static string @TypeInitialization_Type_NoTypeAvailable = "A type initializer threw an exception. To determine which type, inspect the InnerException's StackTrace property.";
+		/// <summary>A type initialiser threw an exception. To determine which type, inspect the InnerException's StackTrace property.</summary>
+		internal static string @TypeInitialization_Type_NoTypeAvailable = "A type initialiser threw an exception. To determine which type, inspect the InnerException's StackTrace property.";
 		/// <summary>The given assembly name or codebase was invalid</summary>
 		internal static string @InvalidAssemblyName = "The given assembly name or codebase was invalid";
 		/// <summary>Invalid assembly public key.</summary>

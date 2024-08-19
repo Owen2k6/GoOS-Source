@@ -16,7 +16,7 @@ namespace MOOS.Driver
         {
             if (ACPI.IO_APIC == null)
             {
-                Panic.Error("[I/O APIC] Can't initialize I/O APIC");
+                Panic.Error("[I/O APIC] Can't initialise I/O APIC");
                 return;
             }
             uint value = In(IOAPICVER);

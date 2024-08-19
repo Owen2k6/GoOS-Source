@@ -415,7 +415,7 @@ namespace Internal.Runtime
         internal static class WellKnownEETypes
         {
             // Returns true if the passed in EEType is the EEType for System.Object
-            // This is recognized by the fact that System.Object and interfaces are the only ones without a base type
+            // This is recognised by the fact that System.Object and interfaces are the only ones without a base type
             internal static unsafe bool IsSystemObject(EEType* pEEType)
             {
                 if (pEEType->IsArray)

@@ -2596,14 +2596,14 @@ namespace System
 		// index within the string.
 		//
 
-		//ForceInline ... Jit can't recognize String.get_Length to determine that this is "fluff"
+		//ForceInline ... Jit can't recognise String.get_Length to determine that this is "fluff"
 		[Pure]
 		public int LastIndexOfAny(char[] anyOf)
 		{
 			return LastIndexOfAny(anyOf, Length - 1, Length);
 		}
 
-		//ForceInline ... Jit can't recognize String.get_Length to determine that this is "fluff"
+		//ForceInline ... Jit can't recognise String.get_Length to determine that this is "fluff"
 		[Pure]
 		public int LastIndexOfAny(char[] anyOf, int startIndex)
 		{
@@ -3061,7 +3061,7 @@ namespace System
 		[System.Security.SecurityCritical]  // auto-generated
 		private string CreateTrimmedString(int start, int end)
 		{
-			//Create a new STRINGREF and initialize it from the range determined above.
+			//Create a new STRINGREF and initialise it from the range determined above.
 			int len = end - start + 1;
 			if (len == Length)
 			{

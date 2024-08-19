@@ -115,7 +115,7 @@ void lodepng_free(void* ptr);
 #endif
 
 /* Replacements for C library functions such as memcpy and strlen, to support platforms
-where a full C library is not available. The compiler can recognize them and compile
+where a full C library is not available. The compiler can recognise them and compile
 to something as fast. */
 
 static void lodepng_memcpy(void* LODEPNG_RESTRICT dst,
@@ -699,7 +699,7 @@ static unsigned HuffmanTree_makeTable(HuffmanTree* tree) {
         /* freeing tree->table values is done at a higher scope */
         return 83; /*alloc fail*/
     }
-    /*initialize with an invalid length to indicate unused entries*/
+    /*initialise with an invalid length to indicate unused entries*/
     for (i = 0; i < size; ++i) tree->table_len[i] = 16;
 
     /*fill in the first table for long symbols: max prefix size and pointer to secondary tables*/
@@ -1502,7 +1502,7 @@ static void addLengthDistance(uivector* values, size_t length, size_t distance) 
 /*3 bytes of data get encoded into two bytes. The hash cannot use more than 3
 bytes as input because 3 is the minimum match length for deflate*/
 static const unsigned HASH_NUM_VALUES = 65536;
-static const unsigned HASH_BIT_MASK = 65535; /*HASH_NUM_VALUES - 1, but C90 does not like that as initializer*/
+static const unsigned HASH_BIT_MASK = 65535; /*HASH_NUM_VALUES - 1, but C90 does not like that as initialiser*/
 
 typedef struct Hash {
     int* head; /*hash value to head circular pos - can be outdated if went around window*/
@@ -1531,7 +1531,7 @@ static unsigned hash_init(Hash* hash, unsigned windowsize) {
         return 83; /*alloc fail*/
     }
 
-    /*initialize hash table*/
+    /*initialise hash table*/
     for (i = 0; i != HASH_NUM_VALUES; ++i) hash->head[i] = -1;
     for (i = 0; i != windowsize; ++i) hash->val[i] = -1;
     for (i = 0; i != windowsize; ++i) hash->chain[i] = i; /*same value as index indicates uninitialised*/
@@ -2703,7 +2703,7 @@ void lodepng_colour_mode_init(LodePNGColourMode* info) {
     info->palettesize = 0;
 }
 
-/*allocates palette memory if needed, and initializes all colours to black*/
+/*allocates palette memory if needed, and initialises all colours to black*/
 static void lodepng_colour_mode_alloc_palette(LodePNGColourMode* info) {
     size_t i;
     /*if the palette is already allocated, it will have size 1024 so no reallocation needed in that case*/

@@ -1,4 +1,4 @@
-﻿using System.Globalization;
+﻿using System.globalisation;
 
 namespace System
 {

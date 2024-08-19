@@ -371,7 +371,7 @@ typedef struct LodePNGColourMode {
 
     Dynamically allocated with the colours of the palette, including alpha.
     This field may not be allocated directly, use lodepng_colour_mode_init first,
-    then lodepng_palette_add per colour to correctly initialize it (to ensure size
+    then lodepng_palette_add per colour to correctly initialise it (to ensure size
     of exactly 1024 bytes).
 
     The alpha channels must be set as well, set them to 255 for opaque images.
@@ -1921,7 +1921,7 @@ https://github.com/lvandeve/lodepng
 *) 7 nov 2010: added LodePNG_error_text function to get error code description.
 *) 30 okt 2010: made decoding slightly faster
 *) 26 okt 2010: (!) changed some C function and struct names (more consistent).
-     Reorganized the documentation and the declaration order in the header.
+     Reorganised the documentation and the declaration order in the header.
 *) 08 aug 2010: only changed some comments and external samples.
 *) 05 jul 2010: fixed bug thanks to warnings in the new gcc version.
 *) 14 mar 2010: fixed bug where too much memory was allocated for char buffers.

@@ -29,7 +29,7 @@ namespace MOOS.FS
     public static class File
     {
         /// <summary>
-        /// This will be overwritten if you initialize file system
+        /// This will be overwritten if you initialise file system
         /// </summary>
         public static FileSystem Instance;
 

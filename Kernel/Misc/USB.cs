@@ -112,7 +112,7 @@ namespace MOOS.Misc
                     Hub.Initialise(device);
                     break;
                 default:
-                    Console.WriteLine($"[USB] Unrecognized device class:{device.Class} subClass:{device.SubClass}");
+                    Console.WriteLine($"[USB] Unrecognised device class:{device.Class} subClass:{device.SubClass}");
                     break;
 
             }

@@ -1,4 +1,4 @@
-﻿namespace System.Globalization
+﻿namespace System.globalisation
 {
 	public static class CharUnicodeInfo
 	{

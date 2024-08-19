@@ -22,7 +22,7 @@ namespace System.Runtime.CompilerServices
         private static unsafe void CheckStaticClassConstruction(ref StaticClassConstructionContext context)
         {
             // Very simplified class constructor runner. In real world, the class constructor runner
-            // would need to be able to deal with potentially multiple threads racing to initialize
+            // would need to be able to deal with potentially multiple threads racing to initialise
             // a single class, and would need to be able to deal with potential deadlocks
             // between class constructors.
 

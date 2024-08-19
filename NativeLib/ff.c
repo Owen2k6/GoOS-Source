@@ -1741,7 +1741,7 @@ int cmp_lfn (				/* 1:matched, 0:not matched */
 }
 
 
-#if FF_FS_MINIMIZE <= 1 || FF_FS_RPATH >= 2 || FF_USE_LABEL || FF_FS_EXFAT
+#if FF_FS_minimise <= 1 || FF_FS_RPATH >= 2 || FF_USE_LABEL || FF_FS_EXFAT
 /*-----------------------------------------------------*/
 /* FAT-LFN: Pick a part of file name from an LFN entry */
 /*-----------------------------------------------------*/
@@ -1956,7 +1956,7 @@ DWORD xsum32 (
 #endif
 
 
-#if FF_FS_MINIMIZE <= 1 || FF_FS_RPATH >= 2
+#if FF_FS_minimise <= 1 || FF_FS_RPATH >= 2
 /*------------------------------------------------------*/
 /* exFAT: Get object information from a directory block */
 /*------------------------------------------------------*/
@@ -1993,7 +1993,7 @@ void get_xdir_info (
 	fno->fdate = ld_word(dirb + XDIR_ModTime + 2);	/* Date */
 }
 
-#endif	/* FF_FS_MINIMIZE <= 1 || FF_FS_RPATH >= 2 */
+#endif	/* FF_FS_minimise <= 1 || FF_FS_RPATH >= 2 */
 
 
 /*-----------------------------------*/
@@ -2152,7 +2152,7 @@ void create_xdir (
 
 
 
-#if FF_FS_MINIMIZE <= 1 || FF_FS_RPATH >= 2 || FF_USE_LABEL || FF_FS_EXFAT
+#if FF_FS_minimise <= 1 || FF_FS_RPATH >= 2 || FF_USE_LABEL || FF_FS_EXFAT
 /*-----------------------------------------------------------------------*/
 /* Read an object from the directory                                     */
 /*-----------------------------------------------------------------------*/
@@ -2228,7 +2228,7 @@ FRESULT dir_read (
 	return res;
 }
 
-#endif	/* FF_FS_MINIMIZE <= 1 || FF_USE_LABEL || FF_FS_RPATH >= 2 */
+#endif	/* FF_FS_minimise <= 1 || FF_USE_LABEL || FF_FS_RPATH >= 2 */
 
 
 
@@ -2420,7 +2420,7 @@ FRESULT dir_register (	/* FR_OK:succeeded, FR_DENIED:no free entry or too many S
 
 
 
-#if !FF_FS_READONLY && FF_FS_MINIMIZE == 0
+#if !FF_FS_READONLY && FF_FS_minimise == 0
 /*-----------------------------------------------------------------------*/
 /* Remove an object from the directory                                   */
 /*-----------------------------------------------------------------------*/
@@ -2464,11 +2464,11 @@ FRESULT dir_remove (	/* FR_OK:Succeeded, FR_DISK_ERR:A disk error */
 	return res;
 }
 
-#endif /* !FF_FS_READONLY && FF_FS_MINIMIZE == 0 */
+#endif /* !FF_FS_READONLY && FF_FS_minimise == 0 */
 
 
 
-#if FF_FS_MINIMIZE <= 1 || FF_FS_RPATH >= 2
+#if FF_FS_minimise <= 1 || FF_FS_RPATH >= 2
 /*-----------------------------------------------------------------------*/
 /* Get file information from directory entry                             */
 /*-----------------------------------------------------------------------*/
@@ -2566,11 +2566,11 @@ void get_fileinfo (		/* No return code */
 	fno->ftime = (WORD)tm; fno->fdate = (WORD)(tm >> 16);
 }
 
-#endif /* FF_FS_MINIMIZE <= 1 || FF_FS_RPATH >= 2 */
+#endif /* FF_FS_minimise <= 1 || FF_FS_RPATH >= 2 */
 
 
 
-#if FF_USE_FIND && FF_FS_MINIMIZE <= 1
+#if FF_USE_FIND && FF_FS_minimise <= 1
 /*-----------------------------------------------------------------------*/
 /* Pattern matching                                                      */
 /*-----------------------------------------------------------------------*/
@@ -2642,7 +2642,7 @@ int pattern_matching (	/* 0:not matched, 1:matched */
 	return 0;
 }
 
-#endif /* FF_USE_FIND && FF_FS_MINIMIZE <= 1 */
+#endif /* FF_USE_FIND && FF_FS_minimise <= 1 */
 
 
 
@@ -3076,13 +3076,13 @@ FRESULT find_volume (	/* FR_OK(0): successful, !=0: any error occurred */
 	}
 
 	/* The filesystem object is not valid. */
-	/* Following code attempts to mount the volume. (analyse BPB and initialize the filesystem object) */
+	/* Following code attempts to mount the volume. (analyse BPB and initialise the filesystem object) */
 
 	fs->fs_type = 0;					/* Clear the filesystem object */
 	fs->pdrv = LD2PD(vol);				/* Bind the logical drive and a physical drive */
-	stat = disk_initialize(fs->pdrv);	/* Initialise the physical drive */
+	stat = disk_initialise(fs->pdrv);	/* Initialise the physical drive */
 	if (stat & STA_NOINIT) { 			/* Check if the initialization succeeded */
-		return FR_NOT_READY;			/* Failed to initialize due to no medium or hard error */
+		return FR_NOT_READY;			/* Failed to initialise due to no medium or hard error */
 	}
 	if (!FF_FS_READONLY && mode && (stat & STA_PROTECT)) { /* Check disk write protection if needed */
 		return FR_WRITE_PROTECTED;
@@ -3110,7 +3110,7 @@ FRESULT find_volume (	/* FR_OK(0): successful, !=0: any error occurred */
 	if (fmt == 4) return FR_DISK_ERR;		/* An error occured in the disk I/O layer */
 	if (fmt >= 2) return FR_NO_FILESYSTEM;	/* No FAT volume is found */
 
-	/* An FAT volume is found (bsect). Following code initializes the filesystem object */
+	/* An FAT volume is found (bsect). Following code initialises the filesystem object */
 
 #if FF_FS_EXFAT
 	if (fmt == 1) {
@@ -3602,7 +3602,7 @@ FRESULT f_read (
 					cc = fs->csize - csect;
 				}
 				if (disk_read(fs->pdrv, rbuff, sect, cc) != RES_OK) ABORT(fs, FR_DISK_ERR);
-#if !FF_FS_READONLY && FF_FS_MINIMIZE <= 2		/* Replace one of the read sectors with cached data if it contains a dirty sector */
+#if !FF_FS_READONLY && FF_FS_minimise <= 2		/* Replace one of the read sectors with cached data if it contains a dirty sector */
 #if FF_FS_TINY
 				if (fs->wflag && fs->winsect - sect < cc) {
 					mem_cpy(rbuff + ((fs->winsect - sect) * SS(fs)), fs->win, SS(fs));
@@ -3717,7 +3717,7 @@ FRESULT f_write (
 					cc = fs->csize - csect;
 				}
 				if (disk_write(fs->pdrv, wbuff, sect, cc) != RES_OK) ABORT(fs, FR_DISK_ERR);
-#if FF_FS_MINIMIZE <= 2
+#if FF_FS_minimise <= 2
 #if FF_FS_TINY
 				if (fs->winsect - sect < cc) {	/* Refill sector cache if it gets invalidated by the direct write */
 					mem_cpy(fs->win, wbuff + ((fs->winsect - sect) * SS(fs)), SS(fs));
@@ -4034,7 +4034,7 @@ FRESULT f_getcwd (
 
 
 
-#if FF_FS_MINIMIZE <= 2
+#if FF_FS_minimise <= 2
 /*-----------------------------------------------------------------------*/
 /* Seek File Read/Write Pointer                                          */
 /*-----------------------------------------------------------------------*/
@@ -4195,7 +4195,7 @@ FRESULT f_lseek (
 
 
 
-#if FF_FS_MINIMIZE <= 1
+#if FF_FS_minimise <= 1
 /*-----------------------------------------------------------------------*/
 /* Create a Directory Object                                             */
 /*-----------------------------------------------------------------------*/
@@ -4381,7 +4381,7 @@ FRESULT f_findfirst (
 
 
 
-#if FF_FS_MINIMIZE == 0
+#if FF_FS_minimise == 0
 /*-----------------------------------------------------------------------*/
 /* Get File Status                                                       */
 /*-----------------------------------------------------------------------*/
@@ -4842,9 +4842,9 @@ FRESULT f_rename (
 }
 
 #endif /* !FF_FS_READONLY */
-#endif /* FF_FS_MINIMIZE == 0 */
-#endif /* FF_FS_MINIMIZE <= 1 */
-#endif /* FF_FS_MINIMIZE <= 2 */
+#endif /* FF_FS_minimise == 0 */
+#endif /* FF_FS_minimise <= 1 */
+#endif /* FF_FS_minimise <= 2 */
 
 
 
@@ -5360,7 +5360,7 @@ FRESULT f_mkfs (
 	part = LD2PT(vol);	/* Partition (0:create as new, 1-4:get from partition table) */
 
 	/* Check physical drive status */
-	stat = disk_initialize(pdrv);
+	stat = disk_initialise(pdrv);
 	if (stat & STA_NOINIT) return FR_NOT_READY;
 	if (stat & STA_PROTECT) return FR_WRITE_PROTECTED;
 	if (disk_ioctl(pdrv, GET_BLOCK_SIZE, &sz_blk) != RES_OK || !sz_blk || sz_blk > 32768 || (sz_blk & (sz_blk - 1))) sz_blk = 1;	/* Erase block to align data area */
@@ -5796,7 +5796,7 @@ FRESULT f_fdisk (
 	DWORD sz_disk, sz_part, s_part;
 
 
-	stat = disk_initialize(pdrv);
+	stat = disk_initialise(pdrv);
 	if (stat & STA_NOINIT) return FR_NOT_READY;
 	if (stat & STA_PROTECT) return FR_WRITE_PROTECTED;
 	if (disk_ioctl(pdrv, GET_SECTOR_COUNT, &sz_disk)) return FR_DISK_ERR;

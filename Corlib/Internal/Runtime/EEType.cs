@@ -65,7 +65,7 @@ namespace Internal.Runtime
         /// <summary>
         /// This EEType represents a type which requires finalisation.
         /// </summary>
-        HasFinalizerFlag = 0x0010,
+        HasFinaliserFlag = 0x0010,
 
         /// <summary>
         /// This type contain GC pointers.
@@ -120,9 +120,9 @@ namespace Internal.Runtime
         ClonedEEType = 0x0001,
 
         /// <summary>
-        /// Represents a parameterized type. For example a single dimensional array or pointer type
+        /// Represents a parameterised type. For example a single dimensional array or pointer type
         /// </summary>
-        ParameterizedEEType = 0x0002,
+        ParameterisedEEType = 0x0002,
 
         /// <summary>
         /// Represents an uninstantiated generic type definition
@@ -370,7 +370,7 @@ namespace Internal.Runtime
 
         //internal bool IsFinalizable {
         //	get {
-        //		return ((_usFlags & (ushort)EETypeFlags.HasFinalizerFlag) != 0);
+        //		return ((_usFlags & (ushort)EETypeFlags.HasFinaliserFlag) != 0);
         //	}
         //}
 
@@ -435,7 +435,7 @@ namespace Internal.Runtime
         {
         	get 
             {
-        		int boundsSize = (int)this.ParameterizedTypeShape - SZARRAY_BASE_SIZE;
+        		int boundsSize = (int)this.ParameterisedTypeShape - SZARRAY_BASE_SIZE;
         		if (boundsSize > 0) {
         			// Multidim array case: Base size includes space for two Int32s
         			// (upper and lower bound) per each dimension of the array.
@@ -574,18 +574,18 @@ namespace Internal.Runtime
         //	}
         //}
 
-        //internal bool IsParameterizedType {
+        //internal bool IsParameterisedType {
         //	get {
-        //		return Kind == EETypeKind.ParameterizedEEType;
+        //		return Kind == EETypeKind.ParameterisedEEType;
         //	}
         //}
 
-        //// The parameterized type shape defines the particular form of parameterized type that
+        //// The parameterised type shape defines the particular form of parameterised type that
         //// is being represented.
         //// Currently, the meaning is a shape of 0 indicates that this is a Pointer,
         //// shape of 1 indicates a ByRef, and >=SZARRAY_BASE_SIZE indicates that this is an array.
         //// Two types are not equivalent if their shapes do not exactly match.
-        internal uint ParameterizedTypeShape {
+        internal uint ParameterisedTypeShape {
         	get 
             {
         		return _uBaseSize;
@@ -718,7 +718,7 @@ namespace Internal.Runtime
         //		// This api is designed to return correct results for EETypes which can be derived from
         //		// And results indistinguishable from correct for DefTypes which cannot be derived from (sealed classes)
         //		// (For sealed classes, this should always return BaseSize-((uint)sizeof(ObjHeader));
-        //		Debug.Assert(!IsInterface && !IsParameterizedType);
+        //		Debug.Assert(!IsInterface && !IsParameterisedType);
 
         //		// get_BaseSize returns the GC size including space for the sync block index field, the EEType* and
         //		// padding for GC heap alignment. Must subtract all of these to get the size used for the fields of
@@ -776,15 +776,15 @@ namespace Internal.Runtime
         //	}
         //}
 
-        //// Get the address of the finalizer method for finalizable types.
-        //internal IntPtr FinalizerCode {
+        //// Get the address of the finaliser method for finalizable types.
+        //internal IntPtr FinaliserCode {
         //	get {
         //		Debug.Assert(IsFinalizable);
 
         //		if (IsDynamicType || !SupportsRelativePointers)
-        //			return GetField<Pointer>(EETypeField.ETF_Finalizer).Value;
+        //			return GetField<Pointer>(EETypeField.ETF_Finaliser).Value;
 
-        //		return GetField<RelativePointer>(EETypeField.ETF_Finalizer).Value;
+        //		return GetField<RelativePointer>(EETypeField.ETF_Finaliser).Value;
         //	}
         //}
 
@@ -794,7 +794,7 @@ namespace Internal.Runtime
         //			return CanonicalEEType->BaseType;
         //		}
 
-        //		if (IsParameterizedType) {
+        //		if (IsParameterisedType) {
         //			if (IsArray)
         //				return GetArrayEEType();
         //			else
@@ -840,7 +840,7 @@ namespace Internal.Runtime
         {
             get
             {
-                //Debug.Assert(!IsParameterizedType, "array type not supported in NonArrayBaseType");
+                //Debug.Assert(!IsParameterisedType, "array type not supported in NonArrayBaseType");
                 //Debug.Assert(!IsCloned, "cloned type not supported in NonClonedNonArrayBaseType");
                 //Debug.Assert(IsCanonical, "we expect canonical types here");
                 //Debug.Assert(!IsRelatedTypeViaIAT, "Non IAT");
@@ -1063,8 +1063,8 @@ namespace Internal.Runtime
         //	}
         //	cbOffset += relativeOrFullPointerOffset;
 
-        //	// Followed by the pointer to the finalizer method.
-        //	if (eField == EETypeField.ETF_Finalizer) {
+        //	// Followed by the pointer to the finaliser method.
+        //	if (eField == EETypeField.ETF_Finaliser) {
         //		Debug.Assert(IsFinalizable);
         //		return cbOffset;
         //	}

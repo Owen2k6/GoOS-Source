@@ -903,7 +903,7 @@ namespace System
 		/// <summary>Should only set visibility flags when creating EnumBuilder.</summary>
 		internal static string @Argument_ShouldOnlySetVisibilityFlags = "Should only set visibility flags when creating EnumBuilder.";
 		/// <summary>Completed signature cannot be modified.</summary>
-		internal static string @Argument_SigIsFinalized = "Completed signature cannot be modified.";
+		internal static string @Argument_SigIsFinalised = "Completed signature cannot be modified.";
 		/// <summary>Stream was not readable.</summary>
 		internal static string @Argument_StreamNotReadable = "Stream was not readable.";
 		/// <summary>Stream was not writable.</summary>
@@ -2174,8 +2174,8 @@ namespace System
 		internal static string @TaskCompletionSourceT_TrySetException_NoExceptions = "The exceptions collection was empty.";
 		/// <summary>The exceptions collection included at least one null element.</summary>
 		internal static string @TaskCompletionSourceT_TrySetException_NullException = "The exceptions collection included at least one null element.";
-		/// <summary>A Task's exception(s) were not observed either by Waiting on the Task or accessing its Exception property. As a result, the unobserved exception was rethrown by the finalizer thread.</summary>
-		internal static string @TaskExceptionHolder_UnhandledException = "A Task's exception(s) were not observed either by Waiting on the Task or accessing its Exception property. As a result, the unobserved exception was rethrown by the finalizer thread.";
+		/// <summary>A Task's exception(s) were not observed either by Waiting on the Task or accessing its Exception property. As a result, the unobserved exception was rethrown by the finaliser thread.</summary>
+		internal static string @TaskExceptionHolder_UnhandledException = "A Task's exception(s) were not observed either by Waiting on the Task or accessing its Exception property. As a result, the unobserved exception was rethrown by the finaliser thread.";
 		/// <summary>(Internal)Expected an Exception or an IEnumerable<Exception></summary>
 		internal static string @TaskExceptionHolder_UnknownExceptionType = "(Internal)Expected an Exception or an IEnumerable<Exception>";
 		/// <summary>ExecuteTask may not be called for a task which was previously queued to a different TaskScheduler.</summary>
@@ -2236,8 +2236,8 @@ namespace System
 		internal static string @UnauthorisedAccess_RegistryKeyGeneric_Key = "Access to the registry key '{0}' is denied.";
 		/// <summary>Unknown error "{0}".</summary>
 		internal static string @UnknownError_Num = "Unknown error '{0}'.";
-		/// <summary>Operation could destabilize the runtime.</summary>
-		internal static string @Verification_Exception = "Operation could destabilize the runtime.";
+		/// <summary>Operation could destabilise the runtime.</summary>
+		internal static string @Verification_Exception = "Operation could destabilise the runtime.";
 		/// <summary>at</summary>
 		internal static string @Word_At = "at";
 		/// <summary>---- DEBUG ASSERTION FAILED ----</summary>
@@ -2356,8 +2356,8 @@ namespace System
 		internal static string @InvalidOperation_ObjectiveCMarshalNotInitialised = "Attempt to track an Objective-C Type without initializing.";
 		/// <summary>Attempt to reinitialise ObjectiveCMarshal.</summary>
 		internal static string @InvalidOperation_ReinitialiseObjectiveCMarshal = "Attempt to reinitialise ObjectiveCMarshal.";
-		/// <summary>Attempt to track an Objective-C Type without a finalizer.</summary>
-		internal static string @InvalidOperation_ObjectiveCTypeNoFinalizer = "Attempt to track an Objective-C Type without a finalizer.";
+		/// <summary>Attempt to track an Objective-C Type without a finaliser.</summary>
+		internal static string @InvalidOperation_ObjectiveCTypeNoFinaliser = "Attempt to track an Objective-C Type without a finaliser.";
 		/// <summary>Supplying a non-null inner should also be marked as Aggregated.</summary>
 		internal static string @InvalidOperation_SuppliedInnerMustBeMarkedAggregation = "Supplying a non-null inner should also be marked as Aggregated.";
 		/// <summary>Length of items must be same as length of keys.</summary>
@@ -2532,16 +2532,16 @@ namespace System
 		internal static string @InvalidProgramme_Specific = "Common Language Runtime detected an invalid program. The body of method '{0}' is invalid.";
 		/// <summary>Method '{0}' has a variable argument list. Variable argument lists are not supported in .NET Core.</summary>
 		internal static string @InvalidProgramme_Vararg = "Method '{0}' has a variable argument list. Variable argument lists are not supported in .NET Core.";
-		/// <summary>Object.Finalize() can not be called directly. It is only callable by the runtime.</summary>
-		internal static string @InvalidProgramme_CallVirtFinalize = "Object.Finalize() can not be called directly. It is only callable by the runtime.";
+		/// <summary>Object.Finalise() can not be called directly. It is only callable by the runtime.</summary>
+		internal static string @InvalidProgramme_CallVirtFinalise = "Object.Finalise() can not be called directly. It is only callable by the runtime.";
 		/// <summary>The corresponding delegate has been garbage collected. Please make sure the delegate is still referenced by managed code when you are using the marshalled native function pointer.</summary>
 		internal static string @Delegate_GarbageCollected = "The corresponding delegate has been garbage collected. Please make sure the delegate is still referenced by managed code when you are using the marshalled native function pointer.";
 		/// <summary>Unable to find an entry point named '{0}' in native library '{1}'.</summary>
-		internal static string @Arg_EntryPointNotFoundExceptionParameterized = "Unable to find an entry point named '{0}' in native library '{1}'.";
+		internal static string @Arg_EntryPointNotFoundExceptionParameterised = "Unable to find an entry point named '{0}' in native library '{1}'.";
 		/// <summary>Unable to find an entry point named '{0}' in native library.</summary>
-		internal static string @Arg_EntryPointNotFoundExceptionParameterizedNoLibrary = "Unable to find an entry point named '{0}' in native library.";
+		internal static string @Arg_EntryPointNotFoundExceptionParameterisedNoLibrary = "Unable to find an entry point named '{0}' in native library.";
 		/// <summary>Unable to native library '{0}' or one of its dependencies.</summary>
-		internal static string @Arg_DllNotFoundExceptionParameterized = "Unable to native library '{0}' or one of its dependencies.";
+		internal static string @Arg_DllNotFoundExceptionParameterised = "Unable to native library '{0}' or one of its dependencies.";
 		/// <summary>COM Interop requires ComWrapper instance registered for marshalling.</summary>
 		internal static string @InvalidOperation_ComInteropRequireComWrapperInstance = "COM Interop requires ComWrapper instance registered for marshalling.";
 	}

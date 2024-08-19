@@ -72,7 +72,7 @@ namespace System.Runtime
 
             // compare the array types structurally
 
-            if (pObjType->ParameterizedTypeShape != pTargetType->ParameterizedTypeShape)
+            if (pObjType->ParameterisedTypeShape != pTargetType->ParameterisedTypeShape)
             {
                 // If the shapes are different, there's one more case to check for: Casting SzArray to MdArray rank 1.
                 if (!pObjType->IsSzArray || pTargetType->ArrayRank != 1)

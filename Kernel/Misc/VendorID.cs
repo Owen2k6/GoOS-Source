@@ -30,7 +30,7 @@ namespace MOOS.Misc
             if (id == 0x06FE) return "Acresso Software Inc";
             if (id == 0x0711) return "SIIG, Inc";
             if (id == 0x07d1) return "D-Link Corporation";
-            if (id == 0x093a) return "KYE Systems Corp / Pixart Imaging";
+            if (id == 0x093a) return "KYE Systems Corp / Pixart Imageing";
             if (id == 0x096E) return "USB Rockey dongle from Feitain";
             if (id == 0x0A5C) return "Broadcom Corporation";
             if (id == 0x0A89) return "BREA Technologies Inc";
@@ -359,7 +359,7 @@ namespace MOOS.Misc
             if (id == 0x115F) return "Maxtor Corporation";
             if (id == 0x1160) return "Megasoft Inc";
             if (id == 0x1161) return "PFU Ltd";
-            if (id == 0x1162) return "OA Laboratory Co Ltd";
+            if (id == 0x1162) return "OA labouratory Co Ltd";
             if (id == 0x1163) return "mohamed alsherif";
             if (id == 0x1164) return "Advanced Peripherals Tech";
             if (id == 0x1165) return "Imagraph Corporation";
@@ -370,7 +370,7 @@ namespace MOOS.Misc
             if (id == 0x116A) return "Luminex Software, Inc";
             if (id == 0x116B) return "Connectware Inc";
             if (id == 0x116C) return "Intelligent Resources";
-            if (id == 0x116E) return "Electronics for Imaging";
+            if (id == 0x116E) return "Electronics for Imageing";
             if (id == 0x1170) return "Inventec Corporation";
             if (id == 0x1172) return "Altera Corporation";
             if (id == 0x1173) return "Adobe Systems";
@@ -487,7 +487,7 @@ namespace MOOS.Misc
             if (id == 0x11EB) return "Formation, Inc";
             if (id == 0x11EC) return "Coreco Inc";
             if (id == 0x11ED) return "Mediamatics";
-            if (id == 0x11EE) return "Dome Imaging Systems Inc";
+            if (id == 0x11EE) return "Dome Imageing Systems Inc";
             if (id == 0x11EF) return "Nicolet Technologies BV";
             if (id == 0x11F0) return "Triya";
             if (id == 0x11F2) return "Picture Tel Japan KK";
@@ -555,7 +555,7 @@ namespace MOOS.Misc
             if (id == 0x1237) return "Alta Technology Corp";
             if (id == 0x1238) return "Adtran";
             if (id == 0x1239) return "The 3DO Company";
-            if (id == 0x123A) return "Visicom Laboratories Inc";
+            if (id == 0x123A) return "Visicom labouratories Inc";
             if (id == 0x123B) return "Seeq Technology Inc";
             if (id == 0x123C) return "Century Systems Inc";
             if (id == 0x123D) return "Engineering Design Team Inc";
@@ -644,7 +644,7 @@ namespace MOOS.Misc
             if (id == 0x1296) return "Kofax Image Products";
             if (id == 0x1297) return "Shuttle Computer";
             if (id == 0x1298) return "Spellcaster Telecommunications Inc";
-            if (id == 0x1299) return "Knowledge Technology Laboratories";
+            if (id == 0x1299) return "Knowledge Technology labouratories";
             if (id == 0x129A) return "Curtiss Wright Controls Electronic Systems";
             if (id == 0x129B) return "Image Access";
             if (id == 0x129D) return "CompCore Multimedia Inc";
@@ -714,7 +714,7 @@ namespace MOOS.Misc
             if (id == 0x12E0) return "Chase Research PLC";
             if (id == 0x12E1) return "Nintendo Co Ltd";
             if (id == 0x12E2) return "Datum Inc Bancomm-Timing Division";
-            if (id == 0x12E3) return "Imation Corp - Medical Imaging Syst";
+            if (id == 0x12E3) return "Imation Corp - Medical Imageing Syst";
             if (id == 0x12E4) return "Brooktrout Technology Inc";
             if (id == 0x12E6) return "Cirel Systems";
             if (id == 0x12E7) return "Sebring Systems Inc";
@@ -870,7 +870,7 @@ namespace MOOS.Misc
             if (id == 0x140B) return "Ramix Inc";
             if (id == 0x140D) return "Matsushita Electric Works Ltd";
             if (id == 0x140F) return "Salient Systems Corp";
-            if (id == 0x1412) return "IC Ensemble, Inc";
+            if (id == 0x1412) return "IC encemble, Inc";
             if (id == 0x1413) return "Addonics";
             if (id == 0x1415) return "Oxford Semiconductor Ltd - now part of PLX Technology";
             if (id == 0x1418) return "Kyushu Electronics Systems Inc";
@@ -1063,12 +1063,12 @@ namespace MOOS.Misc
             if (id == 0x1540) return "Provideo Multimedia Co Ltd";
             if (id == 0x1541) return "Telocity Inc";
             if (id == 0x1542) return "Vivid Technology Inc";
-            if (id == 0x1543) return "Silicon Laboratories";
+            if (id == 0x1543) return "Silicon labouratories";
             if (id == 0x1544) return "DCM Technologies Ltd";
             if (id == 0x1545) return "VisionTek";
             if (id == 0x1546) return "IOI Technology Corp";
             if (id == 0x1547) return "Mitutoyo Corporation";
-            if (id == 0x1548) return "Jet Propulsion Laboratory";
+            if (id == 0x1548) return "Jet Propulsion labouratory";
             if (id == 0x1549) return "Interconnect Systems Solutions";
             if (id == 0x154A) return "Max Technologies Inc";
             if (id == 0x154B) return "Computex Co Ltd";
@@ -1191,7 +1191,7 @@ namespace MOOS.Misc
             if (id == 0x15C4) return "EVSX Inc";
             if (id == 0x15C5) return "Procomp Informatics Ltd";
             if (id == 0x15C6) return "Technical University Of Budapest";
-            if (id == 0x15C7) return "Tateyama System Laboratory Co Ltd";
+            if (id == 0x15C7) return "Tateyama System labouratory Co Ltd";
             if (id == 0x15C8) return "Penta Media Co Ltd";
             if (id == 0x15C9) return "Serome Technology Inc";
             if (id == 0x15CA) return "Bitboys OY";
@@ -1232,7 +1232,7 @@ namespace MOOS.Misc
             if (id == 0x15EF) return "Intelligent Paradigm Inc";
             if (id == 0x15F0) return "B-Tree Systems Inc";
             if (id == 0x15F1) return "Times N Systems Inc";
-            if (id == 0x15F2) return "SPOT Imaging Solutions a division of Diagnostic Instruments, Inc";
+            if (id == 0x15F2) return "SPOT Imageing Solutions a division of Diagnostic Instruments, Inc";
             if (id == 0x15F3) return "Digitmedia Corp";
             if (id == 0x15F4) return "Valuesoft";
             if (id == 0x15F5) return "Power Micro Research";
@@ -1318,7 +1318,7 @@ namespace MOOS.Misc
             if (id == 0x1648) return "MeltDown Systems LLC";
             if (id == 0x1649) return "Jupiter Systems";
             if (id == 0x164A) return "Aiwa Co Ltd";
-            if (id == 0x164C) return "Department Of Defense";
+            if (id == 0x164C) return "Department Of Defence";
             if (id == 0x164D) return "Ishoni Networks";
             if (id == 0x164E) return "Micrel Inc";
             if (id == 0x164F) return "Datavoice (Pty) Ltd";

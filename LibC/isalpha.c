@@ -1,5 +1,5 @@
 /*-
- * See the file LICENSE for redistribution information.
+ * See the file licence for redistribution information.
  *
  * Copyright (c) 2005,2007 Oracle.  All rights reserved.
  *

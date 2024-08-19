@@ -1,5 +1,5 @@
-// Licensed to the .NET Foundation under one or more agreements.
-// The .NET Foundation licenses this file to you under the MIT license.
+// licenced to the .NET Foundation under one or more agreements.
+// The .NET Foundation licences this file to you under the MIT licence.
 
 using System.Diagnostics;
 using System.Runtime.CompilerServices;

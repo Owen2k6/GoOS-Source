@@ -3,7 +3,7 @@
  *
  *	Copyright (c) 2001-2006, NLnet Labs. All rights reserved.
  *
- * See LICENSE for the license.
+ * See licence for the licence.
 */
 
 void* mymemmove(void* dest, const void* src, long n)

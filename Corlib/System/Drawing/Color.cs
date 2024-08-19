@@ -9,7 +9,7 @@ namespace System.Drawing
         public static Colour Aqua { get { return FromArgb(0, 255, 255); } }
         public static Colour LightSkyBlue { get { return FromArgb(135, 206, 250); } }
         public static Colour Aquamarine { get { return FromArgb(127, 255, 212); } }
-        public static Colour LightSlateGray { get { return FromArgb(119, 136, 153); } }
+        public static Colour LightSlateGrey { get { return FromArgb(119, 136, 153); } }
         public static Colour Azure { get { return FromArgb(240, 255, 255); } }
         public static Colour LightSteelBlue { get { return FromArgb(176, 196, 222); } }
         public static Colour Beige { get { return FromArgb(245, 245, 220); } }
@@ -50,7 +50,7 @@ namespace System.Drawing
         public static Colour MistyRose { get { return FromArgb(255, 228, 225); } }
         public static Colour DarkGoldenrod { get { return FromArgb(184, 134, 11); } }
         public static Colour Moccasin { get { return FromArgb(255, 228, 181); } }
-        public static Colour DarkGray { get { return FromArgb(169, 169, 169); } }
+        public static Colour DarkGrey { get { return FromArgb(169, 169, 169); } }
         public static Colour NavajoWhite { get { return FromArgb(255, 222, 173); } }
         public static Colour DarkGreen { get { return FromArgb(0, 100, 0); } }
         public static Colour Navy { get { return FromArgb(0, 0, 128); } }
@@ -72,7 +72,7 @@ namespace System.Drawing
         public static Colour PaleGreen { get { return FromArgb(152, 251, 152); } }
         public static Colour DarkSlateBlue { get { return FromArgb(72, 61, 139); } }
         public static Colour PaleTurquoise { get { return FromArgb(175, 238, 238); } }
-        public static Colour DarkSlateGray { get { return FromArgb(40, 79, 79); } }
+        public static Colour DarkSlateGrey { get { return FromArgb(40, 79, 79); } }
         public static Colour PaleVioletRed { get { return FromArgb(219, 112, 147); } }
         public static Colour DarkTurquoise { get { return FromArgb(0, 206, 209); } }
         public static Colour PapayaWhip { get { return FromArgb(255, 239, 213); } }
@@ -82,7 +82,7 @@ namespace System.Drawing
         public static Colour Peru { get { return FromArgb(205, 133, 63); } }
         public static Colour DeepSkyBlue { get { return FromArgb(0, 191, 255); } }
         public static Colour Pink { get { return FromArgb(255, 192, 203); } }
-        public static Colour DimGray { get { return FromArgb(105, 105, 105); } }
+        public static Colour DimGrey { get { return FromArgb(105, 105, 105); } }
         public static Colour Plum { get { return FromArgb(221, 160, 221); } }
         public static Colour DodgerBlue { get { return FromArgb(30, 144, 255); } }
         public static Colour PowderBlue { get { return FromArgb(176, 224, 230); } }
@@ -102,7 +102,7 @@ namespace System.Drawing
         public static Colour SandyBrown { get { return FromArgb(244, 164, 96); } }
         public static Colour Goldenrod { get { return FromArgb(218, 165, 32); } }
         public static Colour SeaGreen { get { return FromArgb(46, 139, 87); } }
-        public static Colour Gray { get { return FromArgb(128, 128, 128); } }
+        public static Colour Grey { get { return FromArgb(128, 128, 128); } }
         public static Colour Seashell { get { return FromArgb(255, 245, 238); } }
         public static Colour Green { get { return FromArgb(0, 128, 0); } }
         public static Colour Sienna { get { return FromArgb(160, 82, 45); } }
@@ -113,7 +113,7 @@ namespace System.Drawing
         public static Colour HotPink { get { return FromArgb(255, 105, 180); } }
         public static Colour SlateBlue { get { return FromArgb(106, 90, 205); } }
         public static Colour IndianRed { get { return FromArgb(205, 92, 92); } }
-        public static Colour SlateGray { get { return FromArgb(112, 128, 144); } }
+        public static Colour SlateGrey { get { return FromArgb(112, 128, 144); } }
         public static Colour Indigo { get { return FromArgb(75, 0, 130); } }
         public static Colour Snow { get { return FromArgb(255, 250, 250); } }
         public static Colour Ivory { get { return FromArgb(255, 240, 240); } }
@@ -138,7 +138,7 @@ namespace System.Drawing
         public static Colour White { get { return FromArgb(255, 255, 255); } }
         public static Colour LightGreen { get { return FromArgb(144, 238, 144); } }
         public static Colour WhiteSmoke { get { return FromArgb(245, 245, 245); } }
-        public static Colour LightGray { get { return FromArgb(211, 211, 211); } }
+        public static Colour LightGrey { get { return FromArgb(211, 211, 211); } }
         public static Colour Yellow { get { return FromArgb(255, 255, 0); } }
         public static Colour LightPink { get { return FromArgb(255, 182, 193); } }
         public static Colour YellowGreen { get { return FromArgb(154, 205, 50); } }

@@ -22,7 +22,7 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 //
-// \brief Tiny printf, sprintf and snprintf implementation, optimized for speed on
+// \brief Tiny printf, sprintf and snprintf implementation, optimised for speed on
 //        embedded systems with a very limited resources.
 //        Use this instead of bloated standard/newlib printf.
 //        These routines are thread safe and reentrant.

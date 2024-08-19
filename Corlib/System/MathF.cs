@@ -201,7 +201,7 @@ namespace System
 			return x;
 		}
 		/// <summary>
-		/// WARNING!! This method is non-native and not optimized, it computes `(x * y) + z` with no extra steps
+		/// WARNING!! This method is non-native and not optimised, it computes `(x * y) + z` with no extra steps
 		/// </summary>
 		public static float FusedMultiplyAdd(float x, float y, float z)
 		{

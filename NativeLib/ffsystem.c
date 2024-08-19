@@ -40,10 +40,10 @@ void ff_memfree (
 #if FF_FS_REENTRANT	/* Mutal exclusion */
 
 /*------------------------------------------------------------------------*/
-/* Create a Synchronization Object
+/* Create a Synchronisation Object
 /*------------------------------------------------------------------------*/
 /* This function is called in f_mount() function to create a new
-/  synchronization object for the volume, such as semaphore and mutex.
+/  synchronisation object for the volume, such as semaphore and mutex.
 /  When a 0 is returned, the f_mount() function fails with FR_INT_ERR.
 */
 
@@ -80,9 +80,9 @@ int ff_cre_syncobj (	/* 1:Function succeeded, 0:Could not create the sync object
 
 
 /*------------------------------------------------------------------------*/
-/* Delete a Synchronization Object                                        */
+/* Delete a Synchronisation Object                                        */
 /*------------------------------------------------------------------------*/
-/* This function is called in f_mount() function to delete a synchronization
+/* This function is called in f_mount() function to delete a synchronisation
 /  object that created with ff_cre_syncobj() function. When a 0 is returned,
 /  the f_mount() function fails with FR_INT_ERR.
 */

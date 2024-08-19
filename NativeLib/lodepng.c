@@ -3371,7 +3371,7 @@ static void getPixelColourRGBA8(unsigned char* r, unsigned char* g,
 }
 
 /*Similar to getPixelColourRGBA8, but with all the for loops inside of the colour
-mode test cases, optimized to convert the colours much faster, when converting
+mode test cases, optimised to convert the colours much faster, when converting
 to the common case of RGBA with 8 bit per channel. buffer must be RGBA with
 enough memory.*/
 static void getPixelColoursRGBA8(unsigned char* LODEPNG_RESTRICT buffer, size_t numpixels,
@@ -5775,7 +5775,7 @@ static unsigned filter(unsigned char* out, const unsigned char* in, unsigned w, 
         better result with dynamic tree anyway. Using the fixed tree sometimes gives worse, but in rare
         cases better compression. It does make this a bit less slow, so it's worth doing this.*/
         zlibsettings.btype = 1;
-        /*a custom encoder likely doesn't read the btype setting and is optimized for complete PNG
+        /*a custom encoder likely doesn't read the btype setting and is optimised for complete PNG
         images only, so disable it*/
         zlibsettings.custom_zlib = 0;
         zlibsettings.custom_deflate = 0;

@@ -49,7 +49,7 @@ namespace System
 
         // internal so that DateTime doesn't have to call an extra get
         // method for some arithmetic operations.
-        internal readonly long _ticks; // Do not rename (binary serialization)
+        internal readonly long _ticks; // Do not rename (binary serialisation)
 
         public TimeSpan(long ticks)
         {

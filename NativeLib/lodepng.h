@@ -1690,7 +1690,7 @@ lodepng.h where needed, and your program can read/write PNG files.
 
 It is compatible with C90 and up, and C++03 and up.
 
-If performance is important, use optimization when compiling! For both the
+If performance is important, use optimisation when compiling! For both the
 encoder and decoder, this makes a large difference.
 
 Make sure that LodePNG is compiled with the same compiler of the same version
@@ -1879,8 +1879,8 @@ https://github.com/lvandeve/lodepng
 *) 23 aug 2014: Reduced needless memory usage of decoder.
 *) 28 jun 2014: Removed fix_png setting, always support palette OOB for
     simplicity. Made ColourProfile public.
-*) 09 jun 2014: Faster encoder by fixing hash bug and more zeros optimization.
-*) 22 dec 2013: Power of two windowsize required for optimization.
+*) 09 jun 2014: Faster encoder by fixing hash bug and more zeros optimisation.
+*) 22 dec 2013: Power of two windowsize required for optimisation.
 *) 15 apr 2013: Fixed bug with LAC_ALPHA and colour key.
 *) 25 mar 2013: Added an optional feature to ignore some PNG errors (fix_png).
 *) 11 mar 2013: (!) Bugfix with custom free. Changed from "my" to "lodepng_"
@@ -1915,7 +1915,7 @@ https://github.com/lvandeve/lodepng
 *) 17 apr 2011: code cleanup. Bugfixes. Convert low to 16-bit per sample colours.
 *) 21 feb 2011: fixed compiling for C90. Fixed compiling with sections disabled.
 *) 11 dec 2010: encoding is made faster, based on suggestion by Peter Eastman
-    to optimize long sequences of zeros.
+    to optimise long sequences of zeros.
 *) 13 nov 2010: added LodePNG_InfoColour_hasPaletteAlpha and
     LodePNG_InfoColour_canHaveAlpha functions for convenience.
 *) 7 nov 2010: added LodePNG_error_text function to get error code description.
@@ -1997,11 +1997,11 @@ https://github.com/lvandeve/lodepng
     Changed position of palette in info vector. Fixed an important bug that
     happened on PNGs with an uncompressed block.
 *) 16 jun 2006: Internally changed unsigned into unsigned where
-    needed, and performed some optimizations.
+    needed, and performed some optimisations.
 *) 07 jun 2006: (!) Renamed functions to decodePNG and placed them
     in LodePNG namespace. Changed the order of the parameters. Rewrote the
     documentation in the header. Renamed files to lodepng.cpp and lodepng.h
-*) 22 apr 2006: Optimized and improved some code
+*) 22 apr 2006: Optimised and improved some code
 *) 07 sep 2005: (!) Changed to std::vector interface
 *) 12 aug 2005: Initial release (C++, decoder only)
 

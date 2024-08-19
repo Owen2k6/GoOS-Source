@@ -9,9 +9,9 @@ namespace System.Runtime.CompilerServices
     {
         Unmanaged = 0x0004,
         NoInlining = 0x0008,
-        NoOptimization = 0x0040,
+        NoOptimisation = 0x0040,
         AggressiveInlining = 0x0100,
-        AggressiveOptimization = 0x200,
+        AggressiveOptimisation = 0x200,
         InternalCall = 0x1000,
     }
 }

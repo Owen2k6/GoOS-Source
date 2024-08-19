@@ -32,7 +32,7 @@ namespace System
     // enumeration.
     //
     // For compatibility, DateTime does not serialise the Kind data when used in
-    // binary serialization.
+    // binary serialisation.
     //
     // For a description of various calendar issues, look at
     //
@@ -110,8 +110,8 @@ namespace System
         private const ulong KindLocalAmbiguousDst = 0xC000000000000000;
         private const int KindShift = 62;
 
-        private const string TicksField = "ticks"; // Do not rename (binary serialization)
-        private const string DateDataField = "dateData"; // Do not rename (binary serialization)
+        private const string TicksField = "ticks"; // Do not rename (binary serialisation)
+        private const string DateDataField = "dateData"; // Do not rename (binary serialisation)
 
         // The data is stored as an unsigned 64-bit integer
         //   Bits 01-62: The value of 100-nanosecond ticks where 0 represents 1/1/0001 12:00am, up until the value
@@ -381,7 +381,7 @@ namespace System
             }
         }
 
-        private DateTime(SerializationInfo info, StreamingContext context)
+        private DateTime(SerialisationInfo info, StreamingContext context)
         {
             if (info == null)
                 throw new ArgumentNullException(nameof(info));
@@ -392,7 +392,7 @@ namespace System
             ulong serialisedDateData = 0;
 
             // Get the data
-            SerializationInfoEnumerator enumerator = info.GetEnumerator();
+            SerialisationInfoEnumerator enumerator = info.GetEnumerator();
             while (enumerator.MoveNext())
             {
                 switch (enumerator.Name)
@@ -420,12 +420,12 @@ namespace System
             }
             else
             {
-                throw new SerializationException(SR.Serialization_MissingDateTimeData);
+                throw new SerialisationException(SR.Serialisation_MissingDateTimeData);
             }
             long ticks = InternalTicks;
             if (ticks < MinTicks || ticks > MaxTicks)
             {
-                throw new SerializationException(SR.Serialization_DateTimeTicksOutOfRange);
+                throw new SerialisationException(SR.Serialisation_DateTimeTicksOutOfRange);
             }
         }
         */
@@ -857,7 +857,7 @@ namespace System
             return new DateTime(DoubleDateToTicks(d), DateTimeKind.Unspecified);
         }
 
-        void ISerializable.GetObjectData(SerializationInfo info, StreamingContext context)
+        void ISerializable.GetObjectData(SerialisationInfo info, StreamingContext context)
         {
             if (info == null)
             {
@@ -892,7 +892,7 @@ namespace System
                 // changes to store the ticks of the UTC time, but with flags that look like a
                 // local date.
 
-                // To match serialization in text we need to be able to handle cases where
+                // To match serialisation in text we need to be able to handle cases where
                 // the UTC value would be out of range. Unused parts of the ticks range are
                 // used for this, so that values just past max value are stored just past the
                 // end of the maximum range, and values just below minimum value are stored

@@ -803,7 +803,7 @@ namespace System
 						length--;
 					} else
 					{
-						// We use goto for perf reasons. x86 JIT does not optimize around gotos.
+						// We use goto for perf reasons. x86 JIT does not optimise around gotos.
 						goto ReturnFalse;
 					}
 				}
@@ -1114,12 +1114,12 @@ namespace System
 		public override int GetHashCode()
 		{
 
-#if FEATURE_RANDOMIZED_STRING_HASHING
-			if(HashHelpers.s_UseRandomizedStringHashing)
+#if FEATURE_RANDOmiseD_STRING_HASHING
+			if(HashHelpers.s_UseRandomisedStringHashing)
 			{
 				return InternalMarvin32HashString(this, this.Length, 0);
 			}
-#endif // FEATURE_RANDOMIZED_STRING_HASHING
+#endif // FEATURE_RANDOmiseD_STRING_HASHING
 
 			unsafe
 			{
@@ -1149,7 +1149,7 @@ namespace System
 
 		// Use this if and only if you need the hashcode to not change across app domains (e.g. you have an app domain agile
 		// hash table).
-		internal int GetLegacyNonRandomizedHashCode()
+		internal int GetLegacyNonRandomisedHashCode()
 		{
 			unsafe
 			{

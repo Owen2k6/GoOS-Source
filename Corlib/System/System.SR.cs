@@ -32,8 +32,8 @@ namespace System
 		internal static string @AggregateException_ctor_DefaultMessage = "One or more errors occurred.";
 		/// <summary>An element of innerExceptions was null.</summary>
 		internal static string @AggregateException_ctor_InnerExceptionNull = "An element of innerExceptions was null.";
-		/// <summary>The serialization stream contains no inner exceptions.</summary>
-		internal static string @AggregateException_DeserializationFailure = "The serialization stream contains no inner exceptions.";
+		/// <summary>The serialisation stream contains no inner exceptions.</summary>
+		internal static string @AggregateException_DeserialisationFailure = "The serialisation stream contains no inner exceptions.";
 		/// <summary>(Inner Exception #{0}) This text is prepended to each inner exception description during aggregate exception formatting</summary>
 		internal static string @AggregateException_InnerException = "(Inner Exception #{0}) This text is prepended to each inner exception description during aggregate exception formatting";
 		/// <summary>Name:</summary>
@@ -408,16 +408,16 @@ namespace System
 		internal static string @Arg_SafeArrayTypeMismatchException = "Specified array was not of the expected type.";
 		/// <summary>Security error.</summary>
 		internal static string @Arg_SecurityException = "Security error.";
-		/// <summary>Serialization error.</summary>
-		internal static string @SerializationException = "Serialization error.";
+		/// <summary>Serialisation error.</summary>
+		internal static string @SerialisationException = "Serialisation error.";
 		/// <summary>Property set method not found.</summary>
 		internal static string @Arg_SetMethNotFnd = "Property set method not found.";
 		/// <summary>Operation caused a stack overflow.</summary>
 		internal static string @Arg_StackOverflowException = "Operation caused a stack overflow.";
 		/// <summary>Unicode surrogate characters must be written out as pairs together in the same call, not individually. Consider passing in a character array instead.</summary>
 		internal static string @Arg_SurrogatesNotAllowedAsSingleChar = "Unicode surrogate characters must be written out as pairs together in the same call, not individually. Consider passing in a character array instead.";
-		/// <summary>Object synchronization method was called from an unsynchronized block of code.</summary>
-		internal static string @Arg_SynchronizationLockException = "Object synchronization method was called from an unsynchronized block of code.";
+		/// <summary>Object synchronisation method was called from an unsynchronized block of code.</summary>
+		internal static string @Arg_SynchronisationLockException = "Object synchronisation method was called from an unsynchronized block of code.";
 		/// <summary>System error.</summary>
 		internal static string @Arg_SystemException = "System error.";
 		/// <summary>Exception has been thrown by the target of an invocation.</summary>
@@ -738,8 +738,8 @@ namespace System
 		internal static string @Argument_InvalidNativeDigitValue = "Each member of the NativeDigits array must be a single text element (one or more UTF16 code points) with a Unicode Nd (Number, Decimal Digit) property indicating it is a digit.";
 		/// <summary>The region name {0} should not correspond to neutral culture; a specific culture name is required.</summary>
 		internal static string @Argument_InvalidNeutralRegionName = "The region name {0} should not correspond to neutral culture; a specific culture name is required.";
-		/// <summary>Invalid or unsupported normalization form.</summary>
-		internal static string @Argument_InvalidNormalizationForm = "Invalid or unsupported normalization form.";
+		/// <summary>Invalid or unsupported normalisation form.</summary>
+		internal static string @Argument_InvalidNormalisationForm = "Invalid or unsupported normalisation form.";
 		/// <summary>An undefined NumberStyles value is being used.</summary>
 		internal static string @Argument_InvalidNumberStyles = "An undefined NumberStyles value is being used.";
 		/// <summary>Offset and length were out of bounds for the array or count is greater than the number of elements from index to the end of the source collection.</summary>
@@ -1228,8 +1228,8 @@ namespace System
 		internal static string @CancellationToken_CreateLinkedToken_TokensIsEmpty = "No tokens were supplied.";
 		/// <summary>The CancellationTokenSource has been disposed.</summary>
 		internal static string @CancellationTokenSource_Disposed = "The CancellationTokenSource has been disposed.";
-		/// <summary>The SyncRoot property may not be used for the synchronization of concurrent collections.</summary>
-		internal static string @ConcurrentCollection_SyncRoot_NotSupported = "The SyncRoot property may not be used for the synchronization of concurrent collections.";
+		/// <summary>The SyncRoot property may not be used for the synchronisation of concurrent collections.</summary>
+		internal static string @ConcurrentCollection_SyncRoot_NotSupported = "The SyncRoot property may not be used for the synchronisation of concurrent collections.";
 		/// <summary>Task {2} completed.</summary>
 		internal static string @event_TaskCompleted = "Task {2} completed.";
 		/// <summary>Task {2} scheduled to TaskScheduler {0}.</summary>
@@ -1814,8 +1814,8 @@ namespace System
 		internal static string @NotSupported_CollectibleBoundNonCollectible = "A non-collectible assembly may not reference a collectible assembly.";
 		/// <summary>CreateInstance cannot be used with an object of type TypeBuilder.</summary>
 		internal static string @NotSupported_CreateInstanceWithTypeBuilder = "CreateInstance cannot be used with an object of type TypeBuilder.";
-		/// <summary>Only one DBNull instance may exist, and calls to DBNull deserialization methods are not allowed.</summary>
-		internal static string @NotSupported_DBNullSerial = "Only one DBNull instance may exist, and calls to DBNull deserialization methods are not allowed.";
+		/// <summary>Only one DBNull instance may exist, and calls to DBNull deserialisation methods are not allowed.</summary>
+		internal static string @NotSupported_DBNullSerial = "Only one DBNull instance may exist, and calls to DBNull deserialisation methods are not allowed.";
 		/// <summary>The invoked member is not supported in a dynamic assembly.</summary>
 		internal static string @NotSupported_DynamicAssembly = "The invoked member is not supported in a dynamic assembly.";
 		/// <summary>Wrong MethodAttributes or CallingConventions for DynamicMethod. Only public, static, standard supported</summary>
@@ -1876,8 +1876,8 @@ namespace System
 		internal static string @NotSupported_Reading = "accesser does not support reading.";
 		/// <summary>Collection is read-only.</summary>
 		internal static string @NotSupported_ReadOnlyCollection = "Collection is read-only.";
-		/// <summary>Cannot read resources that depend on serialization.</summary>
-		internal static string @NotSupported_ResourceObjectSerialization = "Cannot read resources that depend on serialization.";
+		/// <summary>Cannot read resources that depend on serialisation.</summary>
+		internal static string @NotSupported_ResourceObjectSerialisation = "Cannot read resources that depend on serialisation.";
 		/// <summary>SignalAndWait on a STA thread is not supported.</summary>
 		internal static string @NotSupported_SignalAndWaitSTAThread = "SignalAndWait on a STA thread is not supported.";
 		/// <summary>The string comparison type passed in is currently not supported.</summary>
@@ -1894,8 +1894,8 @@ namespace System
 		internal static string @NotSupported_TypeNotYetCreated = "The invoked member is not supported before the type is created.";
 		/// <summary>This operation is not supported for an UnmanagedMemoryStream created from a SafeBuffer.</summary>
 		internal static string @NotSupported_UmsSafeBuffer = "This operation is not supported for an UnmanagedMemoryStream created from a SafeBuffer.";
-		/// <summary>The UnitySerializationHolder object is designed to transmit information about other types and is not serializable itself.</summary>
-		internal static string @NotSupported_UnitySerHolder = "The UnitySerializationHolder object is designed to transmit information about other types and is not serializable itself.";
+		/// <summary>The UnitySerialisationHolder object is designed to transmit information about other types and is not serializable itself.</summary>
+		internal static string @NotSupported_UnitySerHolder = "The UnitySerialisationHolder object is designed to transmit information about other types and is not serializable itself.";
 		/// <summary>TypeCode '{0}' was not valid.</summary>
 		internal static string @NotSupported_UnknownTypeCode = "TypeCode '{0}' was not valid.";
 		/// <summary>WaitAll for multiple handles on a STA thread is not supported.</summary>
@@ -1976,18 +1976,18 @@ namespace System
 		internal static string @PlatformNotSupported_ArgIterator = "ArgIterator is not supported on this platform.";
 		/// <summary>COM Interop is not supported on this platform.</summary>
 		internal static string @PlatformNotSupported_ComInterop = "COM Interop is not supported on this platform.";
-		/// <summary>The named version of this synchronization primitive is not supported on this platform.</summary>
-		internal static string @PlatformNotSupported_NamedSynchronizationPrimitives = "The named version of this synchronization primitive is not supported on this platform.";
-		/// <summary>Wait operations on multiple wait handles including a named synchronization primitive are not supported on this platform.</summary>
-		internal static string @PlatformNotSupported_NamedSyncObjectWaitAnyWaitAll = "Wait operations on multiple wait handles including a named synchronization primitive are not supported on this platform.";
+		/// <summary>The named version of this synchronisation primitive is not supported on this platform.</summary>
+		internal static string @PlatformNotSupported_NamedSynchronisationPrimitives = "The named version of this synchronisation primitive is not supported on this platform.";
+		/// <summary>Wait operations on multiple wait handles including a named synchronisation primitive are not supported on this platform.</summary>
+		internal static string @PlatformNotSupported_NamedSyncObjectWaitAnyWaitAll = "Wait operations on multiple wait handles including a named synchronisation primitive are not supported on this platform.";
 		/// <summary>Locking/unlocking file regions is not supported on this platform. Use FileShare on the entire file instead.</summary>
 		internal static string @PlatformNotSupported_OSXFileLocking = "Locking/unlocking file regions is not supported on this platform. Use FileShare on the entire file instead.";
 		/// <summary>ReflectionOnly loading is not supported on this platform.</summary>
 		internal static string @PlatformNotSupported_ReflectionOnly = "ReflectionOnly loading is not supported on this platform.";
 		/// <summary>Remoting is not supported on this platform.</summary>
 		internal static string @PlatformNotSupported_Remoting = "Remoting is not supported on this platform.";
-		/// <summary>Secure binary serialization is not supported on this platform.</summary>
-		internal static string @PlatformNotSupported_SecureBinarySerialization = "Secure binary serialization is not supported on this platform.";
+		/// <summary>Secure binary serialisation is not supported on this platform.</summary>
+		internal static string @PlatformNotSupported_SecureBinarySerialisation = "Secure binary serialisation is not supported on this platform.";
 		/// <summary>Strong-name signing is not supported on this platform.</summary>
 		internal static string @PlatformNotSupported_StrongNameSigning = "Strong-name signing is not supported on this platform.";
 		/// <summary>This API is specific to the way in which Windows handles asynchronous I/O, and is not supported on this platform.</summary>
@@ -2067,51 +2067,51 @@ namespace System
 		/// <summary>The timeout must represent a value between -1 and Int32.MaxValue, inclusive.</summary>
 		internal static string @SemaphoreSlim_Wait_TimeoutWrong = "The timeout must represent a value between -1 and Int32.MaxValue, inclusive.";
 		/// <summary>Non existent ParameterInfo. Position bigger than member's parameters length.</summary>
-		internal static string @Serialization_BadParameterInfo = "Non existent ParameterInfo. Position bigger than member's parameters length.";
+		internal static string @Serialisation_BadParameterInfo = "Non existent ParameterInfo. Position bigger than member's parameters length.";
 		/// <summary>The value of the field '{0}' is invalid. The serialised data is corrupt.</summary>
-		internal static string @Serialization_CorruptField = "The value of the field '{0}' is invalid. The serialised data is corrupt.";
+		internal static string @Serialisation_CorruptField = "The value of the field '{0}' is invalid. The serialised data is corrupt.";
 		/// <summary>Invalid serialised DateTime data. Ticks must be between DateTime.MinValue.Ticks and DateTime.MaxValue.Ticks.</summary>
-		internal static string @Serialization_DateTimeTicksOutOfRange = "Invalid serialised DateTime data. Ticks must be between DateTime.MinValue.Ticks and DateTime.MaxValue.Ticks.";
+		internal static string @Serialisation_DateTimeTicksOutOfRange = "Invalid serialised DateTime data. Ticks must be between DateTime.MinValue.Ticks and DateTime.MaxValue.Ticks.";
 		/// <summary>Serializing delegates is not supported on this platform.</summary>
-		internal static string @Serialization_DelegatesNotSupported = "Serializing delegates is not supported on this platform.";
+		internal static string @Serialisation_DelegatesNotSupported = "Serializing delegates is not supported on this platform.";
 		/// <summary>Insufficient state to return the real object.</summary>
-		internal static string @Serialization_InsufficientState = "Insufficient state to return the real object.";
+		internal static string @Serialisation_InsufficientState = "Insufficient state to return the real object.";
 		/// <summary>An error occurred while deserializing the object. The serialised data is corrupt.</summary>
-		internal static string @Serialization_InvalidData = "An error occurred while deserializing the object. The serialised data is corrupt.";
+		internal static string @Serialisation_InvalidData = "An error occurred while deserializing the object. The serialised data is corrupt.";
 		/// <summary>The serialised data contained an invalid escape sequence '\\{0}'.</summary>
-		internal static string @Serialization_InvalidEscapeSequence = "The serialised data contained an invalid escape sequence '\\{0}'.";
-		/// <summary>OnDeserialization method was called while the object was not being deserialised.</summary>
-		internal static string @Serialization_InvalidOnDeser = "OnDeserialization method was called while the object was not being deserialised.";
+		internal static string @Serialisation_InvalidEscapeSequence = "The serialised data contained an invalid escape sequence '\\{0}'.";
+		/// <summary>OnDeserialisation method was called while the object was not being deserialised.</summary>
+		internal static string @Serialisation_InvalidOnDeser = "OnDeserialisation method was called while the object was not being deserialised.";
 		/// <summary>An IntPtr or UIntPtr with an eight byte value cannot be deserialised on a machine with a four byte word size.</summary>
-		internal static string @Serialization_InvalidPtrValue = "An IntPtr or UIntPtr with an eight byte value cannot be deserialised on a machine with a four byte word size.";
+		internal static string @Serialisation_InvalidPtrValue = "An IntPtr or UIntPtr with an eight byte value cannot be deserialised on a machine with a four byte word size.";
 		/// <summary>Only system-provided types can be passed to the GetUninitialisedObject method. '{0}' is not a valid instance of a type.</summary>
-		internal static string @Serialization_InvalidType = "Only system-provided types can be passed to the GetUninitialisedObject method. '{0}' is not a valid instance of a type.";
+		internal static string @Serialisation_InvalidType = "Only system-provided types can be passed to the GetUninitialisedObject method. '{0}' is not a valid instance of a type.";
 		/// <summary>The keys and values arrays have different sizes.</summary>
-		internal static string @Serialization_KeyValueDifferentSizes = "The keys and values arrays have different sizes.";
+		internal static string @Serialisation_KeyValueDifferentSizes = "The keys and values arrays have different sizes.";
 		/// <summary>Invalid serialised DateTime data. Unable to find 'ticks' or 'dateData'.</summary>
-		internal static string @Serialization_MissingDateTimeData = "Invalid serialised DateTime data. Unable to find 'ticks' or 'dateData'.";
+		internal static string @Serialisation_MissingDateTimeData = "Invalid serialised DateTime data. Unable to find 'ticks' or 'dateData'.";
 		/// <summary>The Keys for this Hashtable are missing.</summary>
-		internal static string @Serialization_MissingKeys = "The Keys for this Hashtable are missing.";
+		internal static string @Serialisation_MissingKeys = "The Keys for this Hashtable are missing.";
 		/// <summary>The values for this dictionary are missing.</summary>
-		internal static string @Serialization_MissingValues = "The values for this dictionary are missing.";
+		internal static string @Serialisation_MissingValues = "The values for this dictionary are missing.";
 		/// <summary>Serialised member does not have a ParameterInfo.</summary>
-		internal static string @Serialization_NoParameterInfo = "Serialised member does not have a ParameterInfo.";
+		internal static string @Serialisation_NoParameterInfo = "Serialised member does not have a ParameterInfo.";
 		/// <summary>Member '{0}' was not found.</summary>
-		internal static string @Serialization_NotFound = "Member '{0}' was not found.";
+		internal static string @Serialisation_NotFound = "Member '{0}' was not found.";
 		/// <summary>One of the serialised keys is null.</summary>
-		internal static string @Serialization_NullKey = "One of the serialised keys is null.";
+		internal static string @Serialisation_NullKey = "One of the serialised keys is null.";
 		/// <summary>Version value must be positive.</summary>
-		internal static string @Serialization_OptionalFieldVersionValue = "Version value must be positive.";
-		/// <summary>Cannot add the same member twice to a SerializationInfo object.</summary>
-		internal static string @Serialization_SameNameTwice = "Cannot add the same member twice to a SerializationInfo object.";
+		internal static string @Serialisation_OptionalFieldVersionValue = "Version value must be positive.";
+		/// <summary>Cannot add the same member twice to a SerialisationInfo object.</summary>
+		internal static string @Serialisation_SameNameTwice = "Cannot add the same member twice to a SerialisationInfo object.";
 		/// <summary>The serialised Capacity property of StringBuilder must be positive, less than or equal to MaxCapacity and greater than or equal to the String length.</summary>
-		internal static string @Serialization_StringBuilderCapacity = "The serialised Capacity property of StringBuilder must be positive, less than or equal to MaxCapacity and greater than or equal to the String length.";
+		internal static string @Serialisation_StringBuilderCapacity = "The serialised Capacity property of StringBuilder must be positive, less than or equal to MaxCapacity and greater than or equal to the String length.";
 		/// <summary>The serialised MaxCapacity property of StringBuilder must be positive and greater than or equal to the String length.</summary>
-		internal static string @Serialization_StringBuilderMaxCapacity = "The serialised MaxCapacity property of StringBuilder must be positive and greater than or equal to the String length.";
+		internal static string @Serialisation_StringBuilderMaxCapacity = "The serialised MaxCapacity property of StringBuilder must be positive and greater than or equal to the String length.";
 		/// <summary>Setter must have parameters.</summary>
 		internal static string @SetterHasNoParams = "Setter must have parameters.";
 		/// <summary>The calling thread does not hold the lock.</summary>
-		internal static string @SpinLock_Exit_SynchronizationLockException = "The calling thread does not hold the lock.";
+		internal static string @SpinLock_Exit_SynchronisationLockException = "The calling thread does not hold the lock.";
 		/// <summary>Thread tracking is disabled.</summary>
 		internal static string @SpinLock_IsHeldByCurrentThread = "Thread tracking is disabled.";
 		/// <summary>The timeout must be a value between -1 and Int32.MaxValue, inclusive.</summary>
@@ -2180,8 +2180,8 @@ namespace System
 		internal static string @TaskExceptionHolder_UnknownExceptionType = "(Internal)Expected an Exception or an IEnumerable<Exception>";
 		/// <summary>ExecuteTask may not be called for a task which was previously queued to a different TaskScheduler.</summary>
 		internal static string @TaskScheduler_ExecuteTask_WrongTaskScheduler = "ExecuteTask may not be called for a task which was previously queued to a different TaskScheduler.";
-		/// <summary>The current SynchronizationContext may not be used as a TaskScheduler.</summary>
-		internal static string @TaskScheduler_FromCurrentSynchronizationContext_NoCurrent = "The current SynchronizationContext may not be used as a TaskScheduler.";
+		/// <summary>The current SynchronisationContext may not be used as a TaskScheduler.</summary>
+		internal static string @TaskScheduler_FromCurrentSynchronisationContext_NoCurrent = "The current SynchronisationContext may not be used as a TaskScheduler.";
 		/// <summary>The TryExecuteTaskInline call to the underlying scheduler succeeded, but the task body was not invoked.</summary>
 		internal static string @TaskScheduler_InconsistentStateAfterTryExecuteTaskInline = "The TryExecuteTaskInline call to the underlying scheduler succeeded, but the task body was not invoked.";
 		/// <summary>An exception was thrown by a TaskScheduler.</summary>
@@ -2217,9 +2217,9 @@ namespace System
 		/// <summary>The time zone ID '{0}' was not found on the local computer.</summary>
 		internal static string @TimeZoneNotFound_MissingData = "The time zone ID '{0}' was not found on the local computer.";
 		/// <summary>Type constructor threw an exception.</summary>
-		internal static string @TypeInitialization_Default = "Type constructor threw an exception.";
+		internal static string @TypeInitialisation_Default = "Type constructor threw an exception.";
 		/// <summary>The type initialiser for '{0}' threw an exception.</summary>
-		internal static string @TypeInitialization_Type = "The type initialiser for '{0}' threw an exception.";
+		internal static string @TypeInitialisation_Type = "The type initialiser for '{0}' threw an exception.";
 		/// <summary>Could not resolve nested type '{0}' in type "{1}'.</summary>
 		internal static string @TypeLoad_ResolveNestedType = "Could not resolve nested type '{0}' in type '{1}'.";
 		/// <summary>Could not resolve type '{0}'.</summary>
@@ -2257,17 +2257,17 @@ namespace System
 		/// <summary>Write lock may not be acquired with read lock held. This pattern is prone to deadlocks. Please ensure that read locks are released before taking a write lock. If an upgrade is necessary, use an upgrade lock in place of the read lock.</summary>
 		internal static string @LockRecursionException_WriteAfterReadNotAllowed = "Write lock may not be acquired with read lock held. This pattern is prone to deadlocks. Please ensure that read locks are released before taking a write lock. If an upgrade is necessary, use an upgrade lock in place of the read lock.";
 		/// <summary>The upgradeable lock is being released without being held.</summary>
-		internal static string @SynchronizationLockException_MisMatchedUpgrade = "The upgradeable lock is being released without being held.";
+		internal static string @SynchronisationLockException_MisMatchedUpgrade = "The upgradeable lock is being released without being held.";
 		/// <summary>The read lock is being released without being held.</summary>
-		internal static string @SynchronizationLockException_MisMatchedRead = "The read lock is being released without being held.";
+		internal static string @SynchronisationLockException_MisMatchedRead = "The read lock is being released without being held.";
 		/// <summary>The lock is being disposed while still being used. It either is being held by a thread and/or has active waiters waiting to acquire the lock.</summary>
-		internal static string @SynchronizationLockException_IncorrectDispose = "The lock is being disposed while still being used. It either is being held by a thread and/or has active waiters waiting to acquire the lock.";
+		internal static string @SynchronisationLockException_IncorrectDispose = "The lock is being disposed while still being used. It either is being held by a thread and/or has active waiters waiting to acquire the lock.";
 		/// <summary>Upgradeable lock may not be acquired with read lock held.</summary>
 		internal static string @LockRecursionException_UpgradeAfterReadNotAllowed = "Upgradeable lock may not be acquired with read lock held.";
 		/// <summary>Upgradeable lock may not be acquired with write lock held in this mode. Acquiring Upgradeable lock gives the ability to read along with an option to upgrade to a writer.</summary>
 		internal static string @LockRecursionException_UpgradeAfterWriteNotAllowed = "Upgradeable lock may not be acquired with write lock held in this mode. Acquiring Upgradeable lock gives the ability to read along with an option to upgrade to a writer.";
 		/// <summary>The write lock is being released without being held.</summary>
-		internal static string @SynchronizationLockException_MisMatchedWrite = "The write lock is being released without being held.";
+		internal static string @SynchronisationLockException_MisMatchedWrite = "The write lock is being released without being held.";
 		/// <summary>This method is not supported on signature types.</summary>
 		internal static string @NotSupported_SignatureType = "This method is not supported on signature types.";
 		/// <summary>Release all references before disposing this instance.</summary>
@@ -2326,10 +2326,10 @@ namespace System
 		internal static string @Argument_StructArrayTooLarge = "Array size exceeds addressing limitations.";
 		/// <summary>ArrayWithOffset: offset exceeds array size.</summary>
 		internal static string @IndexOutOfRange_ArrayWithOffset = "ArrayWithOffset: offset exceeds array size.";
-		/// <summary>An action was attempted during deserialization that could lead to a security vulnerability. The action has been aborted.</summary>
-		internal static string @Serialization_DangerousDeserialization = "An action was attempted during deserialization that could lead to a security vulnerability. The action has been aborted.";
-		/// <summary>An action was attempted during deserialization that could lead to a security vulnerability. The action has been aborted. To allow the action, set the '{0}' AppContext switch to true.</summary>
-		internal static string @Serialization_DangerousDeserialization_Switch = "An action was attempted during deserialization that could lead to a security vulnerability. The action has been aborted. To allow the action, set the '{0}' AppContext switch to true.";
+		/// <summary>An action was attempted during deserialisation that could lead to a security vulnerability. The action has been aborted.</summary>
+		internal static string @Serialisation_DangerousDeserialisation = "An action was attempted during deserialisation that could lead to a security vulnerability. The action has been aborted.";
+		/// <summary>An action was attempted during deserialisation that could lead to a security vulnerability. The action has been aborted. To allow the action, set the '{0}' AppContext switch to true.</summary>
+		internal static string @Serialisation_DangerousDeserialisation_Switch = "An action was attempted during deserialisation that could lead to a security vulnerability. The action has been aborted. To allow the action, set the '{0}' AppContext switch to true.";
 		/// <summary>The startup hook simple assembly name '{0}' is invalid. It must be a valid assembly name and it may not contain directory separator, space or comma characters and must not end with '.dll'.</summary>
 		internal static string @Argument_InvalidStartupHookSimpleAssemblyName = "The startup hook simple assembly name '{0}' is invalid. It must be a valid assembly name and it may not contain directory separator, space or comma characters and must not end with '.dll'.";
 		/// <summary>Startup hook assembly '{0}' failed to load. See inner exception for details.</summary>
@@ -2404,8 +2404,8 @@ namespace System
 		internal static string @Arg_MustBeHalf = "Object must be of type Half.";
 		/// <summary>Object must be of type Rune.</summary>
 		internal static string @Arg_MustBeRune = "Object must be of type Rune.";
-		/// <summary>BinaryFormatter serialization and deserialization are disabled within this application. See https://aka.ms/binaryformatter for more information.</summary>
-		internal static string @BinaryFormatter_SerializationDisallowed = "BinaryFormatter serialization and deserialization are disabled within this application. See https://aka.ms/binaryformatter for more information.";
+		/// <summary>BinaryFormatter serialisation and deserialisation are disabled within this application. See https://aka.ms/binaryformatter for more information.</summary>
+		internal static string @BinaryFormatter_SerialisationDisallowed = "BinaryFormatter serialisation and deserialisation are disabled within this application. See https://aka.ms/binaryformatter for more information.";
 		/// <summary>CodeBase is not supported on assemblies loaded from a single-file bundle.</summary>
 		internal static string @NotSupported_CodeBase = "CodeBase is not supported on assemblies loaded from a single-file bundle.";
 		/// <summary>Cannot dynamically create an instance of type '{0}'. Reason: {1}</summary>
@@ -2507,7 +2507,7 @@ namespace System
 		/// <summary>Attempted to load a type that was not created during ahead of time compilation.</summary>
 		internal static string @Arg_UnavailableTypeLoadException = "Attempted to load a type that was not created during ahead of time compilation.";
 		/// <summary>A type initialiser threw an exception. To determine which type, inspect the InnerException's StackTrace property.</summary>
-		internal static string @TypeInitialization_Type_NoTypeAvailable = "A type initialiser threw an exception. To determine which type, inspect the InnerException's StackTrace property.";
+		internal static string @TypeInitialisation_Type_NoTypeAvailable = "A type initialiser threw an exception. To determine which type, inspect the InnerException's StackTrace property.";
 		/// <summary>The given assembly name or codebase was invalid</summary>
 		internal static string @InvalidAssemblyName = "The given assembly name or codebase was invalid";
 		/// <summary>Invalid assembly public key.</summary>

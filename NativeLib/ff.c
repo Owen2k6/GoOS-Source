@@ -3081,7 +3081,7 @@ FRESULT find_volume (	/* FR_OK(0): successful, !=0: any error occurred */
 	fs->fs_type = 0;					/* Clear the filesystem object */
 	fs->pdrv = LD2PD(vol);				/* Bind the logical drive and a physical drive */
 	stat = disk_initialise(fs->pdrv);	/* Initialise the physical drive */
-	if (stat & STA_NOINIT) { 			/* Check if the initialization succeeded */
+	if (stat & STA_NOINIT) { 			/* Check if the initialisation succeeded */
 		return FR_NOT_READY;			/* Failed to initialise due to no medium or hard error */
 	}
 	if (!FF_FS_READONLY && mode && (stat & STA_PROTECT)) { /* Check disk write protection if needed */

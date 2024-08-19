@@ -63,7 +63,7 @@ namespace Internal.Runtime
         IsDynamicTypeFlag = 0x0008,
 
         /// <summary>
-        /// This EEType represents a type which requires finalization.
+        /// This EEType represents a type which requires finalisation.
         /// </summary>
         HasFinalizerFlag = 0x0010,
 

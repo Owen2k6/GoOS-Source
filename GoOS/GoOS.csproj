@@ -17,7 +17,7 @@
 		<EntryPointSymbol>Entry</EntryPointSymbol>
 		<LinkerSubsystem>NATIVE</LinkerSubsystem>
 		<!--Make the code faster!-->
-		<IlcOptimizationPreference>Size</IlcOptimizationPreference>
+		<IlcOptimisationPreference>Size</IlcOptimisationPreference>
 	</PropertyGroup>
 
 	<Target Name="PrepareForILLink">

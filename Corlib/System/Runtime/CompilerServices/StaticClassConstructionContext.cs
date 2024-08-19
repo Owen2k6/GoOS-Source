@@ -11,7 +11,7 @@ namespace System.Runtime.CompilerServices
         // binder/runtime.
         public IntPtr cctorMethodAddress;
 
-        // Initialization state of the class. This is initialised to 0. Every time managed code checks the
+        // Initialisation state of the class. This is initialised to 0. Every time managed code checks the
         // cctor state the runtime will call the classlibrary's CheckStaticClassConstruction with this context
         // structure unless initialised == 1. This check is specific to allow the classlibrary to store more
         // than a binary state for each cctor if it so desires.

@@ -16,7 +16,7 @@
 
 
 #define FF_FS_minimise	0
-/* This option defines minimization level to remove some basic API functions.
+/* This option defines minimisation level to remove some basic API functions.
 /
 /   0: All basic functions are enabled.
 /   1: f_stat(), f_getfree(), f_unlink(), f_mkdir(), f_truncate() and f_rename()
@@ -252,7 +252,7 @@
 /  to the same volume is under control of this function.
 /
 /   0: Disable re-entrancy. FF_FS_TIMEOUT and FF_SYNC_t have no effect.
-/   1: Enable re-entrancy. Also user provided synchronization handlers,
+/   1: Enable re-entrancy. Also user provided synchronisation handlers,
 /      ff_req_grant(), ff_rel_grant(), ff_del_syncobj() and ff_cre_syncobj()
 /      function, must be added to the project. Samples are available in
 /      option/syscall.c.

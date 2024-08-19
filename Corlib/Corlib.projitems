@@ -45,7 +45,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)System\Diagnostics\Process.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)System\Diagnostics\Stopwatch.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)System\Double.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)System\Drawing\Color.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)System\Drawing\Colour.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)System\Drawing\Image.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)System\Drawing\Point.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)System\Drawing\Rectangle.cs" />
@@ -57,8 +57,8 @@
     <Compile Include="$(MSBuildThisFileDirectory)System\EventHandler.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)System\FlagsAttribute.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)System\Func.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)System\Globalization\CharUnicodeInfo.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)System\Globalization\CultureInfo.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)System\Globalisation\CharUnicodeInfo.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)System\Globalisation\CultureInfo.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)System\Int16.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)System\Int32.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)System\Int64.cs" />

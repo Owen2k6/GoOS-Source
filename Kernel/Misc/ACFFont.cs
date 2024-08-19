@@ -9,7 +9,7 @@ namespace MOOS.Misc
     internal unsafe class ACFFont
     {
         /// <summary>
-        /// Initializes a new ACF (Advanced Cosmos Font Format) font face.
+        /// Initialises a new ACF (Advanced Cosmos Font Format) font face.
         /// </summary>
         /// <param name="stream">The data of the ACF font file.</param>
         public ACFFont(byte[] byteArray)
@@ -431,7 +431,7 @@ namespace MOOS.Misc
     internal class Glyph
     {
         /// <summary>
-        /// Initializes a new glyph.
+        /// Initialises a new glyph.
         /// </summary>
         /// <param name="left">The horizontal offset of the glyph's bitmap.</param>
         /// <param name="top">The vertical offset of the glyph's bitmap.</param>
@@ -449,7 +449,7 @@ namespace MOOS.Misc
         }
 
         /// <summary>
-        /// Initializes a new glyph.
+        /// Initialises a new glyph.
         /// </summary>
         /// <param name="left">The horizontal offset of the glyph's bitmap.</param>
         /// <param name="top">The vertical offset of the glyph's bitmap.</param>

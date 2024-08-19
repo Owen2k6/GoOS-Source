@@ -1571,7 +1571,7 @@ Check the implementation of lodepng_error_text to see the meaning of each code.
 
 It is not recommended to use the numerical values to programmatically make
 different decisions based on error types as the numbers are not guaranteed to
-stay backwards compatible. They are for human consumption only. Programmatically
+stay backwards compatible. They are for human consumption only. Programmematically
 only 0 or non-0 matter.
 
 

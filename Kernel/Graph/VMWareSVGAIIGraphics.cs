@@ -14,12 +14,12 @@ namespace MOOS.Graph
         {
             svga = new VMWareSVGAII();
             svga.SetMode(Width,Height);
-            Framebuffer.Initialize(Width, Height, svga.Video_Memory);
+            Framebuffer.Initialise(Width, Height, svga.Video_Memory);
             base.VideoMemory = Framebuffer.FirstBuffer;
 
 #if HasGUI
             //Image from unsplash
-            Program.Wallpaper = new PNG(File.ReadAllBytes("Images/Wallpaper.png"));
+            Programme.Wallpaper = new PNG(File.ReadAllBytes("Images/Wallpaper.png"));
 #endif
         }
 

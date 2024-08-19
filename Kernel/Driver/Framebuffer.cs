@@ -61,7 +61,7 @@ namespace MOOS
             if(Graphics != null) Graphics.Update();
         }
 
-        public static void Initialize(ushort XRes, ushort YRes,uint* FB)
+        public static void Initialise(ushort XRes, ushort YRes,uint* FB)
         {
             Width = XRes;
             Height = YRes;

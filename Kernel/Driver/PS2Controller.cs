@@ -2,9 +2,9 @@
 {
     public static class PS2Controller
     {
-        public static void Initialize()
+        public static void Initialise()
         {
-            PS2Keyboard.Initialize();
+            PS2Keyboard.Initialise();
             PS2Mouse.Initialise();
         }
     }

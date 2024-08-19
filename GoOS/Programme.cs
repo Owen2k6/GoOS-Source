@@ -13,7 +13,7 @@ using GoOS;
 using Control = System.Windows.Forms.Control;
 using GoOS.GUI.Apps;
 
-unsafe class Program
+unsafe class Programme
 {
     static void Main() { }
 
@@ -55,9 +55,9 @@ unsafe class Program
     {
         Console.Clear();
 
-        Hub.Initialize();
-        HID.Initialize();
-        EHCI.Initialize();
+        Hub.Initialise();
+        HID.Initialise();
+        EHCI.Initialise();
 
         if (HID.Mouse != null)
         {

@@ -4,7 +4,7 @@ namespace MOOS
     {
         public static void Enable()
         {
-            //Initialize PIC
+            //Initialise PIC
             Native.Out8(0x20, 0x11);
             Native.Out8(0xA0, 0x11);
             Native.Out8(0x21, 0x20);
@@ -20,7 +20,7 @@ namespace MOOS
 
         public static void Disable()
         {
-            //Initialize PIC
+            //Initialise PIC
             Native.Out8(0x20, 0x11);
             Native.Out8(0xA0, 0x11);
             Native.Out8(0x21, 0x20);

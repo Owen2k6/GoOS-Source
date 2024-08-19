@@ -8,7 +8,7 @@ namespace MOOS.Driver
 {
     public static unsafe class HID
     {
-        public static void Initialize() 
+        public static void Initialise() 
         {
             Mouse = null;
             Keyboard = null;
@@ -69,21 +69,21 @@ namespace MOOS.Driver
             }
         }
 
-        public static void Initialize(USBDevice device)
+        public static void Initialise(USBDevice device)
         {
             if (device.Protocol == 1)
             {
                 USB.NumDevice++;
 
                 Console.WriteLine($"[HID] USB Keyboard at port:{device.Address}");
-                InitializeKeyboard(device);
+                InitialiseKeyboard(device);
             }
             else if (device.Protocol == 2)
             {
                 USB.NumDevice++;
 
                 Console.WriteLine($"[HID] USB Mouse at port:{device.Address}");
-                InitializeMouse(device);
+                InitialiseMouse(device);
             }
         }
 
@@ -92,12 +92,12 @@ namespace MOOS.Driver
         public static USBDevice Mouse;
         public static USBDevice Keyboard;
 
-        static void InitializeMouse(USBDevice device)
+        static void InitialiseMouse(USBDevice device)
         {
             Mouse = device;
         }
 
-        static void InitializeKeyboard(USBDevice device)
+        static void InitialiseKeyboard(USBDevice device)
         {
             Keyboard = device;
             ConsoleKeys = new ConsoleKey[]

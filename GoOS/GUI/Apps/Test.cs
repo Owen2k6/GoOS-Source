@@ -10,7 +10,7 @@ namespace GoOS.GUI.Apps
             Window newWin = new Window(400, 400, 150, 100, "Test");
             windows.Add(newWin);
 
-            Program.wm.addWindow(newWin);
+            Programme.wm.addWindow(newWin);
         }
 
         public override void Execute()

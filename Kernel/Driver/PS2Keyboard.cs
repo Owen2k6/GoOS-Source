@@ -16,7 +16,7 @@ namespace MOOS
         private static char[] keyCharsShift;
         private static ConsoleKey[] keys;
 
-        public static bool Initialize()
+        public static bool Initialise()
         {
             keyChars = new char[]
             {

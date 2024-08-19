@@ -19,9 +19,9 @@ namespace MOOS.Misc
         [RuntimeExport("Entry")]
         public static void Entry(MultibootInfo* Info, IntPtr Modules, IntPtr Trampoline)
         {
-            Allocator.Initialize((IntPtr)0x20000000);
+            Allocator.Initialise((IntPtr)0x20000000);
 
-            StartupCodeHelpers.InitializeModules(Modules);
+            StartupCodeHelpers.InitialiseModules(Modules);
 
             PageTable.Initialise();
 
@@ -30,7 +30,7 @@ namespace MOOS.Misc
             VBEInfo* info = (VBEInfo*)Info->VBEInfo;
             if (info->PhysBase != 0)
             {
-                Framebuffer.Initialize(info->ScreenWidth, info->ScreenHeight, (uint*)info->PhysBase);
+                Framebuffer.Initialise(info->ScreenWidth, info->ScreenHeight, (uint*)info->PhysBase);
                 Framebuffer.Graphics.Clear(0x0);
             }
             else 
@@ -41,43 +41,43 @@ namespace MOOS.Misc
             Console.Setup();
             IDT.Disable();
             GDT.Initialise();
-            IDT.Initialize();
-            Interrupts.Initialize();
+            IDT.Initialise();
+            Interrupts.Initialise();
             IDT.Enable();
 
             SSE.enable_sse();
             //AVX.init_avx();
 
-            ACPI.Initialize();
+            ACPI.Initialise();
 #if UseAPIC
             PIC.Disable();
-            LocalAPIC.Initialize();
-            IOAPIC.Initialize();
+            LocalAPIC.Initialise();
+            IOAPIC.Initialise();
 #else
         PIC.Enable();
 #endif
-            Timer.Initialize();
+            Timer.Initialise();
 
-            Keyboard.Initialize();
+            Keyboard.Initialise();
 
             Serial.Initialise();
 
-            PS2Controller.Initialize();
-            VMwareTools.Initialize();
+            PS2Controller.Initialise();
+            VMwareTools.Initialise();
 
             SMBIOS.Initialise();
 
             PCI.Initialise();
 
-            IDE.Initialize();
-            SATA.Initialize();
+            IDE.Initialise();
+            SATA.Initialise();
 
-            ThreadPool.Initialize();
+            ThreadPool.Initialise();
 
             Console.WriteLine($"[SMP] Trampoline: 0x{((ulong)Trampoline).ToString("x2")}");
             Native.Movsb((byte*)SMP.Trampoline, (byte*)Trampoline, 512);
 
-            SMP.Initialize((uint)SMP.Trampoline);
+            SMP.Initialise((uint)SMP.Trampoline);
 
             //Only fixed size vhds are supported!
             Console.Write("[Initrd] Initrd: 0x");

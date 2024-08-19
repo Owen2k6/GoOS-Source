@@ -181,7 +181,7 @@ namespace System
 		public T1 Item1;
 
 		/// <summary>
-		/// Initializes a new instance of the <see cref="ValueTuple{T1}"/> value type.
+		/// Initialises a new instance of the <see cref="ValueTuple{T1}"/> value type.
 		/// </summary>
 		/// <param name="item1">The value of the tuple's first component.</param>
 		public ValueTuple(T1 item1)
@@ -217,7 +217,7 @@ namespace System
 		public T2 Item2;
 
 		/// <summary>
-		/// Initializes a new instance of the <see cref="ValueTuple{T1, T2}"/> value type.
+		/// Initialises a new instance of the <see cref="ValueTuple{T1, T2}"/> value type.
 		/// </summary>
 		/// <param name="item1">The value of the tuple's first component.</param>
 		/// <param name="item2">The value of the tuple's second component.</param>
@@ -269,7 +269,7 @@ namespace System
 		public T3 Item3;
 
 		/// <summary>
-		/// Initializes a new instance of the <see cref="ValueTuple{T1, T2, T3}"/> value type.
+		/// Initialises a new instance of the <see cref="ValueTuple{T1, T2, T3}"/> value type.
 		/// </summary>
 		/// <param name="item1">The value of the tuple's first component.</param>
 		/// <param name="item2">The value of the tuple's second component.</param>
@@ -329,7 +329,7 @@ namespace System
 		public T4 Item4;
 
 		/// <summary>
-		/// Initializes a new instance of the <see cref="ValueTuple{T1, T2, T3, T4}"/> value type.
+		/// Initialises a new instance of the <see cref="ValueTuple{T1, T2, T3, T4}"/> value type.
 		/// </summary>
 		/// <param name="item1">The value of the tuple's first component.</param>
 		/// <param name="item2">The value of the tuple's second component.</param>
@@ -397,7 +397,7 @@ namespace System
 		public T5 Item5;
 
 		/// <summary>
-		/// Initializes a new instance of the <see cref="ValueTuple{T1, T2, T3, T4, T5}"/> value type.
+		/// Initialises a new instance of the <see cref="ValueTuple{T1, T2, T3, T4, T5}"/> value type.
 		/// </summary>
 		/// <param name="item1">The value of the tuple's first component.</param>
 		/// <param name="item2">The value of the tuple's second component.</param>
@@ -473,7 +473,7 @@ namespace System
 		public T6 Item6;
 
 		/// <summary>
-		/// Initializes a new instance of the <see cref="ValueTuple{T1, T2, T3, T4, T5, T6}"/> value type.
+		/// Initialises a new instance of the <see cref="ValueTuple{T1, T2, T3, T4, T5, T6}"/> value type.
 		/// </summary>
 		/// <param name="item1">The value of the tuple's first component.</param>
 		/// <param name="item2">The value of the tuple's second component.</param>
@@ -561,7 +561,7 @@ namespace System
 		public T7 Item7;
 
 		/// <summary>
-		/// Initializes a new instance of the <see cref="ValueTuple{T1, T2, T3, T4, T5, T6, T7}"/> value type.
+		/// Initialises a new instance of the <see cref="ValueTuple{T1, T2, T3, T4, T5, T6, T7}"/> value type.
 		/// </summary>
 		/// <param name="item1">The value of the tuple's first component.</param>
 		/// <param name="item2">The value of the tuple's second component.</param>
@@ -655,7 +655,7 @@ namespace System
 		public TRest Rest;
 
 		/// <summary>
-		/// Initializes a new instance of the <see cref="ValueTuple{T1, T2, T3, T4, T5, T6, T7, TRest}"/> value type.
+		/// Initialises a new instance of the <see cref="ValueTuple{T1, T2, T3, T4, T5, T6, T7, TRest}"/> value type.
 		/// </summary>
 		/// <param name="item1">The value of the tuple's first component.</param>
 		/// <param name="item2">The value of the tuple's second component.</param>

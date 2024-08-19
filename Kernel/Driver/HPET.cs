@@ -23,7 +23,7 @@ namespace MOOS.Driver
             }
         }
 
-        public static void Initialize()
+        public static void Initialise()
         {
             if (ACPI.HPET == null) 
             {
@@ -36,7 +36,7 @@ namespace MOOS.Driver
             WriteRegister(0x10, 0);
             WriteRegister(0xF0, 0);
             WriteRegister(0x10, 1);
-            Console.WriteLine("[HPET] HPET Initialized");
+            Console.WriteLine("[HPET] HPET Initialised");
         }
 
         public static void WriteRegister(ulong reg,ulong value)

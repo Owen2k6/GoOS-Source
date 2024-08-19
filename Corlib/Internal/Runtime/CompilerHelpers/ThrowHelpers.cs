@@ -8,9 +8,9 @@ namespace Internal.Runtime.CompilerHelpers
 		[DllImport("Error")]
 		private static extern void Error(string s, bool skippable = false);
 
-		public static void ThrowInvalidProgramExceptionWithArgument(ExceptionStringID id, string methodName)
+		public static void ThrowInvalidProgrammeExceptionWithArgument(ExceptionStringID id, string methodName)
 		{
-			Error($"Invalid Program Exception With Argument: {methodName}", true);
+			Error($"Invalid Programme Exception With Argument: {methodName}", true);
 		}
 
 		public static void ThrowOverflowException()
@@ -88,14 +88,14 @@ namespace Internal.Runtime.CompilerHelpers
 			Error($"File Not Found Exception: {fileName}", true);
 		}
 
-		public static void ThrowInvalidProgramException()
+		public static void ThrowInvalidProgrammeException()
 		{
-			Error($"Invalid Program Exception", true);
+			Error($"Invalid Programme Exception", true);
 		}
 
-		public static void ThrowInvalidProgramException(ExceptionStringID id, object method)
+		public static void ThrowInvalidProgrammeException(ExceptionStringID id, object method)
 		{
-			Error($"Invalid Program Exception", true);
+			Error($"Invalid Programme Exception", true);
 		}
 
 		public static void ThrowBadImageFormatException()

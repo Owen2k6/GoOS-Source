@@ -73,7 +73,7 @@ namespace GoOS.GUI
                         {
                             for (int y = 0; y < 19; y++)
                             {
-                                uint colour = Program.ScafellPike.GetPixel(oldMouseX + x, oldMouseY + y);
+                                uint colour = Programme.ScafellPike.GetPixel(oldMouseX + x, oldMouseY + y);
                                 g.DrawPoint(oldMouseX + x, oldMouseY + y, colour);
                             }
                         }
@@ -104,13 +104,13 @@ namespace GoOS.GUI
 
                     //g.FillRectangle(window.X, window.Y, window.Width, 21, 0xFF7F7F7F);
 
-                    for (int ii = 0; ii < window.Width; ii++) g.DrawImage(window.X + ii, window.Y, Program.WindowbarGradient, false);
+                    for (int ii = 0; ii < window.Width; ii++) g.DrawImage(window.X + ii, window.Y, Programme.WindowbarGradient, false);
 
-                    Program.lg12.DrawString(window.X + (window.Width / 2) - (Program.lg12.MeasureString(window.Title) / 2), window.Y + (26 / 2) - (Program.lg12.MeasureStringVert(window.Title) / 2), window.Title, 0xFFFFFFFF, g);
+                    Programme.lg12.DrawString(window.X + (window.Width / 2) - (Programme.lg12.MeasureString(window.Title) / 2), window.Y + (26 / 2) - (Programme.lg12.MeasureStringVert(window.Title) / 2), window.Title, 0xFFFFFFFF, g);
 
-                    //g.DrawImage(window.X + 5, window.Y + (26 / 2) - (Program.WindowCloseButton.Height / 2), Program.WindowCloseButton);
-                    //g.DrawImage(window.X + 20, window.Y + (26 / 2) - (Program.WindowMinButton.Height / 2), Program.WindowMinButton);
-                    //g.DrawImage(window.X + 35, window.Y + (26 / 2) - (Program.WindowMaxButton.Height / 2), Program.WindowMaxButton);
+                    //g.DrawImage(window.X + 5, window.Y + (26 / 2) - (Programme.WindowCloseButton.Height / 2), Programme.WindowCloseButton);
+                    //g.DrawImage(window.X + 20, window.Y + (26 / 2) - (Programme.WindowMinButton.Height / 2), Programme.WindowMinButton);
+                    //g.DrawImage(window.X + 35, window.Y + (26 / 2) - (Programme.WindowMaxButton.Height / 2), Programme.WindowMaxButton);
 
                     window.Update = false;
                 }
@@ -124,22 +124,22 @@ namespace GoOS.GUI
             if (!mouseHandled) 
             {
                 int offset = 0;
-                if (oldMouseY + 19 > Program.ScafellPike.Height) offset = oldMouseY + 19 - Program.ScafellPike.Height;
+                if (oldMouseY + 19 > Programme.ScafellPike.Height) offset = oldMouseY + 19 - Programme.ScafellPike.Height;
 
                 for (int x = 0; x < 12; x++)
                 {
                     for (int y = 0; y < 19 - offset; y++) 
                     {
-                        uint colour = Program.ScafellPike.GetPixel(oldMouseX + x, oldMouseY + y);
+                        uint colour = Programme.ScafellPike.GetPixel(oldMouseX + x, oldMouseY + y);
                         g.DrawPoint(oldMouseX + x, oldMouseY + y, colour);
                     }
                 }
             }
 
-            g.DrawImage(Program.MouseX, Program.MouseY, Program.mouse);
+            g.DrawImage(Programme.MouseX, Programme.MouseY, Programme.mouse);
 
-            oldMouseX = Program.MouseX;
-            oldMouseY = Program.MouseY;
+            oldMouseX = Programme.MouseX;
+            oldMouseY = Programme.MouseY;
         }
     }
 }

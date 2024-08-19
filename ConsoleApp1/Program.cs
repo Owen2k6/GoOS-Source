@@ -3,7 +3,7 @@ using System.Runtime.InteropServices;
 
 namespace ConsoleApp1
 {
-    static unsafe class Program
+    static unsafe class Programme
     {
         [DllImport("SayHello")]
         public static extern void SayHello();

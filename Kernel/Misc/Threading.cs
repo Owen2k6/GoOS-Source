@@ -89,7 +89,7 @@ namespace MOOS.Misc
     internal static unsafe class ThreadPool
     {
         public static List<Thread> Threads;
-        public static bool Initialized = false;
+        public static bool Initialised = false;
         public static bool Locked = false;
         public static long Locker = 0;
 
@@ -105,7 +105,7 @@ namespace MOOS.Misc
             }
         }
 
-        public static void Initialize()
+        public static void Initialise()
         {
             Native.Cli();
             //Bootstrap CPU
@@ -117,13 +117,13 @@ namespace MOOS.Misc
                 Indexs = new int[size + 1];
 
                 Locked = false;
-                Initialized = false;
+                Initialised = false;
                 Threads = new();
                 //At least a thread for each CPU to make Thread Pool work
                 var t = new Thread(&IdleThread);
                 t.IsIdleThread = true;
                 t.Start(0);
-                Initialized = true;
+                Initialised = true;
             }
             //Application CPU
             else
@@ -173,7 +173,7 @@ namespace MOOS.Misc
 
         private static int[] Indexs;
 
-        public static bool CanLock => Unsafe.As<bool, ulong>(ref Initialized);
+        public static bool CanLock => Unsafe.As<bool, ulong>(ref Initialised);
 
         public static void Lock() 
         {
@@ -197,7 +197,7 @@ namespace MOOS.Misc
 
         public static void Schedule(IDT.IDTStackGeneric* stack)
         {
-            if (!Initialized) return;
+            if (!Initialised) return;
 
             //Lock all processors except locker CPU
             if (Locked && Locker != SMP.ThisCPU)

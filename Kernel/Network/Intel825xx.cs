@@ -23,7 +23,7 @@ namespace MOOS
         const int NumRX = 32;
         const int NumTX = 32;
 
-        public static void Initialize()
+        public static void Initialise()
         {
             PCIDevice device = null;
 

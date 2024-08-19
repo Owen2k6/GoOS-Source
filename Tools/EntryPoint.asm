@@ -197,8 +197,8 @@ struc NTHeader
         .MajorLinkerVersion: resb 1
         .MinorLinkerVersion: resb 1
         .SizeOfCode: resb 4
-        .SizeOfInitializedData: resb 4
-        .SizeOfUninitializedData: resb 4
+        .SizeOfinitialisedData: resb 4
+        .SizeOfUninitialisedData: resb 4
         .AddressOfEntryPoint: resb 4
         .BaseOfCode: resb 4
         .ImageBase: resb 8

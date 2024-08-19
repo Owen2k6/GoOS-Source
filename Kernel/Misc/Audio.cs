@@ -16,7 +16,7 @@ namespace MOOS.Misc
 
         public static bool CanTake;
 
-        public static void Initialize() 
+        public static void Initialise() 
         {
             CanTake = true;
             HasAudioDevice = false;

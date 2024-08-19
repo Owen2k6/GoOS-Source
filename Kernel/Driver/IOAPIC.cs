@@ -12,7 +12,7 @@ namespace MOOS.Driver
         private const int IOAPICARB = 0x02;
         private const int IOREDTBL = 0x10;
 
-        public static void Initialize()
+        public static void Initialise()
         {
             if (ACPI.IO_APIC == null)
             {
@@ -27,7 +27,7 @@ namespace MOOS.Driver
             {
                 SetEntry((byte)i, 1 << 16);
             }
-            Console.WriteLine("[I/O APIC] I/O APIC Initialized");
+            Console.WriteLine("[I/O APIC] I/O APIC Initialised");
         }
 
         public static uint In(byte reg)

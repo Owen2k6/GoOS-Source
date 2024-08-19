@@ -62,7 +62,7 @@ namespace MOOS
 
         public static delegate*<byte*, int, void> Sender;
 
-        public static void Initialize()
+        public static void Initialise()
         {
             NETv4.IP = default;
             NETv4.Mask = default;

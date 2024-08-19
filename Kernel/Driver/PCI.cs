@@ -95,9 +95,9 @@ namespace MOOS
                 }
             }
 
-            PCIExpress.Initialize();
+            PCIExpress.Initialise();
 
-            Console.Write("[PCI] PCI Initialized. ");
+            Console.Write("[PCI] PCI Initialised. ");
             Console.Write(((ulong)Devices.Count).ToString());
             Console.WriteLine(" Devices");
         }

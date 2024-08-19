@@ -10,7 +10,7 @@ namespace MOOS
 
         public static EventHandler<ConsoleKeyInfo> OnKeyChanged;
 
-        public static void Initialize() 
+        public static void Initialise() 
         {
             OnKeyChanged = null;
         }

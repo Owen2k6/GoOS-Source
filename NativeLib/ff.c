@@ -1609,7 +1609,7 @@ FRESULT dir_next (	/* FR_OK(0):succeeded, FR_NO_FILE:End of table, FR_DENIED:Cou
 					dp->sect = 0; return FR_NO_FILE;			/* Report EOT */
 #endif
 				}
-				dp->clust = clst;		/* Initialize data for new cluster */
+				dp->clust = clst;		/* Initialise data for new cluster */
 				dp->sect = clst2sect(fs, clst);
 			}
 		}
@@ -3080,7 +3080,7 @@ FRESULT find_volume (	/* FR_OK(0): successful, !=0: any error occurred */
 
 	fs->fs_type = 0;					/* Clear the filesystem object */
 	fs->pdrv = LD2PD(vol);				/* Bind the logical drive and a physical drive */
-	stat = disk_initialize(fs->pdrv);	/* Initialize the physical drive */
+	stat = disk_initialize(fs->pdrv);	/* Initialise the physical drive */
 	if (stat & STA_NOINIT) { 			/* Check if the initialization succeeded */
 		return FR_NOT_READY;			/* Failed to initialize due to no medium or hard error */
 	}
@@ -3154,7 +3154,7 @@ FRESULT find_volume (	/* FR_OK(0): successful, !=0: any error occurred */
 		}
 		if (i == SS(fs)) return FR_NO_FILESYSTEM;
 #if !FF_FS_READONLY
-		fs->last_clst = fs->free_clst = 0xFFFFFFFF;		/* Initialize cluster allocation information */
+		fs->last_clst = fs->free_clst = 0xFFFFFFFF;		/* Initialise cluster allocation information */
 #endif
 		fmt = FS_EXFAT;			/* FAT sub-type */
 	} else
@@ -3213,7 +3213,7 @@ FRESULT find_volume (	/* FR_OK(0): successful, !=0: any error occurred */
 
 #if !FF_FS_READONLY
 		/* Get FSInfo if available */
-		fs->last_clst = fs->free_clst = 0xFFFFFFFF;		/* Initialize cluster allocation information */
+		fs->last_clst = fs->free_clst = 0xFFFFFFFF;		/* Initialise cluster allocation information */
 		fs->fsi_flag = 0x80;
 #if (FF_FS_NOFSINFO & 3) != 3
 		if (fmt == FS_FAT32				/* Allow to update FSInfo only if BPB_FSInfo32 == 1 */
@@ -3246,7 +3246,7 @@ FRESULT find_volume (	/* FR_OK(0): successful, !=0: any error occurred */
 #endif
 #endif
 #if FF_FS_RPATH != 0
-	fs->cdir = 0;			/* Initialize current directory */
+	fs->cdir = 0;			/* Initialise current directory */
 #endif
 #if FF_FS_LOCK != 0			/* Clear file lock semaphores */
 	clear_lock(fs);
@@ -4686,7 +4686,7 @@ FRESULT f_mkdir (
 			if (dcl == 0xFFFFFFFF) res = FR_DISK_ERR;
 			if (res == FR_OK) res = sync_window(fs);	/* Flush FAT */
 			tm = GET_FATTIME();
-			if (res == FR_OK) {					/* Initialize the new directory table */
+			if (res == FR_OK) {					/* Initialise the new directory table */
 				res = dir_clear(fs, dcl);		/* Clean up the new table */
 				if (res == FR_OK && (!FF_FS_EXFAT || fs->fs_type != FS_EXFAT)) {	/* Create dot entries (FAT only) */
 					dir = fs->win;
@@ -4706,12 +4706,12 @@ FRESULT f_mkdir (
 			}
 			if (res == FR_OK) {
 #if FF_FS_EXFAT
-				if (fs->fs_type == FS_EXFAT) {	/* Initialize directory entry block */
+				if (fs->fs_type == FS_EXFAT) {	/* Initialise directory entry block */
 					st_dword(fs->dirbuf + XDIR_ModTime, tm);	/* Created time */
 					st_dword(fs->dirbuf + XDIR_FstClus, dcl);	/* Table start cluster */
 					st_dword(fs->dirbuf + XDIR_FileSize, (DWORD)dj.obj.objsize);	/* File size needs to be valid */
 					st_dword(fs->dirbuf + XDIR_ValidFileSize, (DWORD)dj.obj.objsize);
-					fs->dirbuf[XDIR_GenFlags] = 3;				/* Initialize the object flag */
+					fs->dirbuf[XDIR_GenFlags] = 3;				/* Initialise the object flag */
 					fs->dirbuf[XDIR_Attr] = AM_DIR;				/* Attribute */
 					res = store_xdir(&dj);
 				} else
@@ -5481,7 +5481,7 @@ FRESULT f_mkfs (
 		tbl[1] = (szb_case + au * ss - 1) / (au * ss);	/* Number of up-case table clusters */
 		tbl[2] = 1;										/* Number of root dir clusters */
 
-		/* Initialize the allocation bitmap */
+		/* Initialise the allocation bitmap */
 		sect = b_data; nsect = (szb_bit + ss - 1) / ss;	/* Start of bitmap and number of sectors */
 		nb = tbl[0] + tbl[1] + tbl[2];					/* Number of clusters in-use by system */
 		do {
@@ -5493,7 +5493,7 @@ FRESULT f_mkfs (
 			sect += n; nsect -= n;
 		} while (nsect);
 
-		/* Initialize the FAT */
+		/* Initialise the FAT */
 		sect = b_fat; nsect = sz_fat;	/* Start of FAT and number of FAT sectors */
 		j = nb = cl = 0;
 		do {
@@ -5514,7 +5514,7 @@ FRESULT f_mkfs (
 			sect += n; nsect -= n;
 		} while (nsect);
 
-		/* Initialize the root directory */
+		/* Initialise the root directory */
 		mem_set(buf, 0, szb_buf);
 		buf[SZDIRE * 0 + 0] = 0x83;		/* 83 entry (volume label) */
 		buf[SZDIRE * 1 + 0] = 0x81;		/* 81 entry (allocation bitmap) */
@@ -5702,10 +5702,10 @@ FRESULT f_mkfs (
 			disk_write(pdrv, buf, b_vol + 1, 1);		/* Write original FSINFO (VBR + 1) */
 		}
 
-		/* Initialize FAT area */
+		/* Initialise FAT area */
 		mem_set(buf, 0, (UINT)szb_buf);
 		sect = b_fat;		/* FAT start sector */
-		for (i = 0; i < n_fats; i++) {			/* Initialize FATs each */
+		for (i = 0; i < n_fats; i++) {			/* Initialise FATs each */
 			if (fmt == FS_FAT32) {
 				st_dword(buf + 0, 0xFFFFFFF8);	/* Entry 0 */
 				st_dword(buf + 4, 0xFFFFFFFF);	/* Entry 1 */
@@ -5722,7 +5722,7 @@ FRESULT f_mkfs (
 			} while (nsect);
 		}
 
-		/* Initialize root directory (fill with zero) */
+		/* Initialise root directory (fill with zero) */
 		nsect = (fmt == FS_FAT32) ? pau : sz_dir;	/* Number of root directory sectors */
 		do {
 			n = (nsect > sz_buf) ? sz_buf : nsect;
@@ -6013,7 +6013,7 @@ int putc_flush (		/* Flush left characters in the buffer */
 
 
 static
-void putc_init (		/* Initialize write buffer */
+void putc_init (		/* Initialise write buffer */
 	putbuff* pb,
 	FIL* fp
 )

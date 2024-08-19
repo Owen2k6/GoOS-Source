@@ -7,13 +7,13 @@ namespace MOOS.Driver
     {
         public static List<IDEDevice> Ports;
 
-        public static void Initialize()
+        public static void Initialise()
         {
             Ports = new ();
             ScanPorts(Channels.Primary);
             ScanPorts(Channels.Secondary);
             if (Ports.Count != 0)
-            Console.WriteLine("[IDE] IDE controller Initialized");
+            Console.WriteLine("[IDE] IDE controller Initialised");
         }
 
         public enum Channels

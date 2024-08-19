@@ -14,7 +14,7 @@ namespace MOOS.Driver
 
         public const int FrameSize = 1024;
 
-        public static void Initialize()
+        public static void Initialise()
         {
             qh = (QH*)Allocator.Allocate((ulong)sizeof(QH));
             qh1 = (QH*)Allocator.Allocate((ulong)sizeof(QH));

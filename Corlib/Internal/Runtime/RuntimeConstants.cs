@@ -28,9 +28,9 @@ namespace Internal.Runtime
         /// Flag set if the next pointer loc points to GCStaticsPreInitDataNode.
         /// Otherise it is the next GCStatic entry.
         /// </summary>
-        public const int HasPreInitializedData = 0x2;
+        public const int HasPreInitialisedData = 0x2;
 
-        public const int Mask = Uninitialized | HasPreInitializedData;
+        public const int Mask = Uninitialized | HasPreInitialisedData;
     }
 
     internal static class ArrayTypesConstants

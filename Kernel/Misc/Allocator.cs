@@ -87,7 +87,7 @@ abstract unsafe class Allocator
 
     public static Info _Info;
 
-    public static void Initialize(IntPtr Start)
+    public static void Initialise(IntPtr Start)
     {
         fixed (Info* pInfo = &_Info)
             Native.Stosb(pInfo, 0, (ulong)sizeof(Info));

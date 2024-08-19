@@ -7,10 +7,10 @@ namespace MOOS.Driver
         public static ulong Bus_Clock;
         public static ulong CPU_Clock;
 
-        public static void Initialize()
+        public static void Initialise()
         {
             //PIT.Initialise(1000);
-            HPET.Initialize();
+            HPET.Initialise();
 
             CPU_Clock = EstimateCPUSpeed();
             Console.WriteLine($"[Timer] CPU clock is {CPU_Clock / 1048576}mhz");

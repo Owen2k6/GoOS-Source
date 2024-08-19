@@ -19,7 +19,7 @@ namespace System
         }
 
         // This function is known to the compiler backend.
-        protected void InitializeOpenStaticThunk(object firstParameter, IntPtr functionPointer, IntPtr functionPointerThunk)
+        protected void InitialiseOpenStaticThunk(object firstParameter, IntPtr functionPointer, IntPtr functionPointerThunk)
         {
             // This sort of delegate is invoked by calling the thunk function pointer with the arguments to the delegate + a reference to the delegate object itself.
             m_firstParameter = this;
@@ -28,7 +28,7 @@ namespace System
         }
 
         // This function is known to the IL Transformer.
-        protected void InitializeClosedInstance(object firstParameter, IntPtr functionPointer)
+        protected void InitialiseClosedInstance(object firstParameter, IntPtr functionPointer)
         {
             if (firstParameter == null)
             {

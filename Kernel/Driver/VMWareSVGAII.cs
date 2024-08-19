@@ -69,10 +69,10 @@ namespace MOOS.Driver
             if (ReadRegister(Register.ID) != (uint)ID.V2)
                 return;
             Video_Memory = (uint*)ReadRegister(Register.FrameBufferStart);
-            InitializeFIFO();
+            InitialiseFIFO();
         }
 
-        protected void InitializeFIFO()
+        protected void InitialiseFIFO()
         {
             FIFO_Memory = (byte*)ReadRegister(Register.MemStart);
             *(uint*)&FIFO_Memory[(uint)FIFO.Min] = (uint)Register.FifoNumRegisters * 4;
@@ -92,7 +92,7 @@ namespace MOOS.Driver
             WriteRegister(Register.Height, height);
             WriteRegister(Register.BitsPerPixel, depth);
             Enable();
-            InitializeFIFO();
+            InitialiseFIFO();
         }
 
         protected void WriteRegister(Register register, uint value)

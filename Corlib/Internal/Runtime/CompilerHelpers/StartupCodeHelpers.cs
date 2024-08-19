@@ -145,7 +145,7 @@ namespace Internal.Runtime.CompilerHelpers
             }
         }
 
-        public static void InitializeModules(IntPtr Modules) 
+        public static void InitialiseModules(IntPtr Modules) 
         {
             for (int i = 0; ; i++)
             {
@@ -163,7 +163,7 @@ namespace Internal.Runtime.CompilerHelpers
                 for (int k = 0; k < header->NumberOfSections; k++)
                 {
                     if (sections[k].SectionId == ReadyToRunSectionType.GCStaticRegion)
-                        InitializeStatics(sections[k].Start, sections[k].End);
+                        InitialiseStatics(sections[k].Start, sections[k].End);
 
                     if (sections[k].SectionId == ReadyToRunSectionType.EagerCctor)
                         RunEagerClassConstructors(sections[k].Start, sections[k].End);
@@ -184,7 +184,7 @@ namespace Internal.Runtime.CompilerHelpers
             }
         }
 
-        static unsafe void InitializeStatics(IntPtr rgnStart, IntPtr rgnEnd)
+        static unsafe void InitialiseStatics(IntPtr rgnStart, IntPtr rgnEnd)
         {
             for (IntPtr* block = (IntPtr*)rgnStart; block < (IntPtr*)rgnEnd; block++)
             {
@@ -195,7 +195,7 @@ namespace Internal.Runtime.CompilerHelpers
                 {
                     var obj = RhpNewFast((EEType*)(blockAddr & ~GCStaticRegionConstants.Mask));
 
-                    if ((blockAddr & GCStaticRegionConstants.HasPreInitializedData) == GCStaticRegionConstants.HasPreInitializedData)
+                    if ((blockAddr & GCStaticRegionConstants.HasPreInitialisedData) == GCStaticRegionConstants.HasPreInitialisedData)
                     {
                         IntPtr pPreInitDataAddr = *(pBlock + 1);
                         fixed(byte* p = &obj.GetRawData())

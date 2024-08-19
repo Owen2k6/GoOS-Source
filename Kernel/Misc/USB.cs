@@ -106,10 +106,10 @@ namespace MOOS.Misc
             switch (device.Class)
             {
                 case 3:
-                    HID.Initialize(device);
+                    HID.Initialise(device);
                     break;
                 case 9:
-                    Hub.Initialize(device);
+                    Hub.Initialise(device);
                     break;
                 default:
                     Console.WriteLine($"[USB] Unrecognized device class:{device.Class} subClass:{device.SubClass}");

@@ -2711,7 +2711,7 @@ static void lodepng_color_mode_alloc_palette(LodePNGColorMode* info) {
     if (!info->palette) info->palette = (unsigned char*)lodepng_malloc(1024);
     if (!info->palette) return; /*alloc fail*/
     for (i = 0; i != 256; ++i) {
-        /*Initialize all unused colors with black, the value used for invalid palette indices.
+        /*Initialise all unused colors with black, the value used for invalid palette indices.
         This is an error according to the PNG spec, but common PNG decoders make it black instead.
         That makes color conversion slightly faster due to no error handling needed.*/
         info->palette[i * 4 + 0] = 0;

@@ -9,7 +9,7 @@ namespace System.Reflection.PortableExecutable
         public byte MajorLinkerVersion;
         public byte MinorLinkerVersion;
         public uint SizeOfCode;
-        public uint SizeOfInitializedData;
+        public uint SizeOfInitialisedData;
         public uint SizeOfUninitializedData;
         public uint AddressOfEntryPoint;
         public uint BaseOfCode;

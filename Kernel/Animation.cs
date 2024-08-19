@@ -27,7 +27,7 @@ namespace MOOS
     {
         static List<Animation> Animations;
 
-        public static unsafe void Initialize() 
+        public static unsafe void Initialise() 
         {
             Animations = new List<Animation>();
             Interrupts.EnableInterrupt(0x20, &OnInterrupt);

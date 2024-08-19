@@ -26,7 +26,7 @@ namespace MOOS.Misc
     {
         public static List<BitFontDescriptor> RegisteredBitFont;
 
-        public static void Initialize()
+        public static void Initialise()
         {
             RegisteredBitFont = new List<BitFontDescriptor>();
         }

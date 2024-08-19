@@ -30,7 +30,7 @@ namespace MOOS
         static DMADescriptor* RXDescs;
         static DMADescriptor* TXDescs;
 
-        public static void Initialize()
+        public static void Initialise()
         {
             PCIDevice dev = null;
 

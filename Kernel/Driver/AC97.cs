@@ -14,7 +14,7 @@ namespace MOOS
 
         static BufferDescriptor* BufferDescriptors;
 
-        public static unsafe void Initialize()
+        public static unsafe void Initialise()
         {
             PCIDevice device = PCI.GetDevice(0x8086, 0x2415);
 

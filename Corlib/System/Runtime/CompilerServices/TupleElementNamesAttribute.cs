@@ -13,7 +13,7 @@ namespace System.Runtime.CompilerServices
 #nullable disable
 
 		/// <summary>
-		/// Initializes a new instance of the <see
+		/// Initialises a new instance of the <see
 		/// cref="TupleElementNamesAttribute"/> class.
 		/// </summary>
 		/// <param name="transformNames">

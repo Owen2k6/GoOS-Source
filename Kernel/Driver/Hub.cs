@@ -16,12 +16,12 @@ namespace MOOS.Driver
 
         static USBRequest* req;
 
-        public static void Initialize() 
+        public static void Initialise() 
         {
             req = (USBRequest*)Allocator.Allocate((ulong)sizeof(USBRequest));
         }
 
-        internal static void Initialize(USBDevice device)
+        internal static void Initialise(USBDevice device)
         {
             Desc* desc = (Desc*)Allocator.Allocate((ulong)sizeof(Desc));
 

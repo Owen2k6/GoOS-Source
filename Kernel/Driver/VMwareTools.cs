@@ -49,7 +49,7 @@ namespace MOOS
 
         public static bool Available = false;
 
-        public static void Initialize()
+        public static void Initialise()
         {
             if (!(Available = is_vmware_backdoor())) return;
 

@@ -34,7 +34,7 @@ namespace System.Diagnostics
 
                 delegate*<void> p = (delegate*<void>)((ulong)newPtr + newnthdr->OptionalHeader.AddressOfEntryPoint);
                 //TO-DO disposing
-                StartupCodeHelpers.InitializeModules(moduleSeg);
+                StartupCodeHelpers.InitialiseModules(moduleSeg);
                 StartThread(p);
                 //StartupCodeHelpers.free((IntPtr)ptr);
             }

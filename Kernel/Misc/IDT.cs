@@ -34,10 +34,10 @@ public static class IDT
     public static IDTDescriptor idtr;
 
 
-    public static bool Initialized { get; private set; }
+    public static bool Initialised { get; private set; }
 
 
-    public static unsafe bool Initialize()
+    public static unsafe bool Initialise()
     {
         idt = new IDTEntry[256];
 
@@ -51,7 +51,7 @@ public static class IDT
 
         Native.Load_IDT(ref idtr);
 
-        Initialized = true;
+        Initialised = true;
         return true;
     }
 

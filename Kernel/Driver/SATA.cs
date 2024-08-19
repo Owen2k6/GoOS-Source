@@ -174,7 +174,7 @@ namespace MOOS
         public static HBA* Controller = null;
         public static List<SATADevice> Ports = null;
 
-        public static void Initialize()
+        public static void Initialise()
         {
             Ports = new List<SATADevice>();
             #region FindDev

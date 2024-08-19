@@ -760,8 +760,8 @@ namespace System
 		internal static string @Argument_InvalidSeekOrigin = "Invalid seek origin.";
 		/// <summary>The specified serialized string '{0}' is not supported.</summary>
 		internal static string @Argument_InvalidSerializedString = "The specified serialized string '{0}' is not supported.";
-		/// <summary>The signature of the startup hook '{0}' in assembly '{1}' was invalid. It must be 'public static void Initialize()'.</summary>
-		internal static string @Argument_InvalidStartupHookSignature = "The signature of the startup hook '{0}' in assembly '{1}' was invalid. It must be 'public static void Initialize()'.";
+		/// <summary>The signature of the startup hook '{0}' in assembly '{1}' was invalid. It must be 'public static void Initialise()'.</summary>
+		internal static string @Argument_InvalidStartupHookSignature = "The signature of the startup hook '{0}' in assembly '{1}' was invalid. It must be 'public static void Initialise()'.";
 		/// <summary>An undefined TimeSpanStyles value is being used.</summary>
 		internal static string @Argument_InvalidTimeSpanStyles = "An undefined TimeSpanStyles value is being used.";
 		/// <summary>Token {0:x} is not valid in the scope of module {1}.</summary>
@@ -1195,7 +1195,7 @@ namespace System
 		/// <summary>Assumption failed: {0}</summary>
 		internal static string @AssumptionFailed_Cnd = "Assumption failed: {0}";
 		/// <summary>The builder was not properly initialized.</summary>
-		internal static string @AsyncMethodBuilder_InstanceNotInitialized = "The builder was not properly initialized.";
+		internal static string @AsyncMethodBuilder_InstanceNotInitialised = "The builder was not properly initialized.";
 		/// <summary>Bad IL format.</summary>
 		internal static string @BadImageFormat_BadILFormat = "Bad IL format.";
 		/// <summary>Corrupt .resources file. The specified type doesn't exist.</summary>
@@ -1581,7 +1581,7 @@ namespace System
 		/// <summary>Type definition of the global function has been completed.</summary>
 		internal static string @InvalidOperation_GlobalsHaveBeenCreated = "Type definition of the global function has been completed.";
 		/// <summary>Handle is not initialized.</summary>
-		internal static string @InvalidOperation_HandleIsNotInitialized = "Handle is not initialized.";
+		internal static string @InvalidOperation_HandleIsNotInitialised = "Handle is not initialized.";
 		/// <summary>Handle is not pinned.</summary>
 		internal static string @InvalidOperation_HandleIsNotPinned = "Handle is not pinned.";
 		/// <summary>Hashtable insert failed. Load factor too high. The most common cause is multiple threads writing to the Hashtable simultaneously.</summary>
@@ -1594,8 +1594,8 @@ namespace System
 		internal static string @InvalidOperation_MethodBuilderBaked = "The signature of the MethodBuilder can no longer be modified because an operation on the MethodBuilder caused the methodDef token to be created. For example, a call to SetCustomAttribute requires the methodDef token to emit the CustomAttribute token.";
 		/// <summary>Method already has a body.</summary>
 		internal static string @InvalidOperation_MethodHasBody = "Method already has a body.";
-		/// <summary>You must call Initialize on this object instance before using it.</summary>
-		internal static string @InvalidOperation_MustCallInitialize = "You must call Initialize on this object instance before using it.";
+		/// <summary>You must call Initialise on this object instance before using it.</summary>
+		internal static string @InvalidOperation_MustCallInitialise = "You must call Initialise on this object instance before using it.";
 		/// <summary>NativeOverlapped cannot be reused for multiple operations.</summary>
 		internal static string @InvalidOperation_NativeOverlappedReused = "NativeOverlapped cannot be reused for multiple operations.";
 		/// <summary>You cannot have more than one dynamic module in each dynamic assembly in this version of the runtime.</summary>
@@ -1663,7 +1663,7 @@ namespace System
 		/// <summary>Either the IAsyncResult object did not come from the corresponding async method on this type, or the End method was called multiple times with the same IAsyncResult.</summary>
 		internal static string @InvalidOperation_WrongAsyncResultOrEndCalledMultiple = "Either the IAsyncResult object did not come from the corresponding async method on this type, or the End method was called multiple times with the same IAsyncResult.";
 		/// <summary>Common Language Runtime detected an invalid program.</summary>
-		internal static string @InvalidProgram_Default = "Common Language Runtime detected an invalid program.";
+		internal static string @InvalidProgramme_Default = "Common Language Runtime detected an invalid program.";
 		/// <summary>The time zone ID '{0}' was found on the local computer, but the file at '{1}' was corrupt.</summary>
 		internal static string @InvalidTimeZone_InvalidFileData = "The time zone ID '{0}' was found on the local computer, but the file at '{1}' was corrupt.";
 		/// <summary>The time zone ID '{0}' was found on the local computer, but the registry information was corrupt.</summary>
@@ -1825,7 +1825,7 @@ namespace System
 		/// <summary>Collection was of a fixed size.</summary>
 		internal static string @NotSupported_FixedSizeCollection = "Collection was of a fixed size.";
 		/// <summary>Generic methods with UnmanagedCallersOnlyAttribute are invalid.</summary>
-		internal static string @InvalidProgram_GenericMethod = "Generic methods with UnmanagedCallersOnlyAttribute are invalid.";
+		internal static string @InvalidProgramme_GenericMethod = "Generic methods with UnmanagedCallersOnlyAttribute are invalid.";
 		/// <summary>This operation is invalid on overlapping buffers.</summary>
 		internal static string @InvalidOperation_SpanOverlappedOperation = "This operation is invalid on overlapping buffers.";
 		/// <summary>Invoking default method with named arguments is not supported.</summary>
@@ -1851,11 +1851,11 @@ namespace System
 		/// <summary>Function not marked with UnmanagedCallersOnlyAttribute.</summary>
 		internal static string @InvalidOperation_FunctionMissingUnmanagedCallersOnly = "Function not marked with UnmanagedCallersOnlyAttribute.";
 		/// <summary>Non-blittable parameter types are invalid for UnmanagedCallersOnly methods.</summary>
-		internal static string @InvalidProgram_NonBlittableTypes = "Non-blittable parameter types are invalid for UnmanagedCallersOnly methods.";
+		internal static string @InvalidProgramme_NonBlittableTypes = "Non-blittable parameter types are invalid for UnmanagedCallersOnly methods.";
 		/// <summary>Not supported in a non-reflected type.</summary>
 		internal static string @NotSupported_NonReflectedType = "Not supported in a non-reflected type.";
 		/// <summary>Non-static methods with UnmanagedCallersOnlyAttribute are invalid.</summary>
-		internal static string @InvalidProgram_NonStaticMethod = "Non-static methods with UnmanagedCallersOnlyAttribute are invalid.";
+		internal static string @InvalidProgramme_NonStaticMethod = "Non-static methods with UnmanagedCallersOnlyAttribute are invalid.";
 		/// <summary>Parent does not have a default constructor. The default constructor must be explicitly defined.</summary>
 		internal static string @NotSupported_NoParentDefaultConstructor = "Parent does not have a default constructor. The default constructor must be explicitly defined.";
 		/// <summary>Cannot resolve {0} to a TypeInfo object.</summary>
@@ -2353,7 +2353,7 @@ namespace System
 		/// <summary>Attempt to update previously set Objective-C msgSend API overrides.</summary>
 		internal static string @InvalidOperation_ResetGlobalObjectiveCMsgSend = "Attempt to update previously set Objective-C msgSend API overrides.";
 		/// <summary>Attempt to track an Objective-C Type without initializing.</summary>
-		internal static string @InvalidOperation_ObjectiveCMarshalNotInitialized = "Attempt to track an Objective-C Type without initializing.";
+		internal static string @InvalidOperation_ObjectiveCMarshalNotInitialised = "Attempt to track an Objective-C Type without initializing.";
 		/// <summary>Attempt to reinitialize ObjectiveCMarshal.</summary>
 		internal static string @InvalidOperation_ReinitializeObjectiveCMarshal = "Attempt to reinitialize ObjectiveCMarshal.";
 		/// <summary>Attempt to track an Objective-C Type without a finalizer.</summary>
@@ -2529,11 +2529,11 @@ namespace System
 		/// <summary>Field not found: '{0}'.</summary>
 		internal static string @EE_MissingField = "Field not found: '{0}'.";
 		/// <summary>Common Language Runtime detected an invalid program. The body of method '{0}' is invalid.</summary>
-		internal static string @InvalidProgram_Specific = "Common Language Runtime detected an invalid program. The body of method '{0}' is invalid.";
+		internal static string @InvalidProgramme_Specific = "Common Language Runtime detected an invalid program. The body of method '{0}' is invalid.";
 		/// <summary>Method '{0}' has a variable argument list. Variable argument lists are not supported in .NET Core.</summary>
-		internal static string @InvalidProgram_Vararg = "Method '{0}' has a variable argument list. Variable argument lists are not supported in .NET Core.";
+		internal static string @InvalidProgramme_Vararg = "Method '{0}' has a variable argument list. Variable argument lists are not supported in .NET Core.";
 		/// <summary>Object.Finalize() can not be called directly. It is only callable by the runtime.</summary>
-		internal static string @InvalidProgram_CallVirtFinalize = "Object.Finalize() can not be called directly. It is only callable by the runtime.";
+		internal static string @InvalidProgramme_CallVirtFinalize = "Object.Finalize() can not be called directly. It is only callable by the runtime.";
 		/// <summary>The corresponding delegate has been garbage collected. Please make sure the delegate is still referenced by managed code when you are using the marshalled native function pointer.</summary>
 		internal static string @Delegate_GarbageCollected = "The corresponding delegate has been garbage collected. Please make sure the delegate is still referenced by managed code when you are using the marshalled native function pointer.";
 		/// <summary>Unable to find an entry point named '{0}' in native library '{1}'.</summary>

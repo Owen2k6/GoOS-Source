@@ -76,7 +76,7 @@ namespace MOOS.Driver
             public ushort BridgeCtrl;
         };
 
-        public static void Initialize()
+        public static void Initialise()
         {
             if (ACPI.MCFG == null) return;
 

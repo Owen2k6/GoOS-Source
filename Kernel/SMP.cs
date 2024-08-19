@@ -32,14 +32,14 @@ namespace MOOS
         {
             *(ulong*)Stacks += StackSizeForEachCPU;
             SSE.enable_sse();
-            LocalAPIC.Initialize();
+            LocalAPIC.Initialise();
             LocalAPICTimer.StartTimer(1000, 0x20);
-            ThreadPool.Initialize();
+            ThreadPool.Initialise();
             NumActivedProcessors++;
             for (; ; ) Native.Hlt();
         }
 
-        public static void Initialize(uint trampoline)
+        public static void Initialise(uint trampoline)
         {
             if (ThisCPU != 0) Panic.Error("Error: Bootstrap CPU is not CPU 0");
 

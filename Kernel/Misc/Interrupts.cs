@@ -13,7 +13,7 @@ namespace MOOS.Misc
 
         public static List<INT> INTs;
 
-        public static void Initialize() 
+        public static void Initialise() 
         {
             INTs = new List<INT>();
         }

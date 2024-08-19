@@ -11,7 +11,7 @@ namespace MOOS
         public static byte* Buffer;
         private const int CacheSize = 0xFFFFF;
 
-        public static void Initialize()
+        public static void Initialise()
         {
             var dev = PCI.GetDevice(0x1274, 0x1371);
             if (!dev) return;

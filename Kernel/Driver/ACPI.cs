@@ -210,7 +210,7 @@ namespace MOOS.Driver
 
         public static List<byte> LocalAPIC_CPUIDs;
 
-        public static void Initialize()
+        public static void Initialise()
         {
             FADT = null;
             MADT = null;
@@ -236,7 +236,7 @@ namespace MOOS.Driver
                 }
             }
 
-            Console.WriteLine("[ACPI] ACPI Initialized");
+            Console.WriteLine("[ACPI] ACPI Initialised");
         }
 
         private static void ParseDT(ACPI_HEADER* hdr)

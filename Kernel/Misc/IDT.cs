@@ -105,7 +105,7 @@ public static class IDT
     {
         if(irq < 0x20)
         {
-            Panic.Error($"CPU{SMP.ThisCPU} KERNEL PANIC!!!", true);
+            Panic.Error($" A cpu with the ID of {SMP.ThisCPU} has called a panic requiring the system to lock up.", true);
             InterruptReturnStack* irs;
             switch (irq)
             {
@@ -126,40 +126,42 @@ public static class IDT
                     irs = (InterruptReturnStack*)(((byte*)stack) + sizeof(RegistersStack) + sizeof(ulong));
                     break;
             }
-            Console.WriteLine($"RIP: 0x{stack->irs.rip.ToString("x2")}");
-            Console.WriteLine($"Code Segment: 0x{stack->irs.cs.ToString("x2")}");
-            Console.WriteLine($"RFlags: 0x{stack->irs.rflags.ToString("x2")}");
-            Console.WriteLine($"RSP: 0x{stack->irs.rsp.ToString("x2")}");
-            Console.WriteLine($"Stack Segment: 0x{stack->irs.ss.ToString("x2")}");
+            Console.ForegroundColour = System.ConsoleColour.Blue;
+            Console.WriteLine($" RIP: 0x{stack->irs.rip.ToString("x2")}");
+            Console.WriteLine($" Code Segment: 0x{stack->irs.cs.ToString("x2")}");
+            Console.WriteLine($" RFlags: 0x{stack->irs.rflags.ToString("x2")}");
+            Console.WriteLine($" RSP: 0x{stack->irs.rsp.ToString("x2")}");
+            Console.WriteLine($" Stack Segment: 0x{stack->irs.ss.ToString("x2")}");
+            Console.ForegroundColour = System.ConsoleColour.Yellow;
             switch (irq)
             {
-                case 0: Console.WriteLine("DIVIDE BY ZERO"); break;
-                case 1: Console.WriteLine("SINGLE STEP"); break;
-                case 2: Console.WriteLine("NMI"); break;
-                case 3: Console.WriteLine("BREAKPOINT"); break;
-                case 4: Console.WriteLine("OVERFLOW"); break;
-                case 5: Console.WriteLine("BOUNDS CHECK"); break;
-                case 6: Console.WriteLine("INVALID OPCODE"); break;
-                case 7: Console.WriteLine("COPR UNAVAILABLE"); break;
-                case 8: Console.WriteLine("DOUBLE FAULT"); break;
-                case 9: Console.WriteLine("COPR SEGMENT OVERRUN"); break;
-                case 10: Console.WriteLine("INVALID TSS"); break;
-                case 11: Console.WriteLine("SEGMENT NOT FOUND"); break;
-                case 12: Console.WriteLine("STACK EXCEPTION"); break;
-                case 13: Console.WriteLine("GENERAL PROTECTION"); break;
+                case 0: Console.WriteLine(" The CPU tried to divide a number by zero, which is not allowed. \n This usually happens due to a bug in the programme where it tried to perform an invalid mathematical operation."); break;
+                case 1: Console.WriteLine(" The CPU encountered a debugging operation and paused execution. \n This usually happens when a programme is being debugged step by step. \n If you're not actively debugging, this might indicate a serious issue in the programme’s execution flow."); break;
+                case 2: Console.WriteLine(" A critical hardware signal was sent to the CPU that cannot be ignored. \n This interrupt usually indicates an emergency situation, such as hardware failure or a watchdog timer triggering due to an unresponsive system."); break;
+                case 3: Console.WriteLine(" The CPU hit a breakpoint, which is a deliberate stopping point used by developers to debug the programme. \n If you're not debugging, encountering a breakpoint could indicate an issue with the programme's execution."); break;
+                case 4: Console.WriteLine(" The CPU encountered a mathematical overflow, where a calculation produced a result too large to be stored in the available space. \n This often happens when working with very large numbers and can lead to incorrect results or crashes."); break;
+                case 5: Console.WriteLine(" The CPU detected an attempt to access data outside the allowed memory range. \n This means a programme tried to read or write data beyond its limits, which could cause instability or data corruption."); break;
+                case 6: Console.WriteLine(" The CPU tried to execute an operation that it does not understand. \n This error occurs when a programme sends an instruction to the CPU that isn’t valid, possibly due to a corrupted programme or bug in the software."); break;
+                case 7: Console.WriteLine(" The CPU attempted to use a math coprocessor (like for floating-point calculations), but it was either not present or not available. \n This could indicate an issue with the system's configuration or the software trying to use features that the CPU doesn’t support."); break;
+                case 8: Console.WriteLine(" A critical error occurred while the CPU was trying to handle another error. \n This usually means the system encountered a very serious issue and was unable to recover, leading to a complete crash."); break;
+                case 9: Console.WriteLine(" The CPU encountered an issue with the math coprocessor, where an operation went beyond the expected data range. \n This can happen due to a bug in how data is handled during complex calculations."); break;
+                case 10: Console.WriteLine(" The CPU tried to switch to another task but found that the task’s state information was invalid or corrupted. \n This could be due to a problem in how tasks are managed by the operating system."); break;
+                case 11: Console.WriteLine(" The CPU tried to access a segment of memory that wasn’t available. \n This usually indicates a serious problem in memory management, where the programme or operating system is trying to access memory that doesn’t exist or is not accessible."); break;
+                case 12: Console.WriteLine(" The CPU encountered an error while handling the stack, which is a special memory area used to store temporary data like function calls and local variables. \n This could be due to a stack overflow, where the stack runs out of space, or a stack underflow, where it tries to access non-existent data"); break;
+                case 13: Console.WriteLine(" The CPU encountered a general protection fault, which means a programme tried to perform an operation it wasn't allowed to, \n such as accessing restricted memory or executing an invalid instruction. This is a sign of a serious problem in the programme or system."); break;
                 case 14:
                     ulong CR2 = Native.ReadCR2();
                     if ((CR2 >> 5) < 0x1000)
                     {
-                        Console.WriteLine("NULL POINTER");
+                        Console.WriteLine(" The CPU tried to use a pointer (a reference to a memory location) that was set to 'null,' meaning it pointed to nothing. \n This usually happens due to a bug in the programme, where it tried to access memory that doesn't exist.");
                     }
                     else
                     {
-                        Console.WriteLine("PAGE FAULT");
+                        Console.WriteLine(" The CPU tried to access a section of memory that isn't currently available. \n This could happen if the program tried to access memory that hasn't been allocated or if there’s an issue with how memory is being managed. \n Sometimes, the system can recover from this, but it can also cause a crash.");
                     }
                     break;
-                case 16: Console.WriteLine("COPR ERROR"); break;
-                default: Console.WriteLine("UNKNOWN EXCEPTION"); break;
+                case 16: Console.WriteLine(" An error occurred with the math coprocessor during a calculation. \n This might indicate a hardware issue with the coprocessor or a software bug where the CPU and coprocessor are not communicating correctly."); break;
+                default: Console.WriteLine(" The CPU encountered an error it didn't recognise. \n This means something went wrong, but the system couldn't identify the exact cause. \n It could be due to a hardware issue or an unexpected software problem."); break;
             }
             Framebuffer.Update();
             for (; ; );

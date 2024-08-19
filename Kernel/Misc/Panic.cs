@@ -14,10 +14,14 @@ namespace MOOS.Misc
 
             ConsoleColour colour = Console.ForegroundColour;
 
-            Console.ForegroundColour = System.ConsoleColour.Red;
-            Console.Write("PANIC: ");
+            Console.ForegroundColour = ConsoleColour.Red;
+            Console.WriteLine(" GoOS has ran into a critical problem and has been forced to shut down...");
+            Console.ForegroundColour = ConsoleColour.LightRed;
             Console.WriteLine(msg);
-            Console.WriteLine("All CPU Halted Now!");
+            Console.ForegroundColour = ConsoleColour.Grey;
+            Console.WriteLine(" The system has disabled all CPU activity");
+            Console.ForegroundColour = ConsoleColour.White;
+            Console.WriteLine(" You will need to restart your computer.");
 
             Console.ForegroundColour = colour;
 

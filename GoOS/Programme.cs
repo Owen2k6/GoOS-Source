@@ -12,6 +12,7 @@ using GoOS.GUI;
 using GoOS;
 using Control = System.Windows.Forms.Control;
 using GoOS.GUI.Apps;
+using System;
 
 unsafe class Programme
 {
@@ -158,22 +159,37 @@ unsafe class Programme
 
         Framebuffer.TripleBuffered = true;
 
-        wm = new WindowManager();
         pm = new ProcessManager();
+        wm = new WindowManager();
 
         Test testProcess = new Test();
         pm.addProcess(testProcess);
 
         Framebuffer.Graphics.DrawImage(0, 0, ScafellPike, false);
 
+        Thread processThread = new Thread(&ProcessThread);
+        processThread.Start((int)SMP.ThisCPU);
+
+        Thread renderThread = new Thread(&RenderThread);
+        renderThread.Start((int)SMP.ThisCPU);
+
+        for (; ; )
+        {
+            // Note how this is the main loop and its empty
+        }
+    }
+    public static void ProcessThread()
+    {
+        for (; ; ) pm.Execute();
+    }
+
+    public static void RenderThread()
+    {
         for (; ; )
         {
             MouseX = Control.MousePosition.X;
             MouseY = Control.MousePosition.Y;
-
-            pm.Execute();
             wm.Render(Framebuffer.Graphics);
-
             Framebuffer.Update();
         }
     }

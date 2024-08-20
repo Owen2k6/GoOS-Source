@@ -144,7 +144,7 @@ namespace MOOS.Misc
             Console.WriteLine(" Has Exited");
             Threads[Index].Terminated = true;
             Schedule_Next();
-            Panic.Error("Termination Failed!");
+            Panic.Error(" Termination Failed!");
         }
 
         [DllImport("*")]

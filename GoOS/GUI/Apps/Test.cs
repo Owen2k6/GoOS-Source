@@ -9,8 +9,8 @@ namespace GoOS.GUI.Apps
         {
             Window newWin = new Window(400, 400, 150, 100, "Test");
             windows.Add(newWin);
-            int one = 1; int two = 0;
-            int test = one / two;
+            //int one = 1; int two = 0;
+            //int test = one / two;
             Programme.wm.addWindow(newWin);
         }
 

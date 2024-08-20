@@ -22,7 +22,7 @@ namespace GoOS
 
         public void Execute()
         {
-
+            for (int i = 0; i < Processes.Count; i++) Processes[i].Execute();
         }
     }
 }

@@ -9,6 +9,7 @@ using MOOS.Driver;
 using MOOS.Graph;
 using static MOOS.NETv4;
 using GoOS.GUI;
+using GoOS.Core;
 using GoOS;
 using Control = System.Windows.Forms.Control;
 using GoOS.GUI.Apps;
@@ -167,6 +168,9 @@ unsafe class Programme
 
         Framebuffer.Graphics.DrawImage(0, 0, ScafellPike, false);
 
+        Thread coreThread = new Thread(&Core.Run);
+        coreThread.Start((int)SMP.ThisCPU);
+
         Thread processThread = new Thread(&ProcessThread);
         processThread.Start((int)SMP.ThisCPU);
 
@@ -175,9 +179,14 @@ unsafe class Programme
 
         for (; ; )
         {
-            
+            // Reserve this thread for only what cant be put on the other 3.
+            // The idea is that if one of the other threads crashes this one, which is pretty much vital for the OS to run, doesn't.
+            // Ideally restart them too, in order save the system in a crash of some kind.
+
+            // If there is something thats a core functionality of the OS that doesn't fit into Process or Render, put it into Core.cs in the Core folder.
         }
     }
+
     public static void ProcessThread()
     {
         for (; ; ) pm.Execute();

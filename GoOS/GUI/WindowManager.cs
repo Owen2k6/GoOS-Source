@@ -212,7 +212,7 @@ namespace GoOS.GUI
                         window.Y = MouseY - window.DOY;
                     }
 
-                    g.FillRectangle(window.X + 1, window.Y + 21, window.Width - 2, window.Height - 26, 0xFFFFFFFF);
+                    g.FillRectangle(window.X + 1, window.Y + 21, window.Width, window.Height - 26, 0xFFFFFFFF);
 
                     for (int ii = 0; ii < window.controls.Count; ii++)
                     {

@@ -22,7 +22,7 @@ unsafe class Programme
     public static WindowManager wm;
     public static ProcessManager pm;
 
-    public static int MouseX, MouseY;
+    //public static int MouseX, MouseY;
 
     public static ACFFont lg12;
     public static ACFFont lg18;
@@ -166,7 +166,7 @@ unsafe class Programme
         Test testProcess = new Test();
         pm.addProcess(testProcess);
 
-        Framebuffer.Graphics.DrawImage(0, 0, ScafellPike, false);
+        //Framebuffer.Graphics.DrawImage(0, 0, ScafellPike, false);
 
         Thread coreThread = new Thread(&Core.Run);
         coreThread.Start((int)SMP.ThisCPU);
@@ -196,8 +196,6 @@ unsafe class Programme
     {
         for (; ; )
         {
-            MouseX = Control.MousePosition.X;
-            MouseY = Control.MousePosition.Y;
             wm.Render(Framebuffer.Graphics);
             Framebuffer.Update();
         }

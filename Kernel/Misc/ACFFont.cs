@@ -279,150 +279,50 @@ namespace MOOS.Misc
         /// </summary>
         private readonly Glyph[] _glyphs = new Glyph[256];
 
-        public void DrawChar(int x, int y, Glyph glyph, uint colour, Graphics graphics)
-        {
-            for (int yy = 0; yy < glyph.Height; yy++)
-            {
-                for (int xx = 0; xx < glyph.Width; xx++)
-                {
-                    int Width = Framebuffer.Graphics.Width;
-                    int Height = Framebuffer.Graphics.Height;
-
-                    uint* fb = Framebuffer.FirstBuffer;
-
-                    // Get the alpha value of the glyph's pixel and the inverted value.
-                    uint alpha = glyph.Bitmap[yy * glyph.Width + xx];
-                    uint invAlpha = (uint)-alpha;
-
-                    // Get the background ARGB value and the glyph colour's ARGB value.
-                    uint backgroundArgb = graphics.GetPoint(x + xx, y + yy - glyph.Top);
-
-                    // Store the individual background colour's R, G and B values.
-                    byte backgroundR = (byte)((backgroundArgb >> 16) & 0xFF);
-                    byte backgroundG = (byte)((backgroundArgb >> 8) & 0xFF);
-                    byte backgroundB = (byte)(backgroundArgb & 0xFF);
-
-                    // Store the individual glyph foreground colour's R, G and B values.
-                    byte foregroundR = (byte)((colour >> 16) & 0xFF);
-                    byte foregroundG = (byte)((colour >> 8) & 0xFF);
-                    byte foregroundB = (byte)((colour) & 0xFF);
-
-                    // Get the individual R, G and B values for the blended colour.
-                    byte r = (byte)((alpha * foregroundR + invAlpha * backgroundR) >> 8);
-                    byte g = (byte)((alpha * foregroundG + invAlpha * backgroundG) >> 8);
-                    byte b = (byte)((alpha * foregroundB + invAlpha * backgroundB) >> 8);
-
-                    // Store the blended colour in an unsigned integer.
-                    uint _colour = ((uint)255 << 24) | ((uint)r << 16) | ((uint)g << 8) | b;
-
-                    // Set the pixel to the blended colour.
-                    graphics.DrawPoint(x + xx, y + yy - glyph.Top, _colour);
-                }
-            }
-        }
-
         public void DrawString(int x, int y, string text, uint colour, Graphics graphics, bool centre = false)
         {
-            if (string.IsNullOrEmpty(text)) return;
-
-            if (x >= Framebuffer.Width || y >= Framebuffer.Height) return;
+            if (string.IsNullOrEmpty(text) || x >= Framebuffer.Width || y >= Framebuffer.Height) return;
 
             string[] lines = text.Split('\n');
+            int lineHeight = GetHeight();
+            int totalHeight = lineHeight * lines.Length;
 
-            int[] bx = new int[lines.Length];
-            int[] by = new int[lines.Length];
-
-            // Set temporary values.
-            for (int i = 0; i < bx.Length; i++) bx[i] = 0;
-            for (int i = 0; i < by.Length; i++) by[i] = GetHeight() * i;
-
-            // Loop though the split lines.
             for (int i = 0; i < lines.Length; i++)
             {
-                // Precalculate the string's size.
-                ushort TextWidth = MeasureString(lines[i]);
+                int bx = 0;
+                int by = lineHeight * i - (centre ? totalHeight / 2 : 0);
+                ushort textWidth = MeasureString(lines[i]);
 
-                // Check if the text needs to be centred.
-                if (centre)
-                {
-                    by[i] -= GetHeight() * (lines.Length + 1) / 2;
-                    bx[i] -= TextWidth / 2;
-                }
+                if (centre) bx -= textWidth / 2;
 
                 int topHeight = 0;
-                for (int I = 0; I < lines[i].Length; I++)
+                for (int j = 0; j < lines[i].Length; j++)
                 {
-                    Glyph? Temp = GetGlyph(lines[i][I]);
-                    if (Temp != null && Temp.Height > topHeight)
-                    {
-                        topHeight = Temp.Height;
-                    }
+                    Glyph? glyph = GetGlyph(lines[i][j]);
+                    if (glyph != null && glyph.Height > topHeight) topHeight = glyph.Height;
                 }
 
-                // Loop through each character in the line.
-                for (int I = 0; I < lines[i].Length; I++)
+                for (int j = 0; j < lines[i].Length; j++)
                 {
-                    switch (lines[i][I])
+                    char c = lines[i][j];
+                    if (c == '\0') continue;
+                    if (c == ' ') { bx += lineHeight / 2; continue; }
+                    if (c == '\t') { bx += lineHeight * 4; continue; }
+
+                    Glyph? glyph = GetGlyph(c);
+                    if (glyph == null) continue;
+
+                    for (int yy = 0; yy < glyph.Height; yy++)
                     {
-                        case '\0':
-                            continue;
-                        case ' ':
-                            bx[i] += GetHeight() / 2;
-                            continue;
-                        case '\t':
-                            bx[i] += GetHeight() * 4;
-                            continue;
-                    }
-
-                    // Get the glyph for this char.
-                    Glyph? Temp = GetGlyph(lines[i][I]);
-
-                    // Continue if the glyph for this char is null.
-                    if (Temp == null)
-                    {
-                        continue;
-                    }
-
-
-                    // Draw all pixels.
-                    // Draw the ACF glyph.
-                    for (int yy = 0; yy < Temp.Height; yy++)
-                    {
-                        for (int xx = 0; xx < Temp.Width; xx++)
+                        for (int xx = 0; xx < glyph.Width; xx++)
                         {
-                            // Get the alpha value of the glyph's pixel and the inverted value.
-                            uint alpha = Temp.Bitmap[yy * Temp.Width + xx];
-                            //uint invAlpha = alpha - 2 - (alpha * 2);
-
-                            // Get the background ARGB value and the glyph colour's ARGB value.
-                            uint backgroundArgb = graphics.GetPoint(bx[i] + x + xx, by[i] + y + yy + topHeight - Temp.Top);
-                            uint glyphColourArgb = colour;
-
-                            // Store the individual background colour's R, G and B values.
-                            byte backgroundR = (byte)((backgroundArgb >> 16) & 0xFF);
-                            byte backgroundG = (byte)((backgroundArgb >> 8) & 0xFF);
-                            byte backgroundB = (byte)(backgroundArgb & 0xFF);
-
-                            // Store the individual glyph foreground colour's R, G and B values.
-                            byte foregroundR = (byte)((glyphColourArgb >> 16) & 0xFF);
-                            byte foregroundG = (byte)((glyphColourArgb >> 8) & 0xFF);
-                            byte foregroundB = (byte)((glyphColourArgb) & 0xFF);
-
-                            // Get the individual R, G and B values for the blended colour.
-                            byte r = (byte)((alpha * foregroundR + (255 - alpha) * backgroundR) >> 8);
-                            byte g = (byte)((alpha * foregroundG + (255 - alpha) * backgroundG) >> 8);
-                            byte b = (byte)((alpha * foregroundB + (255 - alpha) * backgroundB) >> 8);
-
-                            // Store the blended colour in an unsigned integer.
-                            uint _colour = ((uint)255 << 24) | ((uint)r << 16) | ((uint)g << 8) | b;
-
-                            // Set the pixel to the blended colour.
-                            graphics.DrawPoint(bx[i] + x + xx, by[i] + y + yy + topHeight - Temp.Top, _colour);
+                            uint alpha = glyph.Bitmap[yy * glyph.Width + xx];
+                            uint _colour = (alpha << 24) | (colour & 0xFFFFFF);
+                            graphics.DrawPoint(bx + x + xx, by + y + yy + topHeight - glyph.Top, _colour, true);
                         }
                     }
 
-                    // Offset the X position by the glyph's length.
-                    bx[i] += Temp.Width + 2;
+                    bx += glyph.Width + 2;
                 }
             }
         }

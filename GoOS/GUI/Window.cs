@@ -7,11 +7,12 @@ namespace GoOS.GUI
     internal class Window
     {
         public int X, Y;
+        public int DOX, DOY; // Drag Offset X & Y
         public int Width, Height;
         public bool WindowDecorations;
         public bool Closable = true;
         public bool Closing = false;
-        public bool Update = true;
+        public bool Dragging = false;
 
         public uint WID { get; private set; }
         public string Title { get; private set; }

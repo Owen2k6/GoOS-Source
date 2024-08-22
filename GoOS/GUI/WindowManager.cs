@@ -10,13 +10,23 @@ namespace GoOS.GUI
 {
     internal class WindowManager
     {
+        public bool main = true;
+        public bool active = true;
         public List<Window> Windows { get; private set; }
-        public Window Focused { get; private set; }
-        
-        private int oldMouseX, oldMouseY;
+
+        public static MouseButtons OldMouseButtons;
+
+        //private static int oldMouseX, oldMouseY;
         
         public WindowManager()
         {
+            Windows = new List<Window>();
+        }
+
+        public WindowManager(bool main, bool active)
+        {
+            this.main = main;
+            this.active = active;
             Windows = new List<Window>();
         }
 
@@ -25,27 +35,41 @@ namespace GoOS.GUI
             for (int i = 0; i < Windows.Count; i++) { if (Windows[i].WID == window.WID) return; }
 
             Windows.Add(window);
-
-            Focused = window;
         }
 
         public bool[] getMouseOverWindow(Window window)
         {
             bool[] points = new bool[4];
 
-            if (window.X <= oldMouseX && window.Y <= oldMouseY && window.X + window.Width >= oldMouseX && window.Y + window.Height >= oldMouseY) points[0] = true;
-            else if (window.X <= oldMouseX + 11 && window.Y <= oldMouseY + 18 && window.X + window.Width >= oldMouseX + 11 && window.Y + window.Height >= oldMouseY + 18) points[1] = true;
-            else if (window.X <= oldMouseX + 11 && window.Y <= oldMouseY && window.X + window.Width >= oldMouseX + 11 && window.Y + window.Height >= oldMouseY) points[2] = true;
-            else if (window.X <= oldMouseX && window.Y <= oldMouseY + 18 && window.X + window.Width >= oldMouseX && window.Y + window.Height >= oldMouseY + 18) points[3] = true;
+            if (window.X <= MControl.MousePosition.X && window.Y <= MControl.MousePosition.Y && window.X + window.Width >= MControl.MousePosition.X && window.Y + window.Height >= MControl.MousePosition.Y) points[0] = true;
+            else if (window.X <= MControl.MousePosition.X + 11 && window.Y <= MControl.MousePosition.Y + 18 && window.X + window.Width >= MControl.MousePosition.X + 11 && window.Y + window.Height >= MControl.MousePosition.Y + 18) points[1] = true;
+            else if (window.X <= MControl.MousePosition.X + 11 && window.Y <= MControl.MousePosition.Y && window.X + window.Width >= MControl.MousePosition.X + 11 && window.Y + window.Height >= MControl.MousePosition.Y) points[2] = true;
+            else if (window.X <= MControl.MousePosition.X && window.Y <= MControl.MousePosition.Y + 18 && window.X + window.Width >= MControl.MousePosition.X && window.Y + window.Height >= MControl.MousePosition.Y + 18) points[3] = true;
             return points;
         }
 
-        public void Render(Graphics g)
+        public void FocusWindow(Window w)
         {
-            bool mouseMoved = oldMouseX != MControl.MousePosition.X || oldMouseY != MControl.MousePosition.Y; // Has mouse been moved?
-            bool mouseHandled = !mouseMoved;
+            for (int i = 0; i < Windows.Count; i++)
+            {
+                if (Windows[i].WID == w.WID)
+                {
+                    Windows.Remove(Windows[i]);
+                    Windows.Add(w);
+                    return;
+                }
+            }
 
-            bool[] isOverFocused = getMouseOverWindow(Focused);
+            for (int i = 0; i < Windows.Count; i++) { if (Windows[i].WID == w.WID) return; }
+
+            Windows.Add(w);
+        }
+
+        /*public void RenderDR(Graphics g)
+        {
+            
+
+            &bool[] isOverFocused = getMouseOverWindow();
 
             for (int i = 0; i < Windows.Count; i++)
             {
@@ -145,6 +169,65 @@ namespace GoOS.GUI
 
             oldMouseX = Programme.MouseX;
             oldMouseY = Programme.MouseY;
+        }*/
+
+        public void Render(Graphics g)
+        {
+            if (active)
+            {
+                g.DrawImage(0, 0, Programme.ScafellPike, false);
+
+                for (int i = 0; i < Windows.Count; i++)
+                {
+                    Window window = Windows[i];
+                    bool isFocused = window.WID == Windows[Windows.Count - 1].WID;
+
+                    if (isFocused)
+                    {
+                        if (MControl.MousePosition.X >= window.X && MControl.MousePosition.X <= window.X + window.Width && MControl.MousePosition.Y >= window.Y && MControl.MousePosition.Y <= window.Y + 26 && OldMouseButtons == MouseButtons.None && MControl.MouseButtons == MouseButtons.Left)
+                        {
+                            window.DOX = MControl.MousePosition.X - window.X;
+                            window.DOY = MControl.MousePosition.Y - window.Y;
+                            window.Dragging = true;
+                        }
+
+                        if (window.Dragging && OldMouseButtons != MouseButtons.None && MControl.MouseButtons == MouseButtons.None)
+                        {
+                            window.Dragging = false;
+                        }
+                    }
+
+                    if (window.Dragging)
+                    {
+                        window.X = MControl.MousePosition.X - window.DOX;
+                        window.Y = MControl.MousePosition.Y - window.DOY;
+                    }
+
+                    g.FillRectangle(window.X + 1, window.Y + 21, window.Width - 2, window.Height - 26, 0xFFFFFFFF);
+
+                    for (int ii = 0; ii < window.controls.Count; ii++)
+                    {
+                        window.controls[ii].Render();
+                    }
+
+                    for (int ii = 0; ii < window.Width; ii++)
+                    {
+                        g.DrawImage(window.X + ii, window.Y, Programme.WindowbarGradient, false);
+                    }
+
+                    Programme.lg12.DrawString(window.X + (window.Width / 2) - (Programme.lg12.MeasureString(window.Title) / 2), window.Y + 13 - (Programme.lg12.MeasureStringVert(window.Title) / 2), window.Title, 0xFFFFFFFF, g);
+
+                    if (window.Closing)
+                    {
+                        Windows.Remove(window);
+                    }
+                }
+
+                g.DrawImage(MControl.MousePosition.X, MControl.MousePosition.Y, Programme.mouse);
+
+                if (main) OldMouseButtons = MControl.MouseButtons;
+            }
         }
+
     }
 }

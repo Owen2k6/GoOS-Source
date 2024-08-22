@@ -14,7 +14,8 @@ namespace GoOS.GUI
         public bool active = true;
         public List<Window> Windows { get; private set; }
 
-        public static MouseButtons OldMouseButtons;
+        public static int MouseX, MouseY;
+        public static MouseButtons MouseButtons, OldMouseButtons;
 
         //private static int oldMouseX, oldMouseY;
         
@@ -41,10 +42,10 @@ namespace GoOS.GUI
         {
             bool[] points = new bool[4];
 
-            if (window.X <= MControl.MousePosition.X && window.Y <= MControl.MousePosition.Y && window.X + window.Width >= MControl.MousePosition.X && window.Y + window.Height >= MControl.MousePosition.Y) points[0] = true;
-            else if (window.X <= MControl.MousePosition.X + 11 && window.Y <= MControl.MousePosition.Y + 18 && window.X + window.Width >= MControl.MousePosition.X + 11 && window.Y + window.Height >= MControl.MousePosition.Y + 18) points[1] = true;
-            else if (window.X <= MControl.MousePosition.X + 11 && window.Y <= MControl.MousePosition.Y && window.X + window.Width >= MControl.MousePosition.X + 11 && window.Y + window.Height >= MControl.MousePosition.Y) points[2] = true;
-            else if (window.X <= MControl.MousePosition.X && window.Y <= MControl.MousePosition.Y + 18 && window.X + window.Width >= MControl.MousePosition.X && window.Y + window.Height >= MControl.MousePosition.Y + 18) points[3] = true;
+            if (window.X <= MouseX && window.Y <= MouseY && window.X + window.Width >= MouseX && window.Y + window.Height >= MouseY) points[0] = true;
+            else if (window.X <= MouseX + 11 && window.Y <= MouseY + 18 && window.X + window.Width >= MouseX + 11 && window.Y + window.Height >= MouseY + 18) points[1] = true;
+            else if (window.X <= MouseX + 11 && window.Y <= MouseY && window.X + window.Width >= MouseX + 11 && window.Y + window.Height >= MouseY) points[2] = true;
+            else if (window.X <= MouseX && window.Y <= MouseY + 18 && window.X + window.Width >= MouseX && window.Y + window.Height >= MouseY + 18) points[3] = true;
             return points;
         }
 
@@ -173,6 +174,14 @@ namespace GoOS.GUI
 
         public void Render(Graphics g)
         {
+            if (main)
+            {
+                MouseX = MControl.MousePosition.X;
+                MouseY = MControl.MousePosition.Y;
+                OldMouseButtons = MouseButtons;
+                MouseButtons = MControl.MouseButtons;
+            }
+
             if (active)
             {
                 g.DrawImage(0, 0, Programme.ScafellPike, false);
@@ -184,14 +193,14 @@ namespace GoOS.GUI
 
                     if (isFocused)
                     {
-                        if (MControl.MousePosition.X >= window.X && MControl.MousePosition.X <= window.X + window.Width && MControl.MousePosition.Y >= window.Y && MControl.MousePosition.Y <= window.Y + 26 && OldMouseButtons == MouseButtons.None && MControl.MouseButtons == MouseButtons.Left)
+                        if (MouseX >= window.X && MouseX <= window.X + window.Width && MouseY >= window.Y && MouseY <= window.Y + 26 && OldMouseButtons == MouseButtons.None && MouseButtons == MouseButtons.Left)
                         {
-                            window.DOX = MControl.MousePosition.X - window.X;
-                            window.DOY = MControl.MousePosition.Y - window.Y;
+                            window.DOX = MouseX - window.X;
+                            window.DOY = MouseY - window.Y;
                             window.Dragging = true;
                         }
 
-                        if (window.Dragging && OldMouseButtons != MouseButtons.None && MControl.MouseButtons == MouseButtons.None)
+                        if (window.Dragging && OldMouseButtons != MouseButtons.None && MouseButtons == MouseButtons.None)
                         {
                             window.Dragging = false;
                         }
@@ -199,8 +208,8 @@ namespace GoOS.GUI
 
                     if (window.Dragging)
                     {
-                        window.X = MControl.MousePosition.X - window.DOX;
-                        window.Y = MControl.MousePosition.Y - window.DOY;
+                        window.X = MouseX - window.DOX;
+                        window.Y = MouseY - window.DOY;
                     }
 
                     g.FillRectangle(window.X + 1, window.Y + 21, window.Width - 2, window.Height - 26, 0xFFFFFFFF);
@@ -223,9 +232,7 @@ namespace GoOS.GUI
                     }
                 }
 
-                g.DrawImage(MControl.MousePosition.X, MControl.MousePosition.Y, Programme.mouse);
-
-                if (main) OldMouseButtons = MControl.MouseButtons;
+                g.DrawImage(MouseX, MouseY, Programme.mouse);
             }
         }
 

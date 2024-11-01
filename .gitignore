@@ -374,3 +374,5 @@ Tools/trampoline.o
 Tools/grub2/boot/ramdisk.tar
 
 .idea/.idea.GoOS/.idea/
+
+.DS_Store

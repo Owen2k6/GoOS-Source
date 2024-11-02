@@ -380,3 +380,5 @@ Tools/grub2/boot/ramdisk.tar
 tools/goose/.idea/
 
 gosh/src/.idea/
+
+.idea/

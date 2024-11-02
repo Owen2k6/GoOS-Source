@@ -1,5 +1,5 @@
 #include <iostream>
-#include "sysinfo.hpp"
+#include "../../lib/sysinfo.hpp"
 
 int main() {
   //std::cout << "GoOS version 1.6 Scafell Pike\n";

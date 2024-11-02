@@ -378,3 +378,5 @@ Tools/grub2/boot/ramdisk.tar
 .DS_Store
 
 tools/goose/.idea/
+
+gosh/src/.idea/

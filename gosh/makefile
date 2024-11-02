@@ -12,9 +12,9 @@ TARGET = $(BIN_DIR)/$(APP_NAME)
 # Detect OS and set compiler
 ifeq ($(shell uname), Darwin)
     ifeq ($(shell uname -m), arm64)
-        CC = aarch64-linux-gnu-gcc
+        CC = aarch64-linux-gnu-g++
     else
-        CC = x86_64-linux-gnu-gcc
+        CC = x86_64-linux-gnu-g++
     endif
 else
     CC = g++

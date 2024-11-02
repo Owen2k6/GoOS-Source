@@ -45,6 +45,35 @@ bool handleBuiltinCommand(const std::vector<std::string> &args) {
         genPrompt();
         return true;
     }
+    else if (args[0] == "ls") {
+        // Fork the process for non-built-in commands
+        pid_t pid = fork();
+        if (pid == 0) {
+            // Child process
+
+            // Prepare the new argv with --color=auto
+            std::vector<std::string> newArgv(args); // Copy the original arguments
+            newArgv.push_back("--color=auto"); // Append --color=auto
+
+            // Convert to C-style array for execvp
+            std::vector<char*> cstrs;
+            for (const auto &arg : newArgv) {
+                cstrs.push_back(const_cast<char*>(arg.c_str())); // Convert to C-style string
+            }
+            cstrs.push_back(nullptr); // Null-terminate the array
+
+            execvp(cstrs[0], cstrs.data()); // Execute the command
+            perror("gosh"); // If execvp fails
+            exit(1);
+        } else if (pid > 0) {
+            // Parent process
+            waitpid(pid, nullptr, 0); // Wait for child process to finish
+        } else {
+            // Fork failed
+            perror("gosh");
+        }
+        return true; // Indicate the command was processed
+    }
     // Add other built-ins here in the future if needed
 
     return false; // Not a built-in command
@@ -86,7 +115,7 @@ int main() {
         putPrompt();
         std::getline(std::cin, input);
         if (input.empty()) continue;
-        if (input == "exit") break;
+        else if (input == "exit") break;
 
         auto args = parseInput(input);
         executeCommand(args);

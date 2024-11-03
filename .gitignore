@@ -382,3 +382,5 @@ tools/goose/.idea/
 gosh/src/.idea/
 
 .idea/
+
+.vscode/

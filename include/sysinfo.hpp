@@ -106,14 +106,7 @@ void displayKernelInfo() {
 }
 
 void displayCPUInfo() {
-    std::cout << "\033[1mProcessor\033[0m " << getCPUInfo();
-}
-
-void displayGPUInfoa() {
-    std::string result = getGPUInfo();
-    if (!result.empty()) {
-        std::cout << "\033[1mGraphics:\033[0m " << result;
-    }
+    std::cout << "\033[1mProcessor\033[0m " << getCPUInfo() << std::endl;
 }
 
 void displayGPUInfo() {

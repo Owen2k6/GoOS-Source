@@ -1,6 +1,6 @@
 # Directories
 APP_NAME = gim
-SRC_DIR = ./
+SRC_DIR = ./src
 OBJ_DIR = ./obj
 BIN_DIR = ./bin
 

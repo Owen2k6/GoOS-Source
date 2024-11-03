@@ -5,7 +5,7 @@
 #include <sys/wait.h> // For waitpid()
 #include <cerrno>     // For error handling with errno and perror
 #include <cstring>    // For strerror()
-#include "../../lib/sysinfo.hpp"
+#include "../../../include/sysinfo.hpp"
 
 std::string prompt = "$ ";
 

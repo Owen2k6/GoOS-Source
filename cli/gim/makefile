@@ -1,8 +1,8 @@
 # Directories
 APP_NAME = gim
 SRC_DIR = ./
-OBJ_DIR = ../obj
-BIN_DIR = ../bin
+OBJ_DIR = ./obj
+BIN_DIR = ./bin
 
 # Files
 SRC = $(wildcard $(SRC_DIR)/*.cpp)
